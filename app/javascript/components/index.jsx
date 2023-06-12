@@ -5,6 +5,8 @@ import App from "./App";
 document.addEventListener("turbo:load", () => {
     const root = createRoot(
         document.body.appendChild(document.createElement("div"))
+        // document.getElementById('root')
     );
     root.render(<App />);
 });
+
