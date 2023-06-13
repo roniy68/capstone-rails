@@ -1,7 +1,7 @@
 import React from "react";
-import Navigation from "./fragments/navigation/Navigation";
 import Footer from "./fragments/Footer";
 import Main from "./fragments/Main";
+import Navigation from "./fragments/navigation/Navigation";
 
 export default () => (
   <>
