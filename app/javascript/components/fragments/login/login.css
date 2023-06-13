@@ -3,22 +3,21 @@
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-  }
-  
-  .login-container h1 {
+}
+
+.login-container h1 {
     margin-bottom: 10px;
-  }
-  
-  .login-container input {
+}
+
+.login-container input {
     padding: 10px;
     margin-bottom: 10px;
-  }
-  
-  .login-container button {
+}
+
+.login-container button {
     padding: 10px;
     background-color: #007bff;
     color: #fff;
     border: none;
     cursor: pointer;
-  }
-  
+}
