@@ -1,4 +1,5 @@
 /************************** Reservation Form ***************************/
+
 /* CSS */
 
 .reservation-form-container {
@@ -7,7 +8,7 @@
   padding: 20px;
   background-color: #a1cbcf;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  box-shadow: rgb(0 0 0 / 30%) 0 19px 38px, rgb(0 0 0 / 22%) 0 15px 12px;
 }
 
 .reservation-form-container h2 {
@@ -36,7 +37,7 @@
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  box-shadow: rgb(204 219 232) 3px 3px 6px 0 inset, rgb(255 255 255 / 50%) -3px -3px 6px 1px inset;
 }
 
 .reservation-form-container button {
@@ -48,7 +49,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgb(0 0 0 / 35%) 0 5px 15px;
 }
 
 .reservation-form-container button:hover {
