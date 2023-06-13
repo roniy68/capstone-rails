@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { reserveCars } from '../../redux/actions';
+import { reserveCar } from '../../redux/actions';
 
-const ReservationForm = ({ cars, reserveCars }) => {
+const ReservationForm = ({ cars, reserveCar }) => {
   const [carName, setCarName] = useState('');
   const [carModel, setCarModel] = useState('');
   const [startDate, setStartDate] = useState('');
@@ -11,7 +11,7 @@ const ReservationForm = ({ cars, reserveCars }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    reserveCars({ carName, carModel, startDate, endDate, price });
+    reserveCar({ carName, carModel, startDate, endDate, price });
     setCarName('');
     setCarModel('');
     setStartDate('');
@@ -39,7 +39,6 @@ const ReservationForm = ({ cars, reserveCars }) => {
             id="carModel"
             value={carModel}
             onChange={(e) => setCarModel(e.target.value)}
-            required
           >
             <option value="" disabled>Select a model</option>
             <option value="s239">s239</option>
@@ -91,4 +90,4 @@ const mapStateToProps = (state) => ({
   cars: state.cars
 });
 
-export default connect(mapStateToProps, { reserveCars })(ReservationForm);
+export default connect(mapStateToProps, { reserveCar })(ReservationForm);
