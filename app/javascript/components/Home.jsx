@@ -8,10 +8,7 @@ import ReservationForm from './fragments/navigation/ReservationForm';
 export default () => (
   <>
     {/* Navbar goes here */}
-    <Routes>
-      <Route path="/" element={<Navigation />} />
-      <Route path="/reserve" element={<ReservationForm />} />
-    </Routes>
+    <Navigation />
 
     {/* Main Content here */}
     <Main />
