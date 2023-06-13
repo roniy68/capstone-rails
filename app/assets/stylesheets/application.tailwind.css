@@ -37,7 +37,6 @@ nav ul li a {
             #7de7eb 55.12%,
             #5ce1e6 71.54%,
             #33bbcf 100%);
-    background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
@@ -83,17 +82,14 @@ nav ul li a {
 
 .sidebar {
     animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 @keyframes slide-top {
     0% {
         transform: translateY(100px);
-        transform: translateY(100px);
     }
 
     100% {
-        transform: translateY(0);
         transform: translateY(0);
     }
 }
@@ -101,11 +97,9 @@ nav ul li a {
 @keyframes slide-top {
     0% {
         transform: translateY(100px);
-        transform: translateY(100px);
     }
 
     100% {
-        transform: translateY(0);
         transform: translateY(0);
     }
 }
