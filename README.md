@@ -7,7 +7,7 @@
   <img src="readme-assets/murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Blog-App-Docked</b></h3>
+  <h3><b>Capstone-Rails</b></h3>
 
 </div>
 
@@ -15,7 +15,7 @@
 
 ## 📑 Table of Contents
 
-- [📊 Blog-App-Docked ](#-Blog-App-Docked-)
+- [📊 Capstone-Rails ](#-Capstone-Rails-)
   - [🛠 Built With ](#-built-with-)
     - [🧰 Tech Stack ](#-tech-stack-)
     - [💎 Key Features ](#-key-features-)
@@ -62,6 +62,10 @@ Rails Blog is a Ruby on rails project. It's a minimalistic presentation of a RoR
 
 To get a local copy up and running, follow these steps.
 
+### Live Demo
+
+##### [Live Here ](https://capstone-rails.onrender.com)
+
 ### Prerequisites
 
 In order to use this project, you need
@@ -74,8 +78,8 @@ In order to use this project, you need
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/roniy68/Blog-App-Docked
-  cd Blog-App-Docked
+  git clone https://github.com/roniy68/Capstone-Rails
+  cd Capstone-Rails
 ```
 
 ### Install
@@ -133,14 +137,11 @@ I am always looking for ways to improve my project. If you have any suggestions 
 
 - **_[Ahmed Hasan Rony](https://github.com/roniy68)_**
 
-
-
-
 ## 🤝 Contributing <a name="contributing"></a>
 
 I welcome any and all contributions to my website! If you have an idea for a new feature or have found a bug, please open an issue or submit a pull request.
 
-Feel free to check the [issues page](https://github.com/roniy68/Blog-App-Docked/issues).
+Feel free to check the [issues page](https://github.com/roniy68/Capstone-Rails/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
