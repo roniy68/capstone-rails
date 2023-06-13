@@ -1,15 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import Login from "./Login";
+import Navbar from "./fragments/Navbar";
+import Footer from "./fragments/Footer";
+
+import Main from "./fragments/Main";
 
 export default () => (
     <>
+        {/* Navbar goes here */}
         <Navbar />
-        <div className="bg-slate-100 p-8 dark:bg-slate-800"> Hello From React</div>
 
-        <Login />
+        {/* Main Content here */}
+        <Main />
+
+        {/* Footer  */}
         <Footer />
     </>
 );
