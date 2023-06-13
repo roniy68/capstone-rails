@@ -16,6 +16,19 @@
     scroll-behavior: smooth;
 }
 
+nav {
+    margin: 3%;
+    border: 1px solid rgb(43, 40, 40);
+    padding: 1.2rem;
+    width: fit-content;
+}
+
+nav ul li a {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #214d76;
+}
+
 .text-gradient {
     background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,
             #def9fa 0.89%,
