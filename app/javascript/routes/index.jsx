@@ -6,6 +6,7 @@ export default (
     <Router>
         <Routes>
             <Route path="/" element={<Home />} />
+            {/* More Routes here */}
         </Routes>
     </Router>
 );

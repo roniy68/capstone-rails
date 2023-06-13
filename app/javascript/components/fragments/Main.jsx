@@ -9,7 +9,7 @@ const Main = () => {
             </div>
 
             <header>
-                <h2> Exxample Header</h2>
+                <h2> Exxample Header 1</h2>
                 <h3> Example Header 2</h3>
             </header>
 
