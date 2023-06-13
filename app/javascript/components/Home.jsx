@@ -1,18 +1,19 @@
 import React from "react";
-import Navbar from "./fragments/Navbar";
+import { Routes, Route } from 'react-router-dom';
+import Navigation from "./fragments/navigation/Navigation";
 import Footer from "./fragments/Footer";
-
 import Main from "./fragments/Main";
+import ReservationForm from './fragments/navigation/ReservationForm';
 
 export default () => (
-    <>
-        {/* Navbar goes here */}
-        <Navbar />
+  <>
+    {/* Navbar goes here */}
+    <Navigation />
 
-        {/* Main Content here */}
-        <Main />
+    {/* Main Content here */}
+    <Main />
 
-        {/* Footer  */}
-        <Footer />
-    </>
+    {/* Footer */}
+    <Footer />
+  </>
 );
