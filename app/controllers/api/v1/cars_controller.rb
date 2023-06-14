@@ -9,9 +9,9 @@ class Api::V1::CarsController < ApplicationController
   def create
     car = Car.create!(car_params)
     if car
-      render json: car      
+      render json: car
     else
-      render json: car.errors      
+      render json: car.errors
     end
   end
 
@@ -21,10 +21,10 @@ class Api::V1::CarsController < ApplicationController
 
   def destroy
     @car&.destroy
-    render json: { message: 'Car Deleted Successfully'}
+    render json: { message: 'Car Deleted Successfully' }
   end
 
-  private 
+  private
 
   def car_params
     params.permit(:name, :model, :price, :description, :photo)

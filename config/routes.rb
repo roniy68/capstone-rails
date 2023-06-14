@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  
+
   # Cathes All Route
   # get '*path', to: 'pages#index', via: :all
 end
