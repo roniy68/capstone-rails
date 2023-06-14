@@ -26,3 +26,12 @@ Car.create(
   user: admin,
   photo: 'https://ik.imagekit.io/ahroniy/mercedies.jpg?updatedAt=1686688717606'
 )
+
+Car.create(
+  name: 'Suzuki',
+  model: 'Swift',
+  description: 'A luxury car with impressive performance.',
+  price: 250.5,
+  user: admin,
+  photo: 'https://paultan.org/image/2021/04/Suzuki_Swift_Sport_ZC33s_Malaysia_Ext-1.jpg'
+)
