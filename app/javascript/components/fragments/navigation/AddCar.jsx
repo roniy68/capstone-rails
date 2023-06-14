@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addCar } from "../../redux/actions";
-import "./ReservationForm.css";
+import "./ReservationAddForm.css";
 
 const AddCar = ({ addCar }) => {
   const [carData, setCarData] = useState({
