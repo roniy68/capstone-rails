@@ -1,5 +1,6 @@
 import React from "react";
 import "./OurCars.css";
+// import rentingCars from "./rentingCars.jpg";
 
 const Cars = () => {
   const cars = [
@@ -8,21 +9,21 @@ const Cars = () => {
       name: "Car 1",
       model: "Model 1",
       price: "$20,000",
-      image: "car1.jpg",
+      image: "rentingCars.jpg",
     },
     {
       id: 2,
       name: "Car 2",
       model: "Model 2",
       price: "$25,000",
-      image: "car2.jpg",
+      image: "rentingCars.jpg",
     },
     {
       id: 3,
       name: "Car 3",
       model: "Model 3",
       price: "$30,000",
-      image: "car3.jpg",
+      image: "rentingCars.jpg",
     },
   ];
 
