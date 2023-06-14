@@ -1,14 +1,13 @@
 import React from "react";
-import { Routes, Route } from 'react-router-dom';
-import Navigation from "./fragments/navigation/Navigation";
 import Footer from "./fragments/Footer";
 import Main from "./fragments/Main";
-import ReservationForm from './fragments/navigation/ReservationForm';
+import Navigation from "./fragments/navigation/Navigation";
+import Cars from "./fragments/navigation/Cars";
 
 export default () => (
   <>
     {/* Navbar goes here */}
-    <Navigation />
+    <Cars />
 
     {/* Main Content here */}
     <Main />
