@@ -22,7 +22,7 @@ const ReservationForm = ({ cars, reserveCar }) => {
 
   return (
     <div className="reservation-form-container">
-      <h2>Reserve Form</h2>
+      <h2>Reservation Form</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="carName">Car Name:</label>
@@ -31,6 +31,7 @@ const ReservationForm = ({ cars, reserveCar }) => {
             id="carName"
             value={carName}
             onChange={(e) => setCarName(e.target.value)}
+            placeholder="Enter car's name"
             required
           />
         </div>
