@@ -7,7 +7,7 @@
   margin: 50px auto;
   padding: 20px;
   background: #4DA0B0;
-  background: -webkit-linear-gradient(to right, #D39D38, #4DA0B0);  
+  background: linear-gradient(to right, #D39D38, #4DA0B0);  
   background: linear-gradient(to right, #D39D38, #4DA0B0);
   border-radius: 10px;
   box-shadow: rgb(0 0 0 / 30%) 0 19px 38px, rgb(0 0 0 / 22%) 0 15px 12px;
@@ -16,7 +16,6 @@
 .reservation-form-container h2 {
   text-align: center;
   color: white;
-            font-size: 50px;
             text-shadow: -1px 1px 0 #3b3737,
                           1px 1px 0 #000,
                          1px -1px 0 #000,
@@ -62,7 +61,6 @@
   color: #fff;
   font-size: 1.3rem;
   font-weight: bolder;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
   box-shadow: rgb(0 0 0 / 35%) 0 5px 15px;
