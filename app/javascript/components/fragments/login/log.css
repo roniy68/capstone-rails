@@ -14,7 +14,7 @@
     margin-bottom: 10px;
 }
 
-.login-container button {
+.login-container form button {
     padding: 10px;
     background-color: #007bff;
     color: #fff;

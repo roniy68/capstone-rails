@@ -7,15 +7,9 @@ import Login from './fragments/login/login';
 
 export default () => (
   <>
-    
     <Login/>
-    
     <Navigation />
-
-   
     <Main />
-
- 
     <Footer />
   </>
 );
