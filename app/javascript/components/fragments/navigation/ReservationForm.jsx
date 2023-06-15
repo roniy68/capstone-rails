@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { reserveCar } from '../../redux/actions';
+import "./ReservationAddForm.css";
 
 const ReservationForm = ({ cars, reserveCar }) => {
   const [carName, setCarName] = useState('');
@@ -20,8 +21,8 @@ const ReservationForm = ({ cars, reserveCar }) => {
   };
 
   return (
-    <div>
-      <h2>Reserve Form</h2>
+    <div className="reservation-form-container">
+      <h2>Reservation Form</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="carName">Car Name:</label>
@@ -30,6 +31,7 @@ const ReservationForm = ({ cars, reserveCar }) => {
             id="carName"
             value={carName}
             onChange={(e) => setCarName(e.target.value)}
+            placeholder="Enter car's name"
             required
           />
         </div>
@@ -40,7 +42,9 @@ const ReservationForm = ({ cars, reserveCar }) => {
             value={carModel}
             onChange={(e) => setCarModel(e.target.value)}
           >
-            <option value="" disabled>Select a model</option>
+            <option value="" disabled>
+              Select a model
+            </option>
             <option value="s239">s239</option>
             <option value="rt20">rt20</option>
             <option value="s560">s560</option>
@@ -74,7 +78,9 @@ const ReservationForm = ({ cars, reserveCar }) => {
             onChange={(e) => setPrice(e.target.value)}
             required
           >
-            <option value="" disabled>Select a price</option>
+            <option value="" disabled>
+              Select a price
+            </option>
             <option value="100">$100</option>
             <option value="150">$150</option>
             <option value="200">$200</option>
