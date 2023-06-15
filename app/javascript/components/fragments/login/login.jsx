@@ -1,29 +1,47 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './login.css';
+import './log.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
-  const navigate = useNavigate();
 
-  const handleLogin = () => {
-    if (username) {
-      navigate('/home');
-    } else {
-      alert('Please enter a username');
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch('/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username }),
+      });
+
+      if (response.ok) {
+        // Username saved successfully
+        console.log('Username saved successfully');
+      } else {
+        // Failed to save username
+        console.error('Failed to save username');
+      }
+    } catch (error) {
+      console.error('An error occurred', error);
     }
   };
 
   return (
     <div className="login-container">
-      <h1>Login</h1>
-      <input
-        type="text"
-        placeholder="Enter username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <button onClick={handleLogin}>Login</button>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter your username"
+          value={username}
+          onChange={handleUsernameChange}
+        />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
