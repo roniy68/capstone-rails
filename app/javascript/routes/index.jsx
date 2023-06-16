@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../components/Home";
 import Reservation from "../components/Reservation";
 // import ReservationForm from "../components/fragments/navigation/ReservationForm"
-// import AddCar from "../components/fragments/navigation/AddCar";
+import AddCar from "../components/fragments/navigation/AddCar";
 // import Cars from "../components/fragments/navigation/Cars";
 // import MyReservations from "../components/fragments/navigation/MyReservations";
 
@@ -13,6 +13,7 @@ export default (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/reserve" element={<Reservation />} />
+      <Route path="/addcar" element={<AddCar />} />
       {/* <Route path="/reserve" component={ReservationForm} />
       <Route path="/addcar" component={AddCar} />
       <Route path="/cars" component={Cars} />
