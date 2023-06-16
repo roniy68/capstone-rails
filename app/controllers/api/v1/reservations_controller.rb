@@ -24,6 +24,13 @@ class Api::V1::ReservationsController < Api::V1::BaseController
     render json: { message: 'Reservation deleted successfully' }
   end
 
+  def user_reservations
+    user = User.find(params[:user_id])
+    reservations = user.reservations
+
+    render json: reservations
+  end
+
   private
 
   def reservation_params
