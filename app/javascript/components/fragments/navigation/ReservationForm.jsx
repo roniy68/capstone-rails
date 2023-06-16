@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ReservationAddForm.css";
 
 const ReservationForm = () => {
@@ -6,8 +6,35 @@ const ReservationForm = () => {
     car_name: "",
     car_model: "",
     start_date: "",
-    end_date: ""
+    end_date: "",
+    car_id: "",
+    user_id: "",
   });
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        // Fetch user data from the API
+        const userResponse = await fetch("/api/v1/users");
+        const userData = await userResponse.json();
+
+        // Fetch car data from the API
+        const carResponse = await fetch("/api/v1/cars");
+        const carData = await carResponse.json();
+
+        // Set the user_id and car_id in the form data
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          car_id: carData.id,
+          user_id: userData.id,
+        }));
+      } catch (error) {
+        console.error("Error fetching user and car data:", error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -25,7 +52,7 @@ const ReservationForm = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ reservation: formData }), // Nest formData under "reservation" key
+        body: JSON.stringify({ reservation: formData }),
       });
 
       if (response.ok) {
@@ -36,6 +63,8 @@ const ReservationForm = () => {
           car_model: "",
           start_date: "",
           end_date: "",
+          car_id: "",
+          user_id: "",
         });
       } else {
         const error = await response.json();
