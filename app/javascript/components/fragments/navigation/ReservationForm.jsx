@@ -1,23 +1,44 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { reserveCar } from '../../redux/actions';
+import React, { useState } from "react";
+import axios from "axios";
 import "./ReservationAddForm.css";
 
-const ReservationForm = ({ cars, reserveCar }) => {
-  const [carName, setCarName] = useState('');
-  const [carModel, setCarModel] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [price, setPrice] = useState('');
+const ReservationForm = () => {
+  const [carName, setCarName] = useState("");
+  const [carModel, setCarModel] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    reserveCar({ carName, carModel, startDate, endDate, price });
-    setCarName('');
-    setCarModel('');
-    setStartDate('');
-    setEndDate('');
-    setPrice('');
+    try {
+      const reservationData = {
+        reservation: {
+          car_name: carName,
+          car_model: carModel,
+          start_date: startDate,
+          end_date: endDate,
+        },
+      };
+
+      const response = await axios.post(
+        "/api/v1/reservation/create",
+        JSON.stringify(reservationData),
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      console.log("Reservation created:", response.data);
+
+      setCarName("");
+      setCarModel("");
+      setStartDate("");
+      setEndDate("");
+    } catch (error) {
+      console.error("Error creating reservation:", error);
+    }
   };
 
   return (
@@ -37,18 +58,14 @@ const ReservationForm = ({ cars, reserveCar }) => {
         </div>
         <div>
           <label htmlFor="carModel">Car's model:</label>
-          <select
+          <input
+            type="text"
             id="carModel"
             value={carModel}
             onChange={(e) => setCarModel(e.target.value)}
-          >
-            <option value="" disabled>
-              Select a model
-            </option>
-            <option value="s239">s239</option>
-            <option value="rt20">rt20</option>
-            <option value="s560">s560</option>
-          </select>
+            placeholder="Enter car's model"
+            required
+          />
         </div>
         <div>
           <label htmlFor="startDate">Start Date:</label>
@@ -70,30 +87,10 @@ const ReservationForm = ({ cars, reserveCar }) => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="price">Price:</label>
-          <select
-            id="price"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            required
-          >
-            <option value="" disabled>
-              Select a price
-            </option>
-            <option value="100">$100</option>
-            <option value="150">$150</option>
-            <option value="200">$200</option>
-          </select>
-        </div>
         <button type="submit">Reserve</button>
       </form>
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  cars: state.cars
-});
-
-export default connect(mapStateToProps, { reserveCar })(ReservationForm);
+export default ReservationForm;
