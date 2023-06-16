@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
+  # Api Endpoints
   namespace :api do
     namespace :v1 do
-      get 'cars/index'
-      post 'cars/create'
-      get '/show/:id', to: 'cars#show'
-      delete '/destroy/:id', to: 'cars#destroy'
+      get 'cars', to: 'cars#index'
+      post 'car/create', to: 'cars#create'
+      get '/car/:id', to: 'cars#show'
+      delete '/car/destroy/:id', to: 'cars#destroy'
     end
   end
+
+  get '*path', to: 'pages#index'
+
+  # Root Page Route - Rails side
   root 'pages#index'
-  get '/*path' => 'pages#index'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-
-  # Cathes All Route
+  # Cathes All othr Routes
   # get '*path', to: 'pages#index', via: :all
+  # get '/*path' => 'pages#index'
 end

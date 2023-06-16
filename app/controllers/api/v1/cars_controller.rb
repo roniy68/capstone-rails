@@ -1,4 +1,4 @@
-class Api::V1::CarsController < ApplicationController
+class Api::V1::CarsController < Api::V1::BaseController
   before_action :set_car, only: %i[show destroy]
 
   def index
@@ -27,7 +27,7 @@ class Api::V1::CarsController < ApplicationController
   private
 
   def car_params
-    params.permit(:name, :model, :price, :description, :photo)
+    params.permit(:name, :model, :price, :description, :photo, :user_id)
   end
 
   def set_car
