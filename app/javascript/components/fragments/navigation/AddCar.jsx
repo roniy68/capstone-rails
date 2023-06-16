@@ -1,90 +1,117 @@
-// import React, { useState } from "react";
-// import { connect } from "react-redux";
-// import { addCar } from "../../redux/actions";
-// import "./navigationStyle/ReservationAddForm.css";
+import React, { useState } from "react";
+import Navigation from "./Navigation";
+import "./navigationStyle/ReservationAddForm.css";
 
-// const AddCar = ({ addCar }) => {
-//   const [carData, setCarData] = useState({
-//     name: "",
-//     model: "",
-//     price: "",
-//     image: null,
-//   });
+const AddCar = () => {
+  const [carData, setCarData] = useState({
+    name: "",
+    description: "",
+    photo: "",
+    price: "",
+    model: "",
+    user_id: 1,
+  });
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     addCar(carData);
-//     setCarData({ name: "", model: "", price: "", image: null });
-//   };
+  const handleChange = (e) => {
+    setCarData({
+      ...carData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-//   const handleChange = (e) => {
-//     if (e.target.name === "image") {
-//       setCarData({
-//         ...carData,
-//         image: e.target.files[0],
-//       });
-//     } else {
-//       setCarData({
-//         ...carData,
-//         [e.target.name]: e.target.value,
-//       });
-//     }
-//   };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-//   return (
-//     <div className="reservation-form-container">
-//       <h2>Add Car</h2>
-//       <form onSubmit={handleSubmit}>
-//         <div>
-//           <label htmlFor="name">Name:</label>
-//           <input
-//             type="text"
-//             id="name"
-//             name="name"
-//             value={carData.name}
-//             onChange={handleChange}
-//             placeholder="Enter car's name"
-//             required
-//           />
-//         </div>
-//         <div>
-//           <label htmlFor="model">Model:</label>
-//           <input
-//             type="text"
-//             id="model"
-//             name="model"
-//             value={carData.model}
-//             onChange={handleChange}
-//             placeholder="Enter car's model"
-//             required
-//           />
-//         </div>
-//         <div>
-//           <label htmlFor="price">Price:</label>
-//           <input
-//             type="number"
-//             id="price"
-//             name="price"
-//             value={carData.price}
-//             onChange={handleChange}
-//             placeholder="Enter car's price"
-//             required
-//           />
-//         </div>
-//         <div>
-//           <label htmlFor="image">Image:</label>
-//           <input
-//             type="file"
-//             id="image"
-//             name="image"
-//             onChange={handleChange}
-//             required
-//           />
-//         </div>
-//         <button type="submit">Add</button>
-//       </form>
-//     </div>
-//   );
-// };
+    try {
+      const response = await fetch("/api/v1/cars", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(carData),
+      });
 
-// export default connect(null, { addCar })(AddCar);
+      if (response.ok) {
+        const newCar = await response.json();
+        console.log("New car added:", newCar);
+
+        setCarData({
+          name: "",
+          description: "",
+          photo: "",
+          price: "",
+          model: "",
+          user_id: 1,
+        });
+      } else {
+        const error = await response.json();
+        console.error("Error adding car:", error);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  return (
+    <div>
+    <Navigation />
+    <div className="reservation-form-container">
+      <h2>Add Car</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input
+            type="text"
+            name="name"
+            value={carData.name}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Model:
+          <input
+            type="text"
+            name="model"
+            value={carData.model}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Price:
+          <input
+            type="text"
+            name="price"
+            value={carData.price}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <label>
+          Description:
+          <textarea
+            name="description"
+            value={carData.description}
+            onChange={handleChange}
+          ></textarea>
+        </label>
+        <br />
+        <label>
+          Photo URL:
+          <input
+            type="file"
+            name="photo"
+            value={carData.photo}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <button type="submit">Add Car</button>
+      </form>
+    </div>
+    </div>
+  );
+};
+
+export default AddCar;

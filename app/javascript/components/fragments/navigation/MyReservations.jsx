@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navigation from "./Navigation";
 import "./navigationStyle/MyReservations.css";
 
 const MyReservations = () => {
@@ -43,30 +44,33 @@ const MyReservations = () => {
   };
 
   return (
-    <div className="my-reservations-container">
-      <h2>My Reservations</h2>
-      {reservations.length > 0 ? (
-        <ul className="reservation-list">
-          {reservations.map((reservation) => (
-            <li key={reservation.id} className="reservation-card">
-              <div className="card-content">
-                <p>Car Name: {reservation.car_name}</p>
-                <p>Car Model: {reservation.car_model}</p>
-                <p>Start Date: {reservation.start_date}</p>
-                <p>End Date: {reservation.end_date}</p>
-              </div>
-              <button
-                className="delete-button"
-                onClick={() => handleDelete(reservation.id)}
-              >
-                Delete
-              </button>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No reservations found!</p>
-      )}
+    <div>
+      <Navigation />
+      <div className="my-reservations-container">
+        <h2>My Reservations</h2>
+        {reservations.length > 0 ? (
+          <ul className="reservation-list">
+            {reservations.map((reservation) => (
+              <li key={reservation.id} className="reservation-card">
+                <div className="card-content">
+                  <p>Car Name: {reservation.car_name}</p>
+                  <p>Car Model: {reservation.car_model}</p>
+                  <p>Start Date: {reservation.start_date}</p>
+                  <p>End Date: {reservation.end_date}</p>
+                </div>
+                <button
+                  className="delete-button"
+                  onClick={() => handleDelete(reservation.id)}
+                >
+                  Delete
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No reservations found!</p>
+        )}
+      </div>
     </div>
   );
 };

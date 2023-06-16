@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Navigation from "./Navigation";
 import "./navigationStyle/detail.css";
 
 
@@ -26,17 +27,19 @@ const CarDetail = () => {
   }
 
   return (
-    <div className="detail-container">
-      <div className="card">
-        <h2>
-          {car.name} - {car.model}
-        </h2>
-        <img src={car.image} alt={car.name} />
-        <div className="desc">
-          <p>Price: ${car.price}</p>
-          <p>Description: {car.description}</p>
+    <div>
+      <Navigation />
+      <div className="detail-container">
+        <div className="card">
+          <h2>
+            {car.name} - {car.model}
+          </h2>
+          <img src={car.image} alt={car.name} />
+          <div className="desc">
+            <p>Price: ${car.price}</p>
+            <p>Description: {car.description}</p>
+          </div>
         </div>
-        
       </div>
     </div>
   );

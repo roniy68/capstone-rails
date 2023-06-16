@@ -41,7 +41,7 @@
 }
 
 .reservation-form-container input,
-.reservation-form-container select {
+.reservation-form-container textarea {
   width: 100%;
   padding: 10px;
   margin-top: 5px;

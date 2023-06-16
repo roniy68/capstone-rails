@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navigation from "./Navigation";
 import "./navigationStyle/ReservationAddForm.css";
 
 const ReservationForm = () => {
@@ -80,50 +81,53 @@ const ReservationForm = () => {
   };
 
   return (
-    <div className="reservation-form-container">
-      <form onSubmit={handleSubmit}>
-        <label>
-          Car Name:
-          <input
-            type="text"
-            name="car_name"
-            value={formData.car_name}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          Car Model:
-          <input
-            type="text"
-            name="car_model"
-            value={formData.car_model}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          Start Date:
-          <input
-            type="date"
-            name="start_date"
-            value={formData.start_date}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          End Date:
-          <input
-            type="date"
-            name="end_date"
-            value={formData.end_date}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
+    <div>
+      <Navigation />
+      <div className="reservation-form-container">
+        <form onSubmit={handleSubmit}>
+          <label>
+            Car Name:
+            <input
+              type="text"
+              name="car_name"
+              value={formData.car_name}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <label>
+            Car Model:
+            <input
+              type="text"
+              name="car_model"
+              value={formData.car_model}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <label>
+            Start Date:
+            <input
+              type="date"
+              name="start_date"
+              value={formData.start_date}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <label>
+            End Date:
+            <input
+              type="date"
+              name="end_date"
+              value={formData.end_date}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 };

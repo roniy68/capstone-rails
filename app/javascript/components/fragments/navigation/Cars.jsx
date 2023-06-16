@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Navigation from "./Navigation";
 import "./navigationStyle/OurCars.css";
 
 const Cars = () => {
@@ -20,22 +21,25 @@ const Cars = () => {
   }, []);
 
   return (
-    <div className="cars-container">
-      <h2>Our Cars</h2>
-      <ul>
-        {cars.map((car) => (
-          <li key={car.id}>
-            <Link to={`/detail/${car.id}`}>
-              <img src={car.image} alt={car.name} />
-              <div>
-                <p>
-                  {car.name} - {car.model}
-                </p>
-              </div>
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div>
+      <Navigation />
+      <div className="cars-container">
+        <h2>Our Cars</h2>
+        <ul>
+          {cars.map((car) => (
+            <li key={car.id}>
+              <Link to={`/detail/${car.id}`}>
+                <img src={car.image} alt={car.name} />
+                <div>
+                  <p>
+                    {car.name} - {car.model}
+                  </p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
