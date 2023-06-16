@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./MyReservations.css";
 
 const MyReservations = () => {
   const [reservations, setReservations] = useState([]);
@@ -42,17 +43,22 @@ const MyReservations = () => {
   };
 
   return (
-    <div>
+    <div className="my-reservations-container">
       <h2>My Reservations</h2>
       {reservations.length > 0 ? (
-        <ul>
+        <ul className="reservation-list">
           {reservations.map((reservation) => (
-            <li key={reservation.id}>
-              <p>Car Name: {reservation.car_name}</p>
-              <p>Car Model: {reservation.car_model}</p>
-              <p>Start Date: {reservation.start_date}</p>
-              <p>End Date: {reservation.end_date}</p>
-              <button onClick={() => handleDelete(reservation.id)}>
+            <li key={reservation.id} className="reservation-card">
+              <div className="card-content">
+                <p>Car Name: {reservation.car_name}</p>
+                <p>Car Model: {reservation.car_model}</p>
+                <p>Start Date: {reservation.start_date}</p>
+                <p>End Date: {reservation.end_date}</p>
+              </div>
+              <button
+                className="delete-button"
+                onClick={() => handleDelete(reservation.id)}
+              >
                 Delete
               </button>
             </li>

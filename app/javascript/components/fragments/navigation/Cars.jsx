@@ -1,6 +1,5 @@
 import React from "react";
 import "./OurCars.css";
-// import rentingCars from "./rentingCars.jpg";
 
 const Cars = () => {
   const cars = [

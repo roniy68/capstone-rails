@@ -1,17 +1,9 @@
-/*********************** Our Cars ***************************/
-
-/* CSS */
+/*********************** Cars ***************************/
 
 .cars-container {
   max-width: 100%;
   margin: 0 auto;
   padding: 20px;
-
-  /* background-image: url('cars.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-color: rgba(0, 0, 0, 0.5); */
 }
 
 
