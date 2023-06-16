@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./navigationStyle/detail.css";
+
 
 const CarDetail = () => {
   const { id } = useParams();
@@ -24,13 +26,18 @@ const CarDetail = () => {
   }
 
   return (
-    <div>
-      <h2>
-        {car.name} - {car.model}
-      </h2>
-      <img src={car.image} alt={car.name} />
-      <p>Price: {car.price}</p>
-      <p>Description: {car.description}</p>
+    <div className="detail-container">
+      <div className="card">
+        <h2>
+          {car.name} - {car.model}
+        </h2>
+        <img src={car.image} alt={car.name} />
+        <div className="desc">
+          <p>Price: ${car.price}</p>
+          <p>Description: {car.description}</p>
+        </div>
+        
+      </div>
     </div>
   );
 };
