@@ -12,22 +12,24 @@ const ReservationForm = () => {
     user_id: "",
   });
 
+  const [reservationStatus, setReservationStatus] = useState(null);
+
   useEffect(() => {
+    // Fetch user and car data
     const fetchUserData = async () => {
       try {
-        // Fetch user data from the API
-        const userResponse = await fetch("/api/v1/users");
-        const userData = await userResponse.json();
+        const [userResponse, carResponse] = await Promise.all([
+          fetch("/api/v1/users"),
+          fetch("/api/v1/cars"),
+        ]);
+        const [userData, carData] = await Promise.all([
+          userResponse.json(),
+          carResponse.json(),
+        ]);
 
-        // Fetch car data from the API
-        const carResponse = await fetch("/api/v1/cars");
-        const carData = await carResponse.json();
-
-        // Assuming you want the first user and the first car from the response arrays
         const user = userData[0];
         const car = carData[0];
 
-        // Set the user_id and car_id in the form data
         setFormData((prevFormData) => ({
           ...prevFormData,
           car_id: car.id,
@@ -71,6 +73,8 @@ const ReservationForm = () => {
           car_id: "",
           user_id: "",
         });
+
+        setReservationStatus("Reservation has been performed.");
       } else {
         const error = await response.json();
         console.error("Error creating reservation:", error);
@@ -83,6 +87,7 @@ const ReservationForm = () => {
   return (
     <div>
       <Navigation />
+      {reservationStatus && <p className="alertMsg">{reservationStatus}</p>}
       <div className="reservation-form-container">
         <form onSubmit={handleSubmit}>
           <label>

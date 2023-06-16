@@ -74,3 +74,9 @@
   color: #333;
   transform: translateY(-5px);
 }
+
+.alertMsg {
+  font-size: 1.8rem;
+  color: #2ed357;
+  text-align: center;
+}
