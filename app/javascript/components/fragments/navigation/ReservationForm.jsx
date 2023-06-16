@@ -22,11 +22,15 @@ const ReservationForm = () => {
         const carResponse = await fetch("/api/v1/cars");
         const carData = await carResponse.json();
 
+        // Assuming you want the first user and the first car from the response arrays
+        const user = userData[0];
+        const car = carData[0];
+
         // Set the user_id and car_id in the form data
         setFormData((prevFormData) => ({
           ...prevFormData,
-          car_id: carData.id,
-          user_id: userData.id,
+          car_id: car.id,
+          user_id: user.id,
         }));
       } catch (error) {
         console.error("Error fetching user and car data:", error);
