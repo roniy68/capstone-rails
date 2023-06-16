@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       get 'cars/index'
       post 'cars/create'
       post 'users/signin', to: 'sessions#create'
+      get 'users/index'
       get '/show/:id', to: 'cars#show'
       delete '/destroy/:id', to: 'cars#destroy'
     end
