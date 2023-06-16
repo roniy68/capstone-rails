@@ -1,5 +1,5 @@
 class Api::V1::CarsController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  #skip_before_action :verify_authenticity_token
   before_action :set_car, only: %i[show destroy]
 
   def index
