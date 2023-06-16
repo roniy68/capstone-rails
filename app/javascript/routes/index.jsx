@@ -5,6 +5,7 @@ import ReservationForm from "../components/fragments/navigation/ReservationForm"
 import AddCar from "../components/fragments/navigation/AddCar";
 import Cars from "../components/fragments/navigation/Cars";
 import MyReservations from "../components/fragments/navigation/MyReservations";
+import CarDetail from "../components/fragments/navigation/CarDetail";
 
 
 export default (
@@ -12,6 +13,7 @@ export default (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/cars" element={<Cars />} />
+      <Route path="/detail/:id" element={<CarDetail />} />
       <Route path="/reserve" element={<ReservationForm />} />
       <Route path="/myreservations" element={<MyReservations />} />
       <Route path="/addcar" element={<AddCar />} />

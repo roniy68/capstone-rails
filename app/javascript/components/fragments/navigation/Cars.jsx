@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./navigationStyle/OurCars.css";
 
 const Cars = () => {
@@ -24,14 +25,14 @@ const Cars = () => {
       <ul>
         {cars.map((car) => (
           <li key={car.id}>
-            <img src={car.image} alt={car.name} />
-            <div>
-              <p>
-                {car.name} - {car.model}
-              </p>
-              <p>Price: ${car.price}</p>
-              <p>Description: {car.description}</p>
-            </div>
+            <Link to={`/detail/${car.id}`}>
+              <img src={car.image} alt={car.name} />
+              <div>
+                <p>
+                  {car.name} - {car.model}
+                </p>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>
