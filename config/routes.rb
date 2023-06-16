@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :users, only: %i[index show create update destroy]
       resources :cars, only: %i[index create show destroy]
       resources :reservations, only: %i[index create show destroy]
-      
+      get '/users/:user_id/reservations', to: 'reservations#user_reservations'
     end
   end
 
