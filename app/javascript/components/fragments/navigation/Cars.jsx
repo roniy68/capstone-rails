@@ -1,30 +1,22 @@
-import React from "react";
-import "./OurCars.css";
+import React, { useState, useEffect } from "react";
+import "./navigationStyle/OurCars.css";
 
 const Cars = () => {
-  const cars = [
-    {
-      id: 1,
-      name: "Car 1",
-      model: "Model 1",
-      price: "$20,000",
-      image: "rentingCars.jpg",
-    },
-    {
-      id: 2,
-      name: "Car 2",
-      model: "Model 2",
-      price: "$25,000",
-      image: "rentingCars.jpg",
-    },
-    {
-      id: 3,
-      name: "Car 3",
-      model: "Model 3",
-      price: "$30,000",
-      image: "rentingCars.jpg",
-    },
-  ];
+  const [cars, setCars] = useState([]);
+
+  useEffect(() => {
+    const fetchCars = async () => {
+      try {
+        const response = await fetch("/api/v1/cars");
+        const data = await response.json();
+        setCars(data);
+      } catch (error) {
+        console.error("Error fetching cars:", error);
+      }
+    };
+
+    fetchCars();
+  }, []);
 
   return (
     <div className="cars-container">
@@ -37,7 +29,8 @@ const Cars = () => {
               <p>
                 {car.name} - {car.model}
               </p>
-              <p>{car.price}</p>
+              <p>Price: ${car.price}</p>
+              <p>Description: {car.description}</p>
             </div>
           </li>
         ))}
