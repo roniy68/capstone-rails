@@ -8,8 +8,8 @@ Rails.application.routes.draw do
       delete '/car/destroy/:id', to: 'cars#destroy'
     end
   end
-  
-  get "*path", to: "pages#index"
+
+  get '*path', to: 'pages#index'
 
   # Root Page Route - Rails side
   root 'pages#index'
