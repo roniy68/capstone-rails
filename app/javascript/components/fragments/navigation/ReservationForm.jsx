@@ -1,93 +1,95 @@
 import React, { useState } from "react";
-import axios from "axios";
 import "./ReservationAddForm.css";
 
 const ReservationForm = () => {
-  const [carName, setCarName] = useState("");
-  const [carModel, setCarModel] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const [formData, setFormData] = useState({
+    car_name: "",
+    car_model: "",
+    start_date: "",
+    end_date: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
-      const reservationData = {
-        reservation: {
-          car_name: carName,
-          car_model: carModel,
-          start_date: startDate,
-          end_date: endDate,
+      const response = await fetch("/api/v1/reservations", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      };
+        body: JSON.stringify({ reservation: formData }), // Nest formData under "reservation" key
+      });
 
-      const response = await axios.post(
-        "/api/v1/reservation/create",
-        JSON.stringify(reservationData),
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      console.log("Reservation created:", response.data);
-
-      setCarName("");
-      setCarModel("");
-      setStartDate("");
-      setEndDate("");
+      if (response.ok) {
+        const reservation = await response.json();
+        console.log("Reservation created:", reservation);
+        setFormData({
+          car_name: "",
+          car_model: "",
+          start_date: "",
+          end_date: "",
+        });
+      } else {
+        const error = await response.json();
+        console.error("Error creating reservation:", error);
+      }
     } catch (error) {
-      console.error("Error creating reservation:", error);
+      console.error("Error:", error);
     }
   };
 
   return (
     <div className="reservation-form-container">
-      <h2>Reservation Form</h2>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="carName">Car Name:</label>
+        <label>
+          Car Name:
           <input
             type="text"
-            id="carName"
-            value={carName}
-            onChange={(e) => setCarName(e.target.value)}
-            placeholder="Enter car's name"
-            required
+            name="car_name"
+            value={formData.car_name}
+            onChange={handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor="carModel">Car's model:</label>
+        </label>
+        <br />
+        <label>
+          Car Model:
           <input
             type="text"
-            id="carModel"
-            value={carModel}
-            onChange={(e) => setCarModel(e.target.value)}
-            placeholder="Enter car's model"
-            required
+            name="car_model"
+            value={formData.car_model}
+            onChange={handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor="startDate">Start Date:</label>
+        </label>
+        <br />
+        <label>
+          Start Date:
           <input
             type="date"
-            id="startDate"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-            required
+            name="start_date"
+            value={formData.start_date}
+            onChange={handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor="endDate">End Date:</label>
+        </label>
+        <br />
+        <label>
+          End Date:
           <input
             type="date"
-            id="endDate"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-            required
+            name="end_date"
+            value={formData.end_date}
+            onChange={handleChange}
           />
-        </div>
-        <button type="submit">Reserve</button>
+        </label>
+        <br />
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
