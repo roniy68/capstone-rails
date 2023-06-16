@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       get 'cars', to: 'cars#index'
       post 'car/create', to: 'cars#create'
       get '/car/:id', to: 'cars#show'
-      delete '/destroy/:id', to: 'cars#destroy'
+      delete '/car/destroy/:id', to: 'cars#destroy'
     end
   end
   
