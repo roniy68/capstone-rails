@@ -12,7 +12,7 @@ export default (
   <Router>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/reserve" elements={<Reservation />} />
+      <Route path="/reserve" element={<Reservation />} />
       {/* <Route path="/reserve" component={ReservationForm} />
       <Route path="/addcar" component={AddCar} />
       <Route path="/cars" component={Cars} />

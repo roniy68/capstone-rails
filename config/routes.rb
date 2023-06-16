@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # Api Endpoints
   namespace :api do
     namespace :v1 do
       get 'cars', to: 'cars#index'
@@ -8,9 +9,12 @@ Rails.application.routes.draw do
     end
   end
   
+  get "*path", to: "pages#index"
+
+  # Root Page Route - Rails side
   root 'pages#index'
 
   # Cathes All othr Routes
-  get '*path', to: 'pages#index', via: :all
+  # get '*path', to: 'pages#index', via: :all
   # get '/*path' => 'pages#index'
 end
