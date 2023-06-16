@@ -1,47 +1,54 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './log.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
+  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
+  // Function to sign in
+  const handleSignIn = async () => {
     try {
-      const response = await fetch('/users', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username }),
-      });
-
-      if (response.ok) {
-        // Username saved successfully
-        console.log('Username saved successfully');
-      } else {
-        // Failed to save username
-        console.error('Failed to save username');
-      }
+      const response = await axios.post(
+        'api/v1/users/signin',
+        {
+          username,
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+      sessionStorage.setItem('username', response.data.username);
+      setMessage('Sign in successful');
+      navigate('/home');
     } catch (error) {
-      console.error('An error occurred', error);
+      setMessage('Sign in failed');
     }
   };
 
+
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="sign-in-form">
+      <h1 className="sign-in-title">Welcome, please sign in to continue</h1>
+      <p>{message}</p>
+      <div className="sign-in-inputs">
         <input
+          className="username-input"
           type="text"
-          placeholder="Enter your username"
+          placeholder="Username"
           value={username}
-          onChange={handleUsernameChange}
+          onChange={(e) => setUsername(e.target.value)}
         />
-        <button type="submit">Submit</button>
-      </form>
+      </div>
+      <div className="btn">
+        <button className="sign-in-button" type="button" onClick={handleSignIn}>
+          LogIn
+        </button>
+      </div>
     </div>
   );
 };
