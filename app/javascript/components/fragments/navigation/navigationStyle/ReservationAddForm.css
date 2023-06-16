@@ -75,7 +75,7 @@
   transform: translateY(-5px);
 }
 
-.alertMsg {
+.alert-msg {
   font-size: 1.8rem;
   color: #2ed357;
   text-align: center;

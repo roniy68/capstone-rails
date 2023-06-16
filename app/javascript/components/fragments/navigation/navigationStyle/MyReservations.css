@@ -21,7 +21,7 @@
 
 .reservation-card {
   width: fit-content;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: rgb(0 0 0 / 24%) 0 3px 8px;
   border-radius: 5px;
   padding: 2rem;
   margin-bottom: 10px;
@@ -33,7 +33,7 @@
 }
 
 .delete-button {
-  background-color: #ff0000;
+  background-color: #f00;
   color: #fff;
   border: none;
   font-size: 1.2rem;

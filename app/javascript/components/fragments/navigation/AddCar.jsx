@@ -57,7 +57,7 @@ const AddCar = () => {
   return (
     <div>
       <Navigation />
-      {carAdded && <p className="alertMsg">New car has been added!</p>}{" "}
+      {carAdded && <p className="alert-msg">New car has been added!</p>}{" "}
       <div className="reservation-form-container">
         <h2>Add Car</h2>
         <form onSubmit={handleSubmit}>

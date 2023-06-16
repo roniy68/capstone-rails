@@ -87,7 +87,7 @@ const ReservationForm = () => {
   return (
     <div>
       <Navigation />
-      {reservationStatus && <p className="alertMsg">{reservationStatus}</p>}
+      {reservationStatus && <p className="alert-msg">{reservationStatus}</p>}
       <div className="reservation-form-container">
         <form onSubmit={handleSubmit}>
           <label>
