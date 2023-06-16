@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'cars/index'
       post 'cars/create'
+      post 'users/signin', to: 'sessions#create'
       get '/show/:id', to: 'cars#show'
       delete '/destroy/:id', to: 'cars#destroy'
     end
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :users, only: [:create]
+
 
   # Cathes All Route
   # get '*path', to: 'pages#index', via: :all
