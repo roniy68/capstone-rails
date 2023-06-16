@@ -23,8 +23,9 @@ const Login = () => {
         }
       );
       sessionStorage.setItem('username', response.data.username);
-      setMessage('Sign in successful');
+      
       navigate('/home');
+      setMessage('Sign in successful');
     } catch (error) {
       setMessage('Sign in failed');
     }
@@ -33,7 +34,7 @@ const Login = () => {
 
   return (
     <div className="sign-in-form">
-      <h1 className="sign-in-title">Welcome, please sign in to continue</h1>
+      <h1 className="sign-in-title">Welcome, please LogIn to continue</h1>
       <p>{message}</p>
       <div className="sign-in-inputs">
         <input
