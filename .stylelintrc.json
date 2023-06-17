@@ -38,7 +38,8 @@
     "dist/**",
     "**/reset*.css",
     "**/bootstrap*.css",
-    "app/assets/builds/*",
-    "app/assets/stylesheets/*"
+    "app/assets/builds/*.css",
+    "app/assets/stylesheets/*.css",
+    "app/javascript/**"
   ]
 }
