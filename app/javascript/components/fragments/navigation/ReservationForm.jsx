@@ -1,99 +1,140 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import { reserveCar } from '../../redux/actions';
-import "./ReservationAddForm.css";
+import React, { useState, useEffect } from "react";
+import Navigation from "./Navigation";
 
-const ReservationForm = ({ cars, reserveCar }) => {
-  const [carName, setCarName] = useState('');
-  const [carModel, setCarModel] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
-  const [price, setPrice] = useState('');
 
-  const handleSubmit = (e) => {
+const ReservationForm = () => {
+  const [formData, setFormData] = useState({
+    car_name: "",
+    car_model: "",
+    start_date: "",
+    end_date: "",
+    car_id: "",
+    user_id: "",
+  });
+
+  const [reservationStatus, setReservationStatus] = useState(null);
+
+  useEffect(() => {
+    // Fetch user and car data
+    const fetchUserData = async () => {
+      try {
+        const [userResponse, carResponse] = await Promise.all([
+          fetch("/api/v1/users"),
+          fetch("/api/v1/cars"),
+        ]);
+        const [userData, carData] = await Promise.all([
+          userResponse.json(),
+          carResponse.json(),
+        ]);
+
+        const user = userData[0];
+        const car = carData[0];
+
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          car_id: car.id,
+          user_id: user.id,
+        }));
+      } catch (error) {
+        console.error("Error fetching user and car data:", error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    reserveCar({ carName, carModel, startDate, endDate, price });
-    setCarName('');
-    setCarModel('');
-    setStartDate('');
-    setEndDate('');
-    setPrice('');
+
+    try {
+      const response = await fetch("/api/v1/reservations", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ reservation: formData }),
+      });
+
+      if (response.ok) {
+        const reservation = await response.json();
+        console.log("Reservation created:", reservation);
+        setFormData({
+          car_name: "",
+          car_model: "",
+          start_date: "",
+          end_date: "",
+          car_id: "",
+          user_id: "",
+        });
+
+        setReservationStatus("Reservation has been performed.");
+      } else {
+        const error = await response.json();
+        console.error("Error creating reservation:", error);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
-    <div className="reservation-form-container">
-      <h2>Reservation Form</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="carName">Car Name:</label>
-          <input
-            type="text"
-            id="carName"
-            value={carName}
-            onChange={(e) => setCarName(e.target.value)}
-            placeholder="Enter car's name"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="carModel">Car's model:</label>
-          <select
-            id="carModel"
-            value={carModel}
-            onChange={(e) => setCarModel(e.target.value)}
-          >
-            <option value="" disabled>
-              Select a model
-            </option>
-            <option value="s239">s239</option>
-            <option value="rt20">rt20</option>
-            <option value="s560">s560</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="startDate">Start Date:</label>
-          <input
-            type="date"
-            id="startDate"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="endDate">End Date:</label>
-          <input
-            type="date"
-            id="endDate"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="price">Price:</label>
-          <select
-            id="price"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            required
-          >
-            <option value="" disabled>
-              Select a price
-            </option>
-            <option value="100">$100</option>
-            <option value="150">$150</option>
-            <option value="200">$200</option>
-          </select>
-        </div>
-        <button type="submit">Reserve</button>
-      </form>
+    <div>
+      <Navigation />
+      {reservationStatus && <p className="alert-msg">{reservationStatus}</p>}
+      <div className="reservation-form-container">
+        <form onSubmit={handleSubmit}>
+          <label>
+            Car Name:
+            <input
+              type="text"
+              name="car_name"
+              value={formData.car_name}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <label>
+            Car Model:
+            <input
+              type="text"
+              name="car_model"
+              value={formData.car_model}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <label>
+            Start Date:
+            <input
+              type="date"
+              name="start_date"
+              value={formData.start_date}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <label>
+            End Date:
+            <input
+              type="date"
+              name="end_date"
+              value={formData.end_date}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  cars: state.cars
-});
-
-export default connect(mapStateToProps, { reserveCar })(ReservationForm);
+export default ReservationForm;

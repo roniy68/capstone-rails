@@ -1,23 +1,22 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../components/Home";
-import Reservation from "../components/Reservation";
-// import ReservationForm from "../components/fragments/navigation/ReservationForm"
+import ReservationForm from "../components/fragments/navigation/ReservationForm"
 import AddCar from "../components/fragments/navigation/AddCar";
-// import Cars from "../components/fragments/navigation/Cars";
-// import MyReservations from "../components/fragments/navigation/MyReservations";
+import Cars from "../components/fragments/navigation/Cars";
+import MyReservations from "../components/fragments/navigation/MyReservations";
+import CarDetail from "../components/fragments/navigation/CarDetail";
 
 
 export default (
   <Router>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/reserve" element={<Reservation />} />
+      <Route path="/cars" element={<Cars />} />
+      <Route path="/detail/:id" element={<CarDetail />} />
+      <Route path="/reserve" element={<ReservationForm />} />
+      <Route path="/myreservations" element={<MyReservations />} />
       <Route path="/addcar" element={<AddCar />} />
-      {/* <Route path="/reserve" component={ReservationForm} />
-      <Route path="/addcar" component={AddCar} />
-      <Route path="/cars" component={Cars} />
-      <Route path="/myreservations" component={MyReservations} /> */}
       {/* More Routes here */}
     </Routes>
   </Router>

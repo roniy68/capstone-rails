@@ -2,8 +2,8 @@ class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :car
 
-  validates :city, presence: true
-  validates :pick_up, presence: true
-  validates :return_date, presence: true
-  validates_comparison_of :return_date, greater_than: :pick_up, other_than: Date.today
+  validates :car_name, presence: true
+  validates :car_model, presence: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
 end

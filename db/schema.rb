@@ -27,9 +27,10 @@ ActiveRecord::Schema[7.0].define(version: 20_230_613_202_858) do
   end
 
   create_table 'reservations', force: :cascade do |t|
-    t.string 'city'
-    t.date 'pick_up'
-    t.date 'return_date'
+    t.string 'car_name'
+    t.string 'car_model'
+    t.date 'start_date'
+    t.date 'end_date'
     t.bigint 'user_id', null: false
     t.bigint 'car_id', null: false
     t.datetime 'created_at', null: false

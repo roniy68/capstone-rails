@@ -1,90 +1,138 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { addCar } from "../../redux/actions";
-import "./ReservationAddForm.css";
+import React, { useState, useEffect } from "react";
+import Navigation from "./Navigation";
 
-const AddCar = ({ addCar }) => {
+const AddCar = () => {
   const [carData, setCarData] = useState({
     name: "",
-    model: "",
+    description: "",
+    photo: "",
     price: "",
-    image: null,
+    model: "",
+    user_id: null,
   });
+  const [carAdded, setCarAdded] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addCar(carData);
-    setCarData({ name: "", model: "", price: "", image: null });
-  };
+  useEffect(() => {
+    const fetchCurrentUser = async () => {
+      try {
+        const response = await fetch("/api/v1/cars");
+        const cars = await response.json();
+        const currentUser = cars[0].user_id;
+
+        setCarData((prevCarData) => ({
+          ...prevCarData,
+          user_id: currentUser,
+        }));
+      } catch (error) {
+        console.error("Error fetching current user:", error);
+      }
+    };
+
+    fetchCurrentUser();
+  }, []);
 
   const handleChange = (e) => {
-    if (e.target.name === "image") {
-      setCarData({
-        ...carData,
-        image: e.target.files[0],
+    setCarData({
+      ...carData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/v1/cars", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(carData),
       });
-    } else {
-      setCarData({
-        ...carData,
-        [e.target.name]: e.target.value,
-      });
+
+      if (response.ok) {
+        const newCar = await response.json();
+        console.log("New car added:", newCar);
+
+        setCarData({
+          name: "",
+          description: "",
+          photo: "",
+          price: "",
+          model: "",
+          user_id: carData.user_id,
+        });
+        setCarAdded(true);
+      } else {
+        const error = await response.json();
+        console.error("Error adding car:", error);
+      }
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
 
   return (
-    <div className="reservation-form-container">
-      <h2>Add Car</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={carData.name}
-            onChange={handleChange}
-            placeholder="Enter car's name"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="model">Model:</label>
-          <input
-            type="text"
-            id="model"
-            name="model"
-            value={carData.model}
-            onChange={handleChange}
-            placeholder="Enter car's model"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="price">Price:</label>
-          <input
-            type="number"
-            id="price"
-            name="price"
-            value={carData.price}
-            onChange={handleChange}
-            placeholder="Enter car's price"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="image">Image:</label>
-          <input
-            type="file"
-            id="image"
-            name="image"
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <button type="submit">Add</button>
-      </form>
+    <div>
+      <Navigation />
+      {carAdded && <p className="alert-msg">New car has been added!</p>}{" "}
+      <div className="reservation-form-container">
+        <h2>Add Car</h2>
+        <form onSubmit={handleSubmit}>
+          <label>
+            Name:
+            <input
+              type="text"
+              name="name"
+              value={carData.name}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <label>
+            Model:
+            <input
+              type="text"
+              name="model"
+              value={carData.model}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <label>
+            Price:
+            <input
+              type="text"
+              name="price"
+              value={carData.price}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <label>
+            Description:
+            <textarea
+              name="description"
+              value={carData.description}
+              onChange={handleChange}
+            ></textarea>
+          </label>
+          <br />
+          <label>
+            Photo URL:
+            <input
+              type="file"
+              name="photo"
+              value={carData.photo}
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <button type="submit">Add Car</button>
+        </form>
+      </div>
     </div>
   );
 };
 
-export default connect(null, { addCar })(AddCar);
+export default AddCar;

@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   # Api Endpoints
   namespace :api do
     namespace :v1 do
-      get 'cars', to: 'cars#index'
-      post 'car/create', to: 'cars#create'
-      get '/car/:id', to: 'cars#show'
-      delete '/car/destroy/:id', to: 'cars#destroy'
+      resources :users, only: %i[index show create update destroy]
+      resources :cars, only: %i[index create show destroy]
+      resources :reservations, only: %i[index create show destroy]
+      get '/users/:user_id/reservations', to: 'reservations#user_reservations'
     end
   end
 
@@ -13,8 +13,4 @@ Rails.application.routes.draw do
 
   # Root Page Route - Rails side
   root 'pages#index'
-
-  # Cathes All othr Routes
-  # get '*path', to: 'pages#index', via: :all
-  # get '/*path' => 'pages#index'
 end

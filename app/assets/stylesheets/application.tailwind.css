@@ -1,5 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+/*
+* Your custom CSS goes here but before adding a lot of CSS check this out:
+*   https://tailwindcss.com/docs/extracting-components
+*/
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* stylelint-disable */
+/* Tailwind Base */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+/* Custom CSS  */
+@import "./custom.css";
+@import "./navigationStyle/detail.css";
+@import "./navigationStyle/MyReservations.css";
+@import "./navigationStyle/OurCars.css";
+@import "./navigationStyle/ReservationAddForm.css"

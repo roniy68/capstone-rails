@@ -1,37 +1,57 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 # Create Users
-admin = User.create(username: 'ahroniy')
+admin1 = User.create(username: 'ahroniyA')
+admin2 = User.create(username: 'salwaB')
+admin3 = User.create(username: 'talhaM')
 
 # Create Cars
-Car.create(
+car1 = admin1.cars.create(
   name: 'Bugati',
   model: 'Cheron',
   description: 'A luxury car with impressive performance.',
   price: 250.5,
-  user: admin,
   photo: 'https://ik.imagekit.io/ahroniy/bugati.jpg?updatedAt=1686688638983'
 )
 
-Car.create(
+car2 = admin2.cars.create(
   name: 'Mercedes',
   model: 'benz',
   description: 'A luxury car with impressive performance.',
   price: 250.5,
-  user: admin,
   photo: 'https://ik.imagekit.io/ahroniy/mercedies.jpg?updatedAt=1686688717606'
 )
 
-Car.create(
+car3 = admin2.cars.create(
   name: 'Suzuki',
   model: 'Swift',
   description: 'A luxury car with impressive performance.',
   price: 250.5,
-  user: admin,
   photo: 'https://paultan.org/image/2021/04/Suzuki_Swift_Sport_ZC33s_Malaysia_Ext-1.jpg'
+)
+
+# Create Reservations
+Reservation.create!(
+  car_name: 'Car 1',
+  car_model: 'Model 1',
+  start_date: Date.today + 1,
+  end_date: Date.today + 7,
+  user_id: admin1.id,
+  car_id: car1.id
+)
+
+Reservation.create!(
+  car_name: 'Car 2',
+  car_model: 'Model 2',
+  start_date: Date.today + 2,
+  end_date: Date.today + 8,
+  user_id: admin2.id,
+  car_id: car2.id
+)
+
+Reservation.create!(
+  car_name: 'Car 3',
+  car_model: 'Model 3',
+  start_date: Date.today + 2,
+  end_date: Date.today + 8,
+  user_id: admin3.id,
+  car_id: car3.id
 )

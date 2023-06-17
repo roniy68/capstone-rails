@@ -21,6 +21,7 @@
     "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
   },
   "devDependencies": {
+    "postcss-import": "^15.1.0",
     "stylelint": "^15.7.0",
     "stylelint-config-standard": "^33.0.0",
     "stylelint-csstree-validator": "^2.1.0",
