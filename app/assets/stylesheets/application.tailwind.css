@@ -10,7 +10,9 @@
 @import "tailwindcss/utilities";
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+
 
 /* Custom CSS  */
 @import "./custom.css";
