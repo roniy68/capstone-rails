@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navigation from "./Navigation";
 import "./navigationStyle/ReservationAddForm.css";
 
@@ -9,9 +9,28 @@ const AddCar = () => {
     photo: "",
     price: "",
     model: "",
-    user_id: 1,
+    user_id: null,
   });
   const [carAdded, setCarAdded] = useState(false);
+
+  useEffect(() => {
+    const fetchCurrentUser = async () => {
+      try {
+        const response = await fetch("/api/v1/cars");
+        const cars = await response.json();
+        const currentUser = cars[0].user_id;
+
+        setCarData((prevCarData) => ({
+          ...prevCarData,
+          user_id: currentUser,
+        }));
+      } catch (error) {
+        console.error("Error fetching current user:", error);
+      }
+    };
+
+    fetchCurrentUser();
+  }, []);
 
   const handleChange = (e) => {
     setCarData({
@@ -42,7 +61,7 @@ const AddCar = () => {
           photo: "",
           price: "",
           model: "",
-          user_id: 1,
+          user_id: carData.user_id,
         });
         setCarAdded(true);
       } else {
