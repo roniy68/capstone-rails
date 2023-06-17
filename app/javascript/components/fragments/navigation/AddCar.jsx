@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "./Navigation";
-import "./navigationStyle/ReservationAddForm.css";
 
 const AddCar = () => {
   const [carData, setCarData] = useState({

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Navigation from "./Navigation";
-import "./navigationStyle/MyReservations.css";
 
 const MyReservations = () => {
   const [reservations, setReservations] = useState([]);

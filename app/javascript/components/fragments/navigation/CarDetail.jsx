@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Navigation from "./Navigation";
-import "./navigationStyle/detail.css";
 
 
 const CarDetail = () => {

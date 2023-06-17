@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "./Navigation";
-import "./navigationStyle/OurCars.css";
 
 const Cars = () => {
   const [cars, setCars] = useState([]);
