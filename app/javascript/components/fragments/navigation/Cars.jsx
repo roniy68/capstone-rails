@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Navigation from "./Navigation";
 
 const Cars = () => {
   const [cars, setCars] = useState([]);
@@ -21,9 +20,7 @@ const Cars = () => {
 
   return (
     <div>
-      <Navigation />
-      <div className="cars-container">
-        <h2>Our Cars</h2>
+      <div className="container ">
         <ul>
           {cars.map((car) => (
             <li key={car.id}>
