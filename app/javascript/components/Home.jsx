@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "./fragments/Footer";
 import Main from "./fragments/Main";
 import Navigation from "./fragments/navigation/Navigation";
-import logo from '../../assets/images/murple_logo.png';
+import { TbBrandGraphql } from 'react-icons/tb';
 
 export default () => (
   <>
@@ -13,8 +13,7 @@ export default () => (
         <div className="w-1/4 bg-white text-[#444444] h-screen">
           <div className="p-4">
             <h1 className="text-xl font-bold">
-              console.log(logo);
-              <img src={logo} alt="logo" width='20px' />
+              <TbBrandGraphql size={'80px'} />
             </h1>
           </div>
 
