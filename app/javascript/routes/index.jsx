@@ -15,6 +15,7 @@ import Layout from "../components/fragments/Layout";
 export default (
   <Router>
     <Routes>
+    <Route path="/login" element={<Login />} />
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/cars" element={<CarsPage />} />
@@ -22,7 +23,6 @@ export default (
         <Route path="/reserve" element={<ReservationPage />} />
         <Route path="/myreservations" element={<MyReservationsPage />} />
         <Route path="/addcar" element={<AddCarPage />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/initial" element={<Body />} />
         {/* More Routes here */}
       </Route>
