@@ -7,6 +7,7 @@ import CarDetailPage from "../components/pages/CarDetailPage";
 import ReservationPage from "../components/pages/ReservationPage";
 import AddCarPage from "../components/pages/AddCarPage";
 import Layout from "../components/fragments/Layout";
+import NotFound from "../components/fragments/NotFound";
 
 
 export default (
@@ -21,6 +22,9 @@ export default (
         <Route path="/addcar" element={<AddCarPage />} />
         {/* More Routes here */}
       </Route>
+
+      {/* Catch  all routes*/}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   </Router>
 );
