@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Navigation from "./Navigation";
 
 
-const CarDetail = () => {
+const CarDetailPage = () => {
   const { id } = useParams();
   const [car, setCar] = useState(null);
 
@@ -27,7 +26,7 @@ const CarDetail = () => {
 
   return (
     <div>
-      <Navigation />
+
       <div className="detail-container">
         <div className="card">
           <h2>
@@ -44,4 +43,4 @@ const CarDetail = () => {
   );
 };
 
-export default CarDetail;
+export default CarDetailPage;

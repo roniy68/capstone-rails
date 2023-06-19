@@ -8,6 +8,7 @@ class Api::V1::CarsController < Api::V1::BaseController
 
   def create
     car = Car.create!(car_params)
+    car.user = current_user
     if car
       render json: car
     else

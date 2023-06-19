@@ -26,19 +26,24 @@ const ReservationForm = () => {
           userResponse.json(),
           carResponse.json(),
         ]);
-
-        const user = userData[0];
-        const car = carData[0];
-
-        setFormData((prevFormData) => ({
-          ...prevFormData,
-          car_id: car.id,
-          user_id: user.id,
-        }));
+    
+        if (userData.length > 0 && carData.length > 0) {
+          const user = userData[0];
+          const car = carData[0];
+    
+          setFormData((prevFormData) => ({
+            ...prevFormData,
+            car_id: car.id,
+            user_id: user.id,
+          }));
+        } else {
+          console.error("User or car data not available");
+        }
       } catch (error) {
         console.error("Error fetching user and car data:", error);
       }
     };
+    
 
     fetchUserData();
   }, []);
