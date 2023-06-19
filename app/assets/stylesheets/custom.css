@@ -12,7 +12,7 @@ body {
     background-color: white;
 }
 
-.colorHover li {
+li {
     padding: 1rem 1.3rem;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
@@ -24,6 +24,6 @@ body {
     transition: all 0.1s ease-in;
 }
 
-.colorHover li:hover {
+li:hover {
   background: #96bf01;
 }
