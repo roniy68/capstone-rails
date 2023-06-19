@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
+import { MdOutlinePaid } from "react-icons/md";
+import { MdArticle } from "react-icons/md";
 
 const CarDetailPage = () => {
   const { id } = useParams();
@@ -21,21 +22,29 @@ const CarDetailPage = () => {
   }, [id]);
 
   if (!car) {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <p className="text-gray-500 text-lg">Loading...</p>
+      </div>
+    );
   }
 
   return (
-    <div>
-
-      <div className="detail-container">
-        <div className="card">
-          <h2>
+    <div className="container mx-auto p-6">
+      <div className="max-w-lg mx-auto">
+        <div className="bg-white shadow-md rounded-lg overflow-hidden">
+          <h2 className="text-2xl font-bold mb-4">
             {car.name} - {car.model}
           </h2>
-          <img src={car.image} alt={car.name} />
-          <div className="desc">
-            <p>Price: ${car.price}</p>
-            <p>Description: {car.description}</p>
+          <img src={car.image} alt={car.name} className="w-full" />
+          <div className="p-4">
+            <p className="flex items-center">
+              <MdOutlinePaid className="mr-2" />${car.price}
+            </p>
+            <p className="flex items-center">
+              <MdArticle className="mr-2" />
+              {car.description}
+            </p>
           </div>
         </div>
       </div>
