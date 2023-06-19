@@ -1,0 +1,44 @@
+.sign-in-form {
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 30%;
+  }
+  
+  .sign-in-title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sign-in-inputs {
+    margin-bottom: 20px;
+  }
+  
+  .username-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .btn {
+    text-align: center;
+  }
+  
+  .sign-in-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: rgb(47, 35, 35);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .sign-in-button:hover {
+    background: linear-gradient(135deg, #da3636, #4a1094);
+  }
+  
