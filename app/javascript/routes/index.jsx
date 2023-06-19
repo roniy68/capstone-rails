@@ -11,13 +11,15 @@ import AddCarPage from "../components/pages/AddCarPage";
 export default (
   <Router>
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/cars" element={<CarsPage />} />
-      <Route path="/detail/:id" element={<CarDetailPage />} />
-      <Route path="/reserve" element={<ReservationPage />} />
-      <Route path="/myreservations" element={<MyReservationsPage />} />
-      <Route path="/addcar" element={<AddCarPage />} />
-      {/* More Routes here */}
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home} />
+        <Route path="/cars" element={<CarsPage />} />
+        <Route path="/detail/:id" element={<CarDetailPage />} />
+        <Route path="/reserve" element={<ReservationPage />} />
+        <Route path="/myreservations" element={<MyReservationsPage />} />
+        <Route path="/addcar" element={<AddCarPage />} />
+        {/* More Routes here */}
+      </Route>
     </Routes>
   </Router>
 );

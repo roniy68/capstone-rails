@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Layout from "../fragments/Layout";
 
 
 const CarDetailPage = () => {
@@ -26,23 +25,21 @@ const CarDetailPage = () => {
   }
 
   return (
-    <Layout>
-      <div>
+    <div>
 
-        <div className="detail-container">
-          <div className="card">
-            <h2>
-              {car.name} - {car.model}
-            </h2>
-            <img src={car.image} alt={car.name} />
-            <div className="desc">
-              <p>Price: ${car.price}</p>
-              <p>Description: {car.description}</p>
-            </div>
+      <div className="detail-container">
+        <div className="card">
+          <h2>
+            {car.name} - {car.model}
+          </h2>
+          <img src={car.image} alt={car.name} />
+          <div className="desc">
+            <p>Price: ${car.price}</p>
+            <p>Description: {car.description}</p>
           </div>
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 

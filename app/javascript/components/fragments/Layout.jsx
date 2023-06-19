@@ -1,7 +1,8 @@
 import React from 'react'
 import Sidebar from './Sidebar'
+import { Outlet } from 'react-router-dom'
 
-const Layout = ({ children }) => {
+const Layout = () => {
     return (
         <>
             <div className="flex h-screen">
@@ -16,7 +17,7 @@ const Layout = ({ children }) => {
                         </div>
                         <div className=''>
                             {/* Children Goes Here */}
-                            {children}
+                            {<Outlet />}
                         </div>
                     </div>
                 </div>
