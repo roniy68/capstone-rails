@@ -1,20 +1,17 @@
-/* App.css */
-body {
+
+
+.header {
+  padding: 20px;
+  text-align: center;
   margin: 0;
-  padding: 0;
   background: linear-gradient(135deg, #da3636, #4a1094);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
-  color: #fff;
+  color: #ffff;
   transition: background 0.5s ease;
-}
-
-.header {
-  padding: 20px;
-  text-align: center;
 }
 
 .header-title {
