@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './init.css';
+import '../../../../assets/stylesheets/navigationStyle/init.css';
 
 const Body = () => (
   <header className="header">
