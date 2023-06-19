@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navigation from "./Navigation";
 
 const MyReservations = () => {
   const [reservations, setReservations] = useState([]);
@@ -51,7 +50,7 @@ const MyReservations = () => {
             {reservations.map((reservation) => (
               <li
                 key={reservation.id}
-                className="border border-gray-300 rounded p-4 shadow"
+                className="border border-gray-300 rounded p-6 shadow"
               >
                 <div className="card-content">
                   <p className="font-semibold">
