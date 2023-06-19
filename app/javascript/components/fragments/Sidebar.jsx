@@ -3,9 +3,10 @@ import logo from '../../../assets/images/murple_logo.png'
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
+
     return (
         <>
-            <div className="flex flex-col block bg-neutral-200 p-3 lg:w-[400px]">
+            <div className="flex flex-col bg-neutral-200 p-3 lg:w-[400px] border-r border-red-400">
 
                 <div className="mb-20 p-10 bg-red-300 rounded-full">
                     <img src={logo} alt="logo" height="10px" />
@@ -13,16 +14,16 @@ const Sidebar = () => {
 
                 <ul className="py-4 flex-1 bg-red-500">
                     <Link to="/cars">
-                        <li className="px-4 py-2 hover:bg-green-700">MODELS</li>
+                        <li className="px-4 py-2">MODELS</li>
                     </Link>
                     <Link to="/reserve">
-                        <li className="px-4 py-2 hover:bg-green-700">ADD RESERVATION</li>
+                        <li className="px-4 py-2">ADD RESERVATION</li>
                     </Link>
                     <Link to="/addcar">
-                        <li className="px-4 py-2 hover:bg-green-700">ADD CAR</li>
+                        <li className="px-4 py-2">ADD CAR</li>
                     </Link>
                     <Link to="/myreservations">
-                        <li className="px-4 py-2 hover:bg-green-700">MY RESERVATIONS</li>
+                        <li className="px-4 py-2">MY RESERVATIONS</li>
                     </Link>
                 </ul>
                 <div className="mt-6 bg-red-500">
