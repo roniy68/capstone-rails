@@ -6,13 +6,14 @@ import MyReservationsPage from "../components/pages/MyReservationsPage"
 import CarDetailPage from "../components/pages/CarDetailPage";
 import ReservationPage from "../components/pages/ReservationPage";
 import AddCarPage from "../components/pages/AddCarPage";
+import Layout from "../components/fragments/Layout";
 
 
 export default (
   <Router>
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home} />
+        <Route index element={<Home />} />
         <Route path="/cars" element={<CarsPage />} />
         <Route path="/detail/:id" element={<CarDetailPage />} />
         <Route path="/reserve" element={<ReservationPage />} />
