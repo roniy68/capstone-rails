@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navigation from "./Navigation";
 
 const AddCar = () => {
   const [carData, setCarData] = useState({
@@ -74,7 +73,6 @@ const AddCar = () => {
 
   return (
     <div>
-      <Navigation />
       {carAdded && <p className="alert-msg">New car has been added!</p>}{" "}
       <div className="reservation-form-container">
         <h2>Add Car</h2>

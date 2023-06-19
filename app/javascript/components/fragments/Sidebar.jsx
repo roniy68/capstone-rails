@@ -1,22 +1,29 @@
 import React from 'react';
 import logo from '../../../assets/images/murple_logo.png'
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
-        <div className="w-2/5 bg-white text-[#444444] h-screen mb-[200px]">
-            <div className="p-4">
-                <h1 className="text-xl font-bold">
-                    <img src={logo} alt="logo" />
-                </h1>
+        <>
+            <div className="mb-20 p-10 bg-red-300 rounded-full">
+                <img src={logo} alt="logo" height="10px" />
             </div>
 
             <ul className="py-4">
-                <li className="px-4 py-2 hover:bg-green-700">MODELS</li>
-                <li className="px-4 py-2 hover:bg-green-700">RESERVATIONS</li>
-                <li className="px-4 py-2 hover:bg-green-700">ADD CAR</li>
-                <li className="px-4 py-2 hover:bg-green-700">MY RESERVATIONS</li>
+                <Link to="/cars">
+                    <li className="px-4 py-2 hover:bg-green-700">MODELS</li>
+                </Link>
+                <Link to="/reserve">
+                    <li className="px-4 py-2 hover:bg-green-700">ADD RESERVATION</li>
+                </Link>
+                <Link to="/addcar">
+                    <li className="px-4 py-2 hover:bg-green-700">ADD CAR</li>
+                </Link>
+                <Link to="/myreservations">
+                    <li className="px-4 py-2 hover:bg-green-700">MY RESERVATIONS</li>
+                </Link>
             </ul>
-        </div>
+        </>
     )
 }
 
