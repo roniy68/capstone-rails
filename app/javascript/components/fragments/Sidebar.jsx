@@ -1,12 +1,12 @@
 import React from 'react';
-import { TbBrandGraphql } from 'react-icons/tb';
+import logo from '../../../assets/images/murple_logo.png'
 
 const Sidebar = () => {
     return (
         <div className="w-2/5 bg-white text-[#444444] h-screen mb-[200px]">
             <div className="p-4">
                 <h1 className="text-xl font-bold">
-                    <TbBrandGraphql size={'80px'} />
+                    <img src={logo} alt="logo" />
                 </h1>
             </div>
 
