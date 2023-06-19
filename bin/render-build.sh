@@ -5,6 +5,6 @@ set -o errexit
 bundle install
 bundle exec rails assets:precompile
 bundle exec rails assets:clean
-bundle exec DISABLE_DATABASE_ENVIRONMENT_CHECK=1 rails db:reset
+DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:reset
 bundle exec rails db:migrate
 bundle exec rails db:seed
