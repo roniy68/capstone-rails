@@ -43,22 +43,26 @@ const MyReservations = () => {
   };
 
   return (
-    <div>
-      <Navigation />
-      <div className="my-reservations-container">
-        <h2>My Reservations</h2>
+    <div className="container mx-auto">
+      <div className="my-8">
+        <h2 className="text-2xl font-bold m-6">My Reservations</h2>
         {reservations.length > 0 ? (
-          <ul className="reservation-list">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {reservations.map((reservation) => (
-              <li key={reservation.id} className="reservation-card">
+              <li
+                key={reservation.id}
+                className="border border-gray-300 rounded p-4 shadow"
+              >
                 <div className="card-content">
-                  <p>Car Name: {reservation.car_name}</p>
+                  <p className="font-semibold">
+                    Car Name: {reservation.car_name}
+                  </p>
                   <p>Car Model: {reservation.car_model}</p>
                   <p>Start Date: {reservation.start_date}</p>
                   <p>End Date: {reservation.end_date}</p>
                 </div>
                 <button
-                  className="delete-button"
+                  className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600"
                   onClick={() => handleDelete(reservation.id)}
                 >
                   Delete
