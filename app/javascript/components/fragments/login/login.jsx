@@ -24,7 +24,7 @@ const Login = () => {
       );
       sessionStorage.setItem('username', response.data.username);
       
-      navigate('/home');
+      navigate('/');
       setMessage('Sign in successful');
     } catch (error) {
       setMessage('Sign in failed');
