@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :cars, only: %i[index create show destroy]
       resources :reservations, only: %i[index create show destroy]
       get '/users/:user_id/reservations', to: 'reservations#user_reservations'
+      post 'users/signin', to: 'sessions#create'
+      get 'users/index'
     end
   end
 
