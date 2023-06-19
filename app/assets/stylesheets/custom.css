@@ -11,3 +11,19 @@ body {
     font-family: 'Robot', sans-serif;
     background-color: white;
 }
+
+.colorHover li {
+    padding: 1rem 1.3rem;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    letter-spacing: 0.01em;
+    font-size: 1.3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #272727;
+    transition: all 0.1s ease-in;
+}
+
+.colorHover li:hover {
+  background: #96bf01;
+}
