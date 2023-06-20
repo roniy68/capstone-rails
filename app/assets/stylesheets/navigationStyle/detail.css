@@ -1,53 +1,103 @@
-/***************************** Detail *****************************/
+/* car-details.css */
 
 .detail-container {
+
+  float: right;
+  margin-right: 5%;
+  margin-top: 100px;
+  width: 600px;
+  height: 80vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  height: 100vh;
-  text-align: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.card {
-  width: 30%;
-  padding: 20px;
-  box-shadow: rgb(50 50 93 / 25%) 0 6px 12px -2px, rgb(0 0 0 / 30%) 0 3px 7px -3px;
-  border-radius: 4px;
-  background-color: #f9f9f9;
+.detail-image img {
+  width: 800px;
+  height: auto;
+  border-radius: 5px;
+  margin-left: 12%;
+  margin-top: 10%;
+  float: left;
 }
 
-.card img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  margin-bottom: 20px;
+.detail-info {
+  flex: 1;
 }
 
-.card h2 {
-  font-size: 2.2rem;
-  margin-bottom: 10px;
-  color: rgb(56 59 59);
+h2 {
+
+  margin-right: 10%;
+  width: 300px;
+  margin-bottom: 50px;
+  font-size: larger;
+  font-weight: bold;
+
+
 }
 
-.desc p{
-    margin-bottom: 10px;
-    font-size: 1.5rem;
+.desc {
+
+  margin-right: 10%;
+  margin-bottom: 50px;
+
+  width: 300px;
+
+
 }
 
-.date {
-  align-self: flex-start;
+.rform {
+
+  margin-right: 10%;
+  width: 300px;
+
+
+}
+
+
+
+
+.date input {
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .reserve-button {
-  font-size: 1.5rem;
-  outline: none;
-  padding: 10px;
-  background: #2d721f;
+  display: block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #96bf01;
   color: #fff;
+  cursor: pointer;
+  font-size: large;
 }
 
 .reserve-button:hover {
-  background: #0abb45;
-  color: aliceblue;
+  background-color: #0056b3;
+}
+
+/* Additional styling for responsiveness */
+
+@media screen and (max-width: 600px) {
+  .detail-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .detail-image img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .detail-info {
+    text-align: center;
+  }
 }
