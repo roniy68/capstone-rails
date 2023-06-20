@@ -24,11 +24,11 @@ const ReservationForm = () => {
           userResponse.json(),
           carResponse.json(),
         ]);
-    
+
         if (userData.length > 0 && carData.length > 0) {
           const user = userData[0];
           const car = carData[0];
-    
+
           setFormData((prevFormData) => ({
             ...prevFormData,
             car_id: car.id,
@@ -41,7 +41,6 @@ const ReservationForm = () => {
         console.error("Error fetching user and car data:", error);
       }
     };
-    
 
     fetchUserData();
   }, []);
@@ -62,7 +61,14 @@ const ReservationForm = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ reservation: formData }),
+        body: JSON.stringify({
+          car_id: formData.car_id,
+          car_name: formData.car_name,
+          car_model: formData.car_model,
+          start_date: formData.start_date,
+          end_date: formData.end_date,
+          user_id: formData.user_id,
+        }),
       });
 
       if (response.ok) {

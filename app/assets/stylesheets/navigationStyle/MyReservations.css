@@ -54,3 +54,12 @@
   font-size: 2rem;
   text-align: center;
 }
+
+.reserve-button {
+  font-size: 1.5rem;
+  border: 2px solid rgb(23, 41, 23);
+  outline: none;
+  padding: 10px;
+  background: #2d721f;
+  color: #fff;
+}
