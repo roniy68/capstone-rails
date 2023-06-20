@@ -94,51 +94,70 @@ const ReservationForm = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center h-screen">
       {reservationStatus && <p className="alert-msg">{reservationStatus}</p>}
-      <div className="reservation-form-container">
-        <form onSubmit={handleSubmit}>
-          <label>
-            Car Name:
+      <div className="w-96 bg-white rounded-lg shadow-lg p-6">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="car_name" className="block mb-1">
+              Car Name:
+            </label>
             <input
               type="text"
+              id="car_name"
               name="car_name"
               value={formData.car_name}
               onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
             />
-          </label>
-          <br />
-          <label>
-            Car Model:
+          </div>
+          <div>
+            <label htmlFor="car_model" className="block mb-1">
+              Car Model:
+            </label>
             <input
               type="text"
+              id="car_model"
               name="car_model"
               value={formData.car_model}
               onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
             />
-          </label>
-          <br />
-          <label>
-            Start Date:
+          </div>
+          <div>
+            <label htmlFor="start_date" className="block mb-1">
+              Start Date:
+            </label>
             <input
               type="date"
+              id="start_date"
               name="start_date"
               value={formData.start_date}
               onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
             />
-          </label>
-          <br />
-          <label>
-            End Date:
+          </div>
+          <div>
+            <label htmlFor="end_date" className="block mb-1">
+              End Date:
+            </label>
             <input
               type="date"
+              id="end_date"
               name="end_date"
               value={formData.end_date}
               onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
             />
-          </label>
-          <br />
-          <button type="submit">Submit</button>
+          </div>
+          <div>
+            <button
+              type="submit"
+              className="w-full bg-blue-500 text-white rounded py-2"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>
