@@ -143,7 +143,7 @@ const AddCar = () => {
           <div>
             <button
               type="submit"
-              className="w-full bg-green-700 text-white rounded py-2 text-xl"
+              className="w-full bg-green-500 text-white rounded py-2 text-xl"
             >
               Add Car
             </button>

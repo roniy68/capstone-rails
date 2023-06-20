@@ -94,7 +94,7 @@ body {
 
 li:hover {
     background: #96bf01;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .social-media {
@@ -114,3 +114,4 @@ li:hover {
 .outlet {
     width: 100%;
 }
+
