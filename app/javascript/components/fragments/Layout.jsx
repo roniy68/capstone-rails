@@ -1,19 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Sidebar from './Sidebar'
 import { Outlet } from 'react-router-dom'
 // import NavBar from './NavBar'
 import { HiOutlineMenu, HiAnnotation, HiBell, HiOutlineUser } from 'react-icons/hi'
 
 const Layout = () => {
-    const [toggle, setToggle] = useState(false)
+    const [show, setShow] = useState(true)
 
     const handleClick = (e) => {
-        setToggle(current => !current)
+        setShow(current => !current)
     }
+
+    useEffect(() => {
+        const sidebar = document.getElementById('sidebar')
+        if (show) {
+            sidebar.style.display = 'flex'
+        } else {
+            sidebar.style.display = 'none'
+        }
+
+    }, [show])
+
     return (
         <>
-            <div className="flex bg-neutral-100 h-screen w-sreen overflow-hidden">
-                <Sidebar hide={toggle} />
+            <div className="flex bg-neutral-100 h-screen w-sreen overflow-hidden ">
+                <Sidebar />
                 <div className="flex bg-gray-500 w-full h-full">
 
                     <div className="flex flex-1 flex-col">

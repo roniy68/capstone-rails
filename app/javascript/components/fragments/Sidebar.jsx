@@ -3,7 +3,7 @@ import logo from '../../../assets/images/murple_logo.png'
 import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaGithub, FaPinterestP } from 'react-icons/fa'
 import { TiSocialGooglePlus } from 'react-icons/ti'
-const Sidebar = ({ hide }) => {
+const Sidebar = () => {
 
     const links = [
         {
@@ -25,8 +25,8 @@ const Sidebar = ({ hide }) => {
     ]
     return (
         <>
-            <div className={`${hide ? "hidden md:flex flex-col bg-white pl-12 lg:w-[400px] border-r border-gray-400" : 'hidden'}`}>
-
+            <div id="sidebar" className='hidden md:flex flex-col bg-white pl-12 lg:w-[400px] border-r border-gray-400 transition ease-in delay-300'>
+                {/* className={`${hide ? "hidden transition ease-in delay-300 md:flex flex-col bg-white pl-12 lg:w-[400px] border-r border-gray-400" : 'hidden'}`} */}
                 <div className="mb-20 p-10 rounded-full">
                     <img src={logo} alt="logo" height="10px" />
                 </div>
@@ -35,7 +35,7 @@ const Sidebar = ({ hide }) => {
                     {
                         links.map((link) => (
                             <Link to={link.url}>
-                                <li className="p-4 hover:bg-green-500 hover:text-white rounded-md">{link.label}</li>
+                                <li className="p-4 text-lg hover:bg-green-500 hover:text-white rounded-md">{link.label}</li>
                             </Link>
                         ))
                     }
