@@ -25,7 +25,7 @@ const AddCar = () => {
       } catch (error) {
         console.error("Error fetching current user:", error);
       }
-    };
+       };
 
     fetchCurrentUser();
   }, []);
@@ -72,66 +72,85 @@ const AddCar = () => {
   };
 
   return (
-    <>
-      <div>
-        {carAdded && <p className="alert-msg">New car has been added!</p>}{" "}
-        <div className="reservation-form-container">
-          <h2>Add Car</h2>
-          <form onSubmit={handleSubmit}>
-            <label>
+    <div className="flex flex-col items-center justify-center h-screen">
+      {carAdded && <p className="alert-msg">New car has been added!</p>}
+      <div className="w-96 bg-white rounded-lg shadow-lg p-6">
+        <form onSubmit={handleSubmit} className="space-y-4 shadow">
+          <div>
+            <label htmlFor="name" className="block mb-1">
               Name:
-              <input
-                type="text"
-                name="name"
-                value={carData.name}
-                onChange={handleChange}
-              />
             </label>
-            <br />
-            <label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={carData.name}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
+            />
+          </div>
+          <div>
+            <label htmlFor="model" className="block mb-1">
               Model:
-              <input
-                type="text"
-                name="model"
-                value={carData.model}
-                onChange={handleChange}
-              />
             </label>
-            <br />
-            <label>
+            <input
+              type="text"
+              id="model"
+              name="model"
+              value={carData.model}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
+            />
+          </div>
+          <div>
+            <label htmlFor="price" className="block mb-1">
               Price:
-              <input
-                type="text"
-                name="price"
-                value={carData.price}
-                onChange={handleChange}
-              />
             </label>
-            <br />
-            <label>
+            <input
+              type="text"
+              id="price"
+              name="price"
+              value={carData.price}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
+            />
+          </div>
+          <div>
+            <label htmlFor="description" className="block mb-1">
               Description:
-              <textarea
-                name="description"
-                value={carData.description}
-                onChange={handleChange}
-              ></textarea>
             </label>
-            <br />
-            <label>
+            <textarea
+              id="description"
+              name="description"
+              value={carData.description}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
+            ></textarea>
+          </div>
+          <div>
+            <label htmlFor="photo" className="block mb-1">
               Photo URL:
-              <input
-                type="file"
-                name="photo"
-                value={carData.photo}
-                onChange={handleChange}
-              />
             </label>
-            <br />
-            <button type="submit">Add Car</button>
-          </form>
-        </div>
+            <input
+              type="file"
+              id="photo"
+              name="photo"
+              value={carData.photo}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
+            />
+          </div>
+          <div>
+            <button
+              type="submit"
+              className="w-full bg-green-700 text-white rounded py-2 text-xl"
+            >
+              Add Car
+            </button>
+          </div>
+        </form>
       </div>
-    </>
+    </div>
   );
 };
 

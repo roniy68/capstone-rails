@@ -97,7 +97,7 @@ const ReservationForm = () => {
     <div className="flex flex-col items-center justify-center h-screen">
       {reservationStatus && <p className="alert-msg">{reservationStatus}</p>}
       <div className="w-96 bg-white rounded-lg shadow-lg p-6">
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4 shadow">
           <div>
             <label htmlFor="car_name" className="block mb-1">
               Car Name:
@@ -153,7 +153,7 @@ const ReservationForm = () => {
           <div>
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white rounded py-2"
+              className="w-full bg-green-700 text-white rounded py-2 text-xl"
             >
               Submit
             </button>
