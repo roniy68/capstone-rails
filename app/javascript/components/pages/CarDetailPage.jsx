@@ -79,18 +79,22 @@ const CarDetailPage = () => {
   }
 
   return (
-    <div>
+    <>
+    <div className="detail-image">
+    <img src={car.photo} alt={car.name} />
+    </div>
       <div className="detail-container">
         <div className="card">
           <h2>
             {car.name} - {car.model}
           </h2>
-          <img src={car.image} alt={car.name} />
+          </div>
+          
           <div className="desc">
             <p>Price: ${car.price}</p>
             <p>Description: {car.description}</p>
           </div>
-          <form onSubmit={handleReservation}>
+          <form onSubmit={handleReservation} className="rform">
             <label className="date">
               Start Date:
               <input
@@ -115,9 +119,10 @@ const CarDetailPage = () => {
               Reserve
             </button>
           </form>
-        </div>
+        
       </div>
-    </div>
+      </>
+  
   );
 };
 
