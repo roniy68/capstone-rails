@@ -1,37 +1,52 @@
 import React from 'react';
 import logo from '../../../assets/images/murple_logo.png'
 import { Link } from 'react-router-dom';
+import { FaFacebookF, FaTwitter, FaGithub, FaPinterestP } from 'react-icons/fa'
+import { TiSocialGooglePlus } from 'react-icons/ti'
+const Sidebar = ({ hide }) => {
 
-const Sidebar = () => {
-
+    const links = [
+        {
+            url: "/cars",
+            label: "MODELS"
+        },
+        {
+            url: "/reserve",
+            label: "RESERVE"
+        },
+        {
+            url: "/addcar",
+            label: "ADD CAR"
+        },
+        {
+            url: "/myreservations",
+            label: "RESERVATIONS"
+        }
+    ]
     return (
         <>
-            <div className="flex flex-col bg-neutral-200 p-3 lg:w-[400px] border-r border-red-400">
+            <div className={`${hide ? "hidden md:flex flex-col bg-white pl-12 lg:w-[400px] border-r border-gray-400" : 'hidden'}`}>
 
-                <div className="mb-20 p-10 bg-red-300 rounded-full">
+                <div className="mb-20 p-10 rounded-full">
                     <img src={logo} alt="logo" height="10px" />
                 </div>
 
-                <ul className="py-4 flex-1 bg-red-500">
-                    <Link to="/cars">
-                        <li className="px-4 py-2">MODELS</li>
-                    </Link>
-                    <Link to="/reserve">
-                        <li className="px-4 py-2">ADD RESERVATION</li>
-                    </Link>
-                    <Link to="/addcar">
-                        <li className="px-4 py-2">ADD CAR</li>
-                    </Link>
-                    <Link to="/myreservations">
-                        <li className="px-4 py-2">MY RESERVATIONS</li>
-                    </Link>
+                <ul className="py-4 font-bold flex-1">
+                    {
+                        links.map((link) => (
+                            <Link to={link.url}>
+                                <li className="p-4 hover:bg-green-500 hover:text-white rounded-md">{link.label}</li>
+                            </Link>
+                        ))
+                    }
                 </ul>
-                <div className="mt-6 bg-red-500">
+                <div className="mt-6">
                     <ul className='flex p-6 justify-around'>
-                        <li>FB</li>
-                        <li>GH</li>
-                        <li>FB</li>
-                        <li>GH</li>
+                        <li><FaFacebookF /></li>
+                        <li><FaTwitter /></li>
+                        <li><TiSocialGooglePlus /></li>
+                        <li><FaPinterestP /></li>
+                        <li><FaGithub /></li>
                     </ul>
                 </div>
 

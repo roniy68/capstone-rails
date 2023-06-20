@@ -11,7 +11,3 @@ body {
     font-family: 'Robot', sans-serif;
     background-color: white;
 }
-
-li:hover {
-    @apply bg-green-700;
-}

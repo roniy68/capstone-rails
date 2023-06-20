@@ -1,32 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Sidebar from './Sidebar'
 import { Outlet } from 'react-router-dom'
+// import NavBar from './NavBar'
+import { HiOutlineMenu, HiAnnotation, HiBell, HiOutlineUser } from 'react-icons/hi'
 
 const Layout = () => {
+    const [toggle, setToggle] = useState(false)
+
+    const handleClick = (e) => {
+        setToggle(current => !current)
+    }
     return (
         <>
             <div className="flex bg-neutral-100 h-screen w-sreen overflow-hidden">
-                <Sidebar />
+                <Sidebar hide={toggle} />
                 <div className="flex bg-gray-500 w-full h-full">
 
                     <div className="flex flex-1 flex-col">
-                        <div className="flex bg-red-500 h-[100px] p-4 sticky top-0 z-10 items-center justify-between">
-                            <div className='flex-none bg-green-600 rounded-full'>
-                                Hamburger
+                        {/* Navbar */}
+                        <div className="flex bg-slate-200 lg:h-[80px] md:h-[60px] p-4 sticky top-0 z-10 items-center justify-between">
+                            {/* Navbar Ham burger */}
+                            <div onClick={handleClick} className='flex-none'>
+                                <HiOutlineMenu size={36} />
                             </div>
-                            <div className='flex justify-end flex-auto gap-2 bg-green-600'>
-                                <div>
-                                    Notifications
+                            {/* Navbar Menus */}
+                            <div className='flex justify-end flex-auto gap-2'>
+
+                                <div className='p-6'>
+                                    <HiBell size={36} />
                                 </div>
-                                <div>
-                                    Messeges
+                                <div className='p-6'>
+                                    <HiAnnotation size={36} />
                                 </div>
-                                <div>
-                                    Profile
+                                <div className='p-6'>
+                                    <HiOutlineUser size={36} />
                                 </div>
 
                             </div>
                         </div>
+
                         <div className=' bg-white h-screen flex flex-col p-6 overflow-y-auto scroll-smooth'>
                             {/* Children Goes Here */}
                             {<Outlet />}
