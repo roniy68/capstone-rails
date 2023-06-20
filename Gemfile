@@ -79,6 +79,6 @@ group :test do
   gem 'webdrivers'
 end
 
-gem "shrine", "~> 3.4"
+gem 'shrine', '~> 3.4'
 
-gem "image_processing", "~> 1.12"
+gem 'image_processing', '~> 1.12'
