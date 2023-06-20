@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Users API', type: :request do
   describe 'GET /api/v1/users' do
     it 'fetches all users' do
-      user1 = create(:user, username: 'user1')
-      user2 = create(:user, username: 'user2')
+      create(:user, username: 'user1')
+      create(:user, username: 'user2')
 
       get '/api/v1/users'
 
@@ -35,7 +35,7 @@ RSpec.describe 'Users API', type: :request do
     it 'creates a new user' do
       user_params = {
         user: {
-          username: 'newuser',
+          username: 'newuser'
         }
       }
 
@@ -46,7 +46,6 @@ RSpec.describe 'Users API', type: :request do
       json_response = JSON.parse(response.body)
 
       expect(json_response['username']).to eq('newuser')
-     
     end
   end
 
@@ -56,7 +55,7 @@ RSpec.describe 'Users API', type: :request do
 
       user_params = {
         user: {
-          username: 'updateduser',
+          username: 'updateduser'
         }
       }
 
@@ -81,7 +80,6 @@ RSpec.describe 'Users API', type: :request do
       json_response = JSON.parse(response.body)
 
       expect(json_response).to include('message' => 'User deleted successfully')
-
     end
   end
 end
