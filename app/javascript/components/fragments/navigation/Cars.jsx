@@ -19,23 +19,23 @@ const Cars = () => {
   }, []);
 
   return (
-    <div>
-      <div className="container ">
-        <ul>
-          {cars.map((car) => (
-            <li key={car.id}>
-              <Link to={`/detail/${car.id}`}>
-                <img src={car.image} alt={car.name} />
-                <div>
-                  <p>
-                    {car.name} - {car.model}
-                  </p>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div className="flex bg-red-500 h-screen items-center justify-center">
+
+      <ul className="bg-blue-500 flex">
+        {cars.map((car) => (
+          <li className="flex-1 bg-green-500 p-6" key={car.id}>
+            <Link to={`/detail/${car.id}`}>
+              <img src={car.image} alt={car.name} />
+              <div>
+                <p>
+                  {car.name} - {car.model}
+                </p>
+              </div>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
     </div>
   );
 };

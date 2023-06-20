@@ -89,7 +89,7 @@ const ReservationForm = () => {
   };
 
   return (
-    <div>
+    <div className="bg-red-500 h-screen flex items-center justify-center">
       {reservationStatus && <p className="alert-msg">{reservationStatus}</p>}
       <div className="reservation-form-container">
         <form onSubmit={handleSubmit}>

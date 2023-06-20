@@ -42,7 +42,7 @@ const MyReservations = () => {
   };
 
   return (
-    <div>
+    <div className="flex justify-center items-center bg-red-500 min-h-screen">
       <div className="my-reservations-container">
         <h2>My Reservations</h2>
         {reservations.length > 0 ? (

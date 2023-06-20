@@ -28,7 +28,9 @@ const Sidebar = () => {
             <div id="sidebar" className='hidden md:flex flex-col bg-white pl-12 lg:w-[400px] border-r border-gray-400 transition ease-in delay-300'>
                 {/* className={`${hide ? "hidden transition ease-in delay-300 md:flex flex-col bg-white pl-12 lg:w-[400px] border-r border-gray-400" : 'hidden'}`} */}
                 <div className="mb-20 p-10 rounded-full">
-                    <img src={logo} alt="logo" height="10px" />
+                    <Link to="/">
+                        <img src={logo} alt="logo" height="10px" />
+                    </Link>
                 </div>
 
                 <ul className="py-4 font-bold flex-1">

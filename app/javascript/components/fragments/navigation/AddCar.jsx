@@ -72,7 +72,7 @@ const AddCar = () => {
   };
 
   return (
-    <div>
+    <div className="flex h-screen bg-red-500 items-center justify-center">
       {carAdded && <p className="alert-msg">New car has been added!</p>}{" "}
       <div className="reservation-form-container">
         <h2>Add Car</h2>
