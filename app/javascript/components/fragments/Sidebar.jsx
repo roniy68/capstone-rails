@@ -1,18 +1,16 @@
 import React from 'react';
-import logo from '../../../assets/images/RENTCAR.png'
 import { Link } from 'react-router-dom';
 import { AiFillGithub, AiFillFacebook, AiFillInstagram, 
-AiFillLinkedin } from 'react-icons/ai'
+AiFillLinkedin } from 'react-icons/ai';
+import {RxCross1} from 'react-icons/rx'
 
 const Sidebar = () => {
 
     return (
       <>
         <div className="side-bar">
-          <div className="logo">
-            <img src={logo} alt="logo" height="10px" />
-          </div>
-          <div>
+          <div className="sidebar-elt">
+            <RxCross1 className="close-icone" />
             <ul className="py-4 flex-1 navbar-links">
               <Link to="/cars">
                 <li className="px-4 py-2">MODELS</li>
@@ -28,7 +26,6 @@ const Sidebar = () => {
               </Link>
             </ul>
           </div>
-
           <div className="social-media">
             <AiFillGithub />
             <AiFillFacebook />

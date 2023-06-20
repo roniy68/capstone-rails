@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *,
 *::before,
 *::after {
@@ -8,18 +10,56 @@
 
 body {
     font-size: 1.5rem;
-    font-family: 'Robot', sans-serif;
+    font-family: 'Poppins', sans-serif
 }
 
-.logo {
-    width: 150px;
-    height: 20px;
+.logo p{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: white;
+}
+
+.logo-ham {
+    max-width: 200px;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    background: #96bf01;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
     margin: 0;
-    padding: 0;
+    padding: 10px;
+}
+
+.sidebar-navig {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-icons, .close-icone{
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    cursor: pointer;
+    margin: 0 12px;
+}
+
+.close-icone {
+    display: none;
 }
 
 .side-bar {
-    width: 30%;
+   position: relative;
+   height: 100vh;
+    width: 300px;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -27,10 +67,23 @@ body {
    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
+.sidebar-elt {
+    margin-top: 20%;
+}
+
+.navbar-links {
+    padding: 15px;
+    list-style: none;
+}
+
 .navbar-links li{
-    padding: 1rem 1.3rem;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 10px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
     letter-spacing: 0.01em;
     font-size: 1.3rem;
     text-decoration: none;
@@ -41,6 +94,7 @@ body {
 
 li:hover {
     background: #96bf01;
+    border-radius: 10px;
 }
 
 .social-media {
@@ -51,5 +105,12 @@ li:hover {
     cursor: pointer;
     color: rgb(90, 84, 84);
     font-size: 1.6rem;
+}
 
+.main-container {
+    display: flex;
+}
+
+.outlet {
+    width: 100%;
 }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navigation from "./Navigation";
 
 const MyReservations = () => {
   const [reservations, setReservations] = useState([]);
@@ -44,7 +43,6 @@ const MyReservations = () => {
 
   return (
     <div>
-      <Navigation />
       <div className="my-reservations-container">
         <h2>My Reservations</h2>
         {reservations.length > 0 ? (
@@ -67,7 +65,7 @@ const MyReservations = () => {
             ))}
           </ul>
         ) : (
-          <p>No reservations found!</p>
+          <p className="alert">No reservations found!</p>
         )}
       </div>
     </div>

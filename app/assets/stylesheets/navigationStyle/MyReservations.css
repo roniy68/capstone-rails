@@ -48,3 +48,9 @@
   transform: scale(1.05);
   background: #f74545;
 }
+
+.alert {
+  color: #f00;
+  font-size: 2rem;
+  text-align: center;
+}

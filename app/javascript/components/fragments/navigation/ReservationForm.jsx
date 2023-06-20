@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navigation from "./Navigation";
-
 
 const ReservationForm = () => {
   const [formData, setFormData] = useState({
@@ -91,7 +89,6 @@ const ReservationForm = () => {
 
   return (
     <div>
-      <Navigation />
       {reservationStatus && <p className="alert-msg">{reservationStatus}</p>}
       <div className="reservation-form-container">
         <form onSubmit={handleSubmit}>

@@ -72,64 +72,66 @@ const AddCar = () => {
   };
 
   return (
-    <div>
-      {carAdded && <p className="alert-msg">New car has been added!</p>}{" "}
-      <div className="reservation-form-container">
-        <h2>Add Car</h2>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Name:
-            <input
-              type="text"
-              name="name"
-              value={carData.name}
-              onChange={handleChange}
-            />
-          </label>
-          <br />
-          <label>
-            Model:
-            <input
-              type="text"
-              name="model"
-              value={carData.model}
-              onChange={handleChange}
-            />
-          </label>
-          <br />
-          <label>
-            Price:
-            <input
-              type="text"
-              name="price"
-              value={carData.price}
-              onChange={handleChange}
-            />
-          </label>
-          <br />
-          <label>
-            Description:
-            <textarea
-              name="description"
-              value={carData.description}
-              onChange={handleChange}
-            ></textarea>
-          </label>
-          <br />
-          <label>
-            Photo URL:
-            <input
-              type="file"
-              name="photo"
-              value={carData.photo}
-              onChange={handleChange}
-            />
-          </label>
-          <br />
-          <button type="submit">Add Car</button>
-        </form>
+    <>
+      <div>
+        {carAdded && <p className="alert-msg">New car has been added!</p>}{" "}
+        <div className="reservation-form-container">
+          <h2>Add Car</h2>
+          <form onSubmit={handleSubmit}>
+            <label>
+              Name:
+              <input
+                type="text"
+                name="name"
+                value={carData.name}
+                onChange={handleChange}
+              />
+            </label>
+            <br />
+            <label>
+              Model:
+              <input
+                type="text"
+                name="model"
+                value={carData.model}
+                onChange={handleChange}
+              />
+            </label>
+            <br />
+            <label>
+              Price:
+              <input
+                type="text"
+                name="price"
+                value={carData.price}
+                onChange={handleChange}
+              />
+            </label>
+            <br />
+            <label>
+              Description:
+              <textarea
+                name="description"
+                value={carData.description}
+                onChange={handleChange}
+              ></textarea>
+            </label>
+            <br />
+            <label>
+              Photo URL:
+              <input
+                type="file"
+                name="photo"
+                value={carData.photo}
+                onChange={handleChange}
+              />
+            </label>
+            <br />
+            <button type="submit">Add Car</button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
