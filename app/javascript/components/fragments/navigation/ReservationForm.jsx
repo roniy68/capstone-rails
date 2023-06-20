@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navigation from "./Navigation";
 
 
 const ReservationForm = () => {
@@ -26,11 +25,11 @@ const ReservationForm = () => {
           userResponse.json(),
           carResponse.json(),
         ]);
-    
+
         if (userData.length > 0 && carData.length > 0) {
           const user = userData[0];
           const car = carData[0];
-    
+
           setFormData((prevFormData) => ({
             ...prevFormData,
             car_id: car.id,
@@ -43,7 +42,7 @@ const ReservationForm = () => {
         console.error("Error fetching user and car data:", error);
       }
     };
-    
+
 
     fetchUserData();
   }, []);
@@ -91,7 +90,6 @@ const ReservationForm = () => {
 
   return (
     <div>
-      <Navigation />
       {reservationStatus && <p className="alert-msg">{reservationStatus}</p>}
       <div className="reservation-form-container">
         <form onSubmit={handleSubmit}>

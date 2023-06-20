@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import '../../../../assets/stylesheets/navigationStyle/log.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -23,7 +22,7 @@ const Login = () => {
         }
       );
       sessionStorage.setItem('username', response.data.username);
-      
+
       navigate('/');
       setMessage('Sign in successful');
     } catch (error) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../../../../assets/stylesheets/navigationStyle/init.css';
 
 const Body = () => (
   <header className="header">
@@ -8,8 +7,8 @@ const Body = () => (
     <div className="header-book-btn-space">
       <div className="header-book-btn-login">
         <Link to="/login" className="link-login">
-            <button>Login</button>
-            </Link>
+          <button>Login</button>
+        </Link>
       </div>
     </div>
   </header>

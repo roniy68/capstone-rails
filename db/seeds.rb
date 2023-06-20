@@ -1,3 +1,5 @@
+# Constants
+IMAGE = Rails.root.join('app', 'assets', 'images','murple_logo.png')
 # Create Users
 admin1 = User.create(username: 'ahroniyA')
 admin2 = User.create(username: 'salwaB')
@@ -11,6 +13,7 @@ car1 = admin1.cars.create(
   price: 250.5,
   photo: 'https://ik.imagekit.io/ahroniy/bugati.jpg?updatedAt=1686688638983'
 )
+car1.images.attach(io: File.open(IMAGE), filename: 'murple_logo.png')
 
 car2 = admin2.cars.create(
   name: 'Mercedes',
@@ -19,7 +22,7 @@ car2 = admin2.cars.create(
   price: 250.5,
   photo: 'https://ik.imagekit.io/ahroniy/mercedies.jpg?updatedAt=1686688717606'
 )
-
+car2.images.attach(io: File.open(IMAGE), filename: 'murple_logo.png')
 car3 = admin2.cars.create(
   name: 'Suzuki',
   model: 'Swift',

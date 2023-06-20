@@ -28,7 +28,7 @@ class Api::V1::CarsController < Api::V1::BaseController
   private
 
   def car_params
-    params.permit(:name, :model, :price, :description, :photo, :user_id)
+    params.permit(:name, :model, :price, :description, :photo, :user_id,  :image)
   end
 
   def set_car
