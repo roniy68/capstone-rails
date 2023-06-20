@@ -68,7 +68,7 @@ const Cars = () => {
         <button onClick={handlePrev} disabled={currentIndex === 0}>
           <BsArrowLeftSquareFill />
         </button>
-        <ul className="flex space-x-4 overflow-x-auto">
+        <ul>
           {renderCars()}
         </ul>
         <button onClick={handleNext} disabled={currentIndex >= cars.length - 3}>
