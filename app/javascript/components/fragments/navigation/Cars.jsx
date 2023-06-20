@@ -40,7 +40,7 @@ const Cars = () => {
     return cars.slice(startIndex, endIndex + 1).map((car) => (
       <li key={car.id} className="car-card">
         <Link to={`/detail/${car.id}`}>
-          <img src={car.image} alt={car.name} />
+          <img src={car.photo} alt={car.name} />
           <div>
             <p>
               {car.name} - {car.model}
