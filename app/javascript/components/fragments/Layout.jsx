@@ -13,25 +13,26 @@ const Layout = () => {
   };
     return (
       <>
-          <div className="main-container">
-            <div className="navbar-top">
-              <div className="logo-ham">
-                <GiHamburgerMenu className="menu-icons"  />
-                <div className="logo">
-                  <p>RENTCAR</p>
-                </div>
-              </div>
-              <AiOutlineLogout className="menu-icons" onClick={handleLogout} />
-            </div>
-
-            <Sidebar />
-
-            <div className="outlet">
-              {/* Children Goes Here */}
-              {<Outlet />}
+      <div className="main-container">
+        <div className="navbar-top fixed-navbar">
+          <div className="logo-ham">
+            <GiHamburgerMenu className="menu-icons" />
+            <div className="logo">
+              <p>RENTCAR</p>
             </div>
           </div>
-      </>
+          <AiOutlineLogout className="menu-icons" onClick={handleLogout} />
+        </div>
+    
+        <Sidebar />
+    
+        <div className="outlet">
+          {/* Children Goes Here */}
+          {<Outlet />}
+        </div>
+      </div>
+    </>
+    
     );
 }
 

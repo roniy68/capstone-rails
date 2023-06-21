@@ -58,13 +58,18 @@ const CarDetailPage = () => {
           car_model: car.model,
           start_date: formData.start_date,
           end_date: formData.end_date,
-          user_id: userId
+          user_id: userId,
         }),
       });
-
+  
       if (response.ok) {
-        console.log("Car reserved successfully.");
-        navigate("/myreservations");
+        const data = await response.json();
+        if (data.alreadyReserved) {
+          alert("The car is already reserved.");
+        } else {
+          alert("Car reserved successfully.");
+          navigate("/myreservations");
+        }
       } else {
         const error = await response.text();
         console.error("Error reserving car:", error);
@@ -73,6 +78,7 @@ const CarDetailPage = () => {
       console.error("Error:", error);
     }
   };
+  
 
   if (!car) {
     return <p>Loading...</p>;

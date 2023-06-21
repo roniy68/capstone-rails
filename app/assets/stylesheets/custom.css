@@ -39,6 +39,18 @@ body {
     padding: 10px;
 }
 
+.fixed-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+  }
+  
+  .main-container {
+    padding-top: 50px; /* Add padding to the top to prevent content from being overlapped by the fixed navbar */
+  }
+
 .sidebar-navig {
     display: flex;
     flex-direction: column;
@@ -183,5 +195,6 @@ li:hover {
   .sign-in-button:hover {
     background: linear-gradient(135deg, #da3636, #4a1094);
   }
-
+  
+ 
   
