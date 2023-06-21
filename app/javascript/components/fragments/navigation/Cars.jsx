@@ -1,8 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { BsArrowLeftSquareFill, BsArrowRightSquareFill } from "react-icons/bs";
+import {
+  AiFillGithub,
+  AiFillFacebook,
+  AiFillInstagram,
+  AiFillLinkedin,
+} from "react-icons/ai";
+import { useLocation } from "react-router-dom";
 
 const Cars = () => {
   const [cars, setCars] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const location = useLocation();
+  const [message, setMessage] = useState(location?.state?.message || "");
+  const Navigate = useNavigate();
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -18,24 +30,73 @@ const Cars = () => {
     fetchCars();
   }, []);
 
+  useEffect(() => {
+    if (message) {
+      const timer = setTimeout(() => {
+        setMessage(""); // Clear the message after 3 seconds
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [message]);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => prevIndex - 1);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => prevIndex + 1);
+  };
+
+
+
+  const renderCars = () => {
+    const startIndex = currentIndex;
+    const endIndex = startIndex + 2;
+    return cars
+      .slice(startIndex, endIndex + 1)
+      .map((car) => (
+        <li key={car.id} className="car-card">
+          <Link to={`/detail/${car.id}`}>
+            <img src={car.photo} alt={car.name} />
+            <div>
+              <p>
+                {car.name} - {car.model}
+              </p>
+            </div>
+            <div className="social-media">
+              <AiFillGithub />
+              <AiFillFacebook />
+              <AiFillInstagram />
+              <AiFillLinkedin />
+            </div>
+          </Link>
+        </li>
+      ));
+  };
+
   return (
-    <div className="flex bg-red-500 h-screen items-center justify-center">
+    <div className="container mx-auto">
+      <div className="car-title">
+        {message && (
+          <p style={{ color: "black", textAlign: "center", fontSize: "larger", fontWeight: "bold" }}>{message}</p>
+        )}
+        <h1 className="font-bold text-[25px] flex items-center justify-center">LATEST MODELS</h1>
+        <p className="text-gray-500 text-[15px]">Please select a renting car Model</p>
+      </div>
 
-      <ul className="bg-blue-500 flex">
-        {cars.map((car) => (
-          <li className="flex-1 bg-green-500 p-6" key={car.id}>
-            <Link to={`/detail/${car.id}`}>
-              <img src={car.image} alt={car.name} />
-              <div>
-                <p>
-                  {car.name} - {car.model}
-                </p>
-              </div>
-            </Link>
-          </li>
-        ))}
-      </ul>
-
+      <div className="carousel">
+        <button onClick={handlePrev} disabled={currentIndex === 0}>
+          <BsArrowLeftSquareFill />
+        </button>
+        <ul>{renderCars()}</ul>
+        <button
+          onClick={handleNext}
+          disabled={currentIndex >= cars.length - 3}
+        >
+          <BsArrowRightSquareFill />
+        </button>
+      </div>
     </div>
   );
 };
