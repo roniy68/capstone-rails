@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { BiLeftArrow } from "react-icons/bi";
+
 
 const CarDetailPage = () => {
   const { id } = useParams();
@@ -84,10 +86,18 @@ const CarDetailPage = () => {
     return <p>Loading...</p>;
   }
 
+  const handleGoBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
   return (
     <>
+    <button style={{color:"black", float:"left", marginTop:"30%"}}className="back-button" onClick={handleGoBack}>
+          <BiLeftArrow/> 
+          
+          </button>
     <div className="detail-image">
-    <img src={car.photo} alt={car.name} />
+    <img style={{height:"600px", width: "800px"}} src={car.photo} alt={car.name} />
     </div>
       <div className="detail-container">
         <div className="card">
@@ -125,8 +135,9 @@ const CarDetailPage = () => {
               Reserve
             </button>
           </form>
-        
+          
       </div>
+      
       </>
   
   );
