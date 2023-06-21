@@ -25,7 +25,7 @@ const AddCar = () => {
       } catch (error) {
         console.error("Error fetching current user:", error);
       }
-       };
+    };
 
     fetchCurrentUser();
   }, []);
@@ -132,13 +132,14 @@ const AddCar = () => {
               Photo URL:
             </label>
             <input
-              type="file"
+              type="text"
               id="photo"
               name="photo"
               value={carData.photo}
               onChange={handleChange}
               className="w-full border border-gray-300 rounded px-3 py-2"
             />
+
           </div>
           <div>
             <button
