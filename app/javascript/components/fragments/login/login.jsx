@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
-import '../../../../assets/stylesheets/navigationStyle/log.css';
 
 const Login = () => {
   const [username, setUsername] = useState('');
