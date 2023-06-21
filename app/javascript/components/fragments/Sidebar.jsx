@@ -25,15 +25,15 @@ const Sidebar = () => {
   ]
   return (
     <>
-      <div id="sidebar" className='hidden md:flex flex-col bg-white pl-12 lg:w-[400px] border-r border-gray-400 transition ease-in delay-300'>
+      <div id="sidebar" className='hidden md:flex flex-col bg-white lg:w-[400px] border-r border-gray-400 transition ease-in delay-300'>
         {/* className={`${hide ? "hidden transition ease-in delay-300 md:flex flex-col bg-white pl-12 lg:w-[400px] border-r border-gray-400" : 'hidden'}`} */}
         <div className=" rounded-full">
           <Link to="/">
-            <img className='h-[200px] w-[200px] ' src={logo} alt="logo" height="5px" />
+            <img className='h-auto w-[200px] m-0 flex items-center justify-start' src={logo} alt="logo"/>
           </Link>
         </div>
 
-        <ul className="mt-60 py-4 font-bold flex-1 ">
+        <ul className="mt-50 py-4 font-bold flex-1 ">
           {
             links.map((link) => (
               <Link to={link.url}>
@@ -43,13 +43,14 @@ const Sidebar = () => {
           }
         </ul>
         <div className="mt-6">
-          <ul className='flex p-6 justify-around'>
-            <li><FaFacebookF /></li>
-            <li><FaTwitter /></li>
-            <li><TiSocialGooglePlus /></li>
-            <li><FaPinterestP /></li>
-            <li><FaGithub /></li>
+          <ul className='flex p-6 justify-around text-gray-500'>
+            <li><FaFacebookF size={20}/></li>
+            <li><FaTwitter size={20}/></li>
+            <li><TiSocialGooglePlus size={20}/></li>
+            <li><FaPinterestP size={20}/></li>
+            <li><FaGithub size={20}/></li>
           </ul>
+          <p className='flex items-center justify-center'>@ 2023 SAT - RENTCAR</p>
         </div>
 
       </div>

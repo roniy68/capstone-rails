@@ -40,7 +40,7 @@ const Layout = () => {
             {/* Navbar */}
             <div className="flex bg-[#96bf01] lg:h-[80px] md:h-[60px] p-4 sticky top-0 z-10 items-center justify-between">
               {/* Navbar Ham burger */}
-              <div onClick={handleClick} className='flex-none'>
+              <div onClick={handleClick} className='flex-none text-white'>
                 <HiOutlineMenu size={36} />
               </div>
               {/* Navbar Menus */}
