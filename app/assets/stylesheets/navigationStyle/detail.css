@@ -1,6 +1,7 @@
 /* car-details.css */
 
 .detail-container {
+
   float: right;
   margin-right: 5%;
   margin-top: 100px;
@@ -12,7 +13,7 @@
   align-items: center;
   background-color: #f2f2f2;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .detail-image img {
@@ -29,6 +30,7 @@
 }
 
 h2 {
+
   margin-right: 10%;
   width: 300px;
   margin-bottom: 50px;
@@ -39,14 +41,17 @@ h2 {
 }
 
 .desc {
+
   margin-right: 10%;
   margin-bottom: 50px;
+
   width: 300px;
 
 
 }
 
 .rform {
+
   margin-right: 10%;
   width: 300px;
 
@@ -81,7 +86,7 @@ h2 {
 
 /* Additional styling for responsiveness */
 
-@media screen and (width <= 600px) {
+@media screen and (max-width: 600px) {
   .detail-card {
     flex-direction: column;
     align-items: center;
