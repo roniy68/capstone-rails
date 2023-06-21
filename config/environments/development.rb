@@ -2,7 +2,7 @@ require 'active_support/core_ext/integer/time'
 
 # in test.rb and development.rb
 # make sure to update host according to your need
-Rails.application.routes.default_url_options = {protocol: "http", host: "localhost", port: 3000}
+# Rails.application.routes.default_url_options = {protocol: "http", host: "localhost", port: 3000}
   
 
 Rails.application.configure do
@@ -39,7 +39,8 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  # config.active_storage.service = :local
+  config.active_storage.service = :cloudinary
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

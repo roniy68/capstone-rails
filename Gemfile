@@ -79,3 +79,9 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem "cloudinary", "~> 1.26"
+
+gem "dotenv", "~> 2.8"
+
+gem "image_magick", "~> 0.1.9"
