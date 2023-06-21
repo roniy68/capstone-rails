@@ -7,7 +7,6 @@ import CarDetailPage from "../components/pages/CarDetailPage";
 import ReservationPage from "../components/pages/ReservationPage";
 import AddCarPage from "../components/pages/AddCarPage";
 import Login from "../components/fragments/login/login";
-import Body from "../components/fragments/Initialpage/initial";
 import Layout from "../components/fragments/Layout";
 import NotFound from "../components/fragments/NotFound";
 
@@ -24,7 +23,6 @@ export default (
         <Route path="/reserve" element={<ReservationPage />} />
         <Route path="/myreservations" element={<MyReservationsPage />} />
         <Route path="/addcar" element={<AddCarPage />} />
-        <Route path="/initial" element={<Body />} />
         {/* More Routes here */}
       </Route>
 
