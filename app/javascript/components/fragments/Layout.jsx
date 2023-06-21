@@ -1,27 +1,39 @@
 import React from 'react'
 import Sidebar from './Sidebar'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineLogout } from "react-icons/ai";
 
 const Layout = () => {
-    return (
-        <>
-            <div className="flex bg-neutral-100 h-screen w-sreen overflow-hidden">
-                <Sidebar />
-                <div className="flex bg-gray-500 w-full h-full">
+  const Navigate = useNavigate();
 
-                    <div className="flex flex-col items-center">
-                        <div className="bg-blue-500 mb-12">
-                            Navbar top eited
-                        </div>
-                        <div className='flex flex-col p-6'>
-                            {/* Children Goes Here */}
-                            {<Outlet />}
-                        </div>
-                    </div>
-                </div>
+  const handleLogout = () => {
+    sessionStorage.removeItem("username");
+    Navigate("/login", { state: { message: "Signed out successfully" } });
+  };
+    return (
+      <>
+      <div className="main-container">
+        <div className="navbar-top fixed-navbar">
+          <div className="logo-ham">
+            <GiHamburgerMenu className="menu-icons" />
+            <div className="logo">
+              <p>RENTCAR</p>
             </div>
-        </>
-    )
+          </div>
+          <AiOutlineLogout className="menu-icons" onClick={handleLogout} />
+        </div>
+    
+        <Sidebar />
+    
+        <div className="outlet">
+          {/* Children Goes Here */}
+          {<Outlet />}
+        </div>
+      </div>
+    </>
+    
+    );
 }
 
 export default Layout

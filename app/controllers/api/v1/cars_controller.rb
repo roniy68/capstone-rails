@@ -7,12 +7,12 @@ class Api::V1::CarsController < Api::V1::BaseController
   end
 
   def create
-    car = Car.create!(car_params)
-    car.user = current_user
-    if car
-      render json: car
+    user = User.find(params[:user_id])
+    car = user.cars.build(car_params)
+    if car.save
+      render json: car, status: :created
     else
-      render json: car.errors
+      render json: { error: car.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
@@ -28,7 +28,7 @@ class Api::V1::CarsController < Api::V1::BaseController
   private
 
   def car_params
-    params.permit(:name, :model, :price, :description, :photo, :user_id)
+    params.require(:car).permit(:name, :model, :price, :description, :photo, :user_id)
   end
 
   def set_car

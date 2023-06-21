@@ -5,11 +5,13 @@
   padding: 20px;
 }
 
-.my-reservations-container h2{
+.my-reservations-container h2 {
   text-align: center;
-  padding: 20px;
   font-size: 2.3rem;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 .reservation-list {
   display: grid;
@@ -47,4 +49,10 @@
 .delete-button:hover {
   transform: scale(1.05);
   background: #f74545;
+}
+
+.alert {
+  color: #f00;
+  font-size: 2rem;
+  text-align: center;
 }

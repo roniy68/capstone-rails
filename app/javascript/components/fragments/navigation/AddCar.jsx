@@ -72,61 +72,83 @@ const AddCar = () => {
   };
 
   return (
-    <div>
-      {carAdded && <p className="alert-msg">New car has been added!</p>}{" "}
-      <div className="reservation-form-container">
-        <h2>Add Car</h2>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Name:
+    <div className="flex flex-col items-center justify-center h-screen">
+      {carAdded && <p className="alert-msg">New car has been added!</p>}
+      <div className="w-96 bg-white rounded-lg shadow-lg p-6">
+        <form onSubmit={handleSubmit} className="space-y-4 shadow">
+          <div>
+            <label htmlFor="name" className="block mb-1">
+              Name:
+            </label>
             <input
               type="text"
+              id="name"
               name="name"
               value={carData.name}
               onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
             />
-          </label>
-          <br />
-          <label>
-            Model:
+          </div>
+          <div>
+            <label htmlFor="model" className="block mb-1">
+              Model:
+            </label>
             <input
               type="text"
+              id="model"
               name="model"
               value={carData.model}
               onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
             />
-          </label>
-          <br />
-          <label>
-            Price:
+          </div>
+          <div>
+            <label htmlFor="price" className="block mb-1">
+              Price:
+            </label>
             <input
               type="text"
+              id="price"
               name="price"
               value={carData.price}
               onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
             />
-          </label>
-          <br />
-          <label>
-            Description:
+          </div>
+          <div>
+            <label htmlFor="description" className="block mb-1">
+              Description:
+            </label>
             <textarea
+              id="description"
               name="description"
               value={carData.description}
               onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
             ></textarea>
-          </label>
-          <br />
-          <label>
-            Photo URL:
+          </div>
+          <div>
+            <label htmlFor="photo" className="block mb-1">
+              Photo URL:
+            </label>
             <input
-              type="file"
+              type="text"
+              id="photo"
               name="photo"
               value={carData.photo}
               onChange={handleChange}
+              className="w-full border border-gray-300 rounded px-3 py-2"
             />
-          </label>
-          <br />
-          <button type="submit">Add Car</button>
+
+          </div>
+          <div>
+            <button
+              type="submit"
+              className="w-full bg-green-500 text-white rounded py-2 text-xl"
+            >
+              Add Car
+            </button>
+          </div>
         </form>
       </div>
     </div>
