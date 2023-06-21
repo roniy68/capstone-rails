@@ -1,4 +1,7 @@
 class Api::V1::CarsController < Api::V1::BaseController
+  include Rails.application.routes.url_helpers
+  include ActiveStorage::SetCurrent
+
   before_action :set_car, only: %i[show destroy]
 
   def index
@@ -34,5 +37,9 @@ class Api::V1::CarsController < Api::V1::BaseController
 
   def set_car
     @car = Car.find(params[:id])
+  end
+
+  def image_url
+    rails_blob_path(car.image, disposition: "attachment", only_path: true)
   end
 end

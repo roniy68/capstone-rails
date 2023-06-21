@@ -8,4 +8,8 @@ class Car < ApplicationRecord
   validates :price, presence: true
   validates :description, presence: true
   validates :photo, presence: true
+
+  # def image_url
+  #   self.image.attachment.url
+  # end
 end
