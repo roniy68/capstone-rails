@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { BsArrowLeftSquareFill, BsArrowRightSquareFill } from "react-icons/bs";
+import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 import {
   AiFillGithub,
   AiFillFacebook,
@@ -53,48 +53,67 @@ const Cars = () => {
   const renderCars = () => {
     const startIndex = currentIndex;
     const endIndex = startIndex + 2;
-    return cars
-      .slice(startIndex, endIndex + 1)
-      .map((car) => (
-        <li key={car.id} className="car-card">
-          <Link to={`/detail/${car.id}`}>
-            <img src={car.photo} alt={car.name} />
-            <div>
-              <p>
-                {car.name} - {car.model}
-              </p>
-            </div>
-            <div className="social-media">
-              <AiFillGithub />
-              <AiFillFacebook />
-              <AiFillInstagram />
-              <AiFillLinkedin />
-            </div>
-          </Link>
-        </li>
-      ));
+    return cars.slice(startIndex, endIndex + 1).map((car) => (
+      <li
+        key={car.id}
+        className="w-[400px] h-[400px] mt-10 shadow"
+      >
+        <Link to={`/detail/${car.id}`}>
+          <img
+            src={car.photo}
+            alt={car.name}
+            className="w-[200px] h-[200px] p-6 border-2 border-black mx-auto my-4"
+          />
+          <div className="text-center">
+            <p className="text-xl text-gray-600">
+              {car.name} - {car.model}
+            </p>
+          </div>
+          <div className="flex items-center justify-center mt-10 gap-6">
+            <p className="text-gray-600">{car.description}</p>
+          </div>
+          <div className="flex items-center justify-center mt-10 gap-6 text-gray-500">
+            <AiFillGithub />
+            <AiFillFacebook />
+            <AiFillInstagram />
+            <AiFillLinkedin />
+          </div>
+        </Link>
+      </li>
+    ));
   };
 
   return (
-    <div className="container mx-auto">
-      <div className="car-title">
+    <div className="h-screen">
         {message && (
-          <p style={{ color: "black", textAlign: "center", fontSize: "larger", fontWeight: "bold" }}>{message}</p>
+          <p className="text-center text-green-600 text-2xl">
+            {message}
+          </p>
         )}
-        <h1 className="font-bold text-[25px] flex items-center justify-center">LATEST MODELS</h1>
-        <p className="text-gray-500 text-[15px]">Please select a renting car Model</p>
-      </div>
-
-      <div className="carousel">
-        <button onClick={handlePrev} disabled={currentIndex === 0}>
-          <BsArrowLeftSquareFill />
+        <h1 className="font-bold text-[30x] flex items-center justify-center tracking-widest">
+          LATEST MODELS
+        </h1>
+        <p className="text-gray-500 text-[15px] flex items-center justify-center mb-10">
+          Please select a renting car Model
+        </p>
+        
+      <div className="flex justify-center items-center">
+        <button
+          onClick={handlePrev}
+          disabled={currentIndex === 0}
+          className="bg-[#96bf01] rounded-r-full mr-6 pl-10"
+        >
+          <BsFillCaretLeftFill size={50} className="text-white" />
         </button>
-        <ul>{renderCars()}</ul>
+        <ul className="flex justify-center items-center">
+          {renderCars()}
+        </ul>
         <button
           onClick={handleNext}
           disabled={currentIndex >= cars.length - 3}
+          className="bg-[#96bf01] rounded-l-full ml-6 pr-10"
         >
-          <BsArrowRightSquareFill />
+          <BsFillCaretRightFill size={50} className="text-white" />
         </button>
       </div>
     </div>
