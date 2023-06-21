@@ -83,7 +83,7 @@ const ReservationForm = () => {
           user_id: "",
         });
 
-        setReservationStatus("Reservation has been performed.");
+        setReservationStatus("Car reserved successfully!");
       } else {
         const error = await response.json();
         console.error("Error creating reservation:", error);
