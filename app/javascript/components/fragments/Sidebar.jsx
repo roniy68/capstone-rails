@@ -24,6 +24,9 @@ const Sidebar = () => {
               <Link to="/myreservations">
                 <li className="px-4 py-2">MY RESERVATIONS</li>
               </Link>
+              <Link to="/delete">
+                <li className="px-4 py-2">DELETE MODELS</li>
+              </Link>
             </ul>
           </div>
           <div className="social-media">
