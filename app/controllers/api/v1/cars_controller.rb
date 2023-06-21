@@ -3,7 +3,8 @@ class Api::V1::CarsController < Api::V1::BaseController
 
   def index
     cars = Car.all.order(created_at: :desc)
-    render json: cars
+    render json: cars.as_json(include: :image)
+
   end
 
   def create
@@ -17,7 +18,7 @@ class Api::V1::CarsController < Api::V1::BaseController
   end
 
   def show
-    render json: @car
+    render json: @car.as_json(include: :image).merge(url_for(image))
   end
 
   def destroy

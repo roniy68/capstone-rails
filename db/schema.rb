@@ -45,7 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_20_174503) do
   create_table "cars", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.text "photo"
+    t.string "photo"
     t.decimal "price"
     t.text "model"
     t.bigint "user_id", null: false
