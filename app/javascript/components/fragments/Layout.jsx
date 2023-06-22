@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Sidebar from './Sidebar'
 import { Outlet, useNavigate } from 'react-router-dom'
 // import NavBar from './NavBar'
-import { HiOutlineMenu, HiAnnotation, HiBell, HiOutlineUser } from 'react-icons/hi'
+import { HiOutlineMenu, HiAnnotation, HiOutlineUser } from 'react-icons/hi'
 import { AiOutlineLogout } from "react-icons/ai";
 
 const Layout = () => {
