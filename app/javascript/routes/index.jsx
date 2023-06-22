@@ -17,8 +17,8 @@ export default (
     <Routes>
       {/* General Routes */}
       <Route path="/login" element={<Login />} />
-      {/* Protected Routes */}
       <Route element={<PrivateRoutes />}>
+        {/* Protected Routes */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/cars" element={<CarsPage />} />

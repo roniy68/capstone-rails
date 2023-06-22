@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Navigate, Outlet } from 'react-router-dom'
 
 
 const PrivateRoutes = () => {
 
-    let auth = { 'token': false }
+    const [user, setUser] = useState(sessionStorage.getItem('username'))
+
+    useEffect(() => {
+        setUser(sessionStorage.getItem('username'))
+        console.log(user)
+    }, [user])
+
     return (
-        auth.token ? <Outlet /> : <Navigate to="/login" />
+        user ? <Outlet /> : <Navigate to="/login" />
     )
 }
 
