@@ -1,10 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-import carsReducer from './carsSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import carsReducer from "./carsSlice";
 
 const store = configureStore({
-    reducer: {
-        car: carsReducer,
-    },
+  reducer: {
+    cars: carsReducer,
+  },
 });
 
 export default store;

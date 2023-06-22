@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCars, selectCars } from "../../redux/carsSlice";
 import { Link, useNavigate } from "react-router-dom";
 import { BsCaretLeft, BsCaretRight } from "react-icons/bs";
 import {
@@ -10,30 +12,21 @@ import {
 import { useLocation } from "react-router-dom";
 
 const Cars = () => {
-  const [cars, setCars] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const dispatch = useDispatch();
+  const { cars, isLoading } = useSelector(selectCars);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
   const location = useLocation();
-  const [message, setMessage] = useState(location?.state?.message || "");
+  const [message, setMessage] = React.useState(location?.state?.message || "");
   const Navigate = useNavigate();
 
   useEffect(() => {
-    const fetchCars = async () => {
-      try {
-        const response = await fetch("/api/v1/cars");
-        const data = await response.json();
-        setCars(data);
-      } catch (error) {
-        console.error("Error fetching cars:", error);
-      }
-    };
-
-    fetchCars();
-  }, []);
+    dispatch(fetchCars());
+  }, [dispatch]);
 
   useEffect(() => {
     if (message) {
       const timer = setTimeout(() => {
-        setMessage(""); // Clear the message after 3 seconds
+        setMessage("");
       }, 3000);
 
       return () => clearTimeout(timer);
@@ -47,7 +40,6 @@ const Cars = () => {
   const handleNext = () => {
     setCurrentIndex((prevIndex) => prevIndex + 1);
   };
-
 
   const renderCars = () => {
     const startIndex = currentIndex;
@@ -78,6 +70,10 @@ const Cars = () => {
       </li>
     ));
   };
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="h-screen w-full">
