@@ -56,36 +56,30 @@ const AllCars = () => {
     }, [message]);
 
     const renderCars = () => {
-        const startIndex = currentIndex;
-        const endIndex = startIndex + 2;
-        return cars
-            .slice(startIndex, endIndex + 1)
-            .map((car) => (
-                <li key={car.id} className="flex items-center space-x-4 py-4" style={{ transform: "scale(1.7)", marginTop: "60px" }}>
-                    <Link to={`/detail/${car.id}`} className="flex-shrink-0">
-                        <img
-                            src={car.photo}
-                            alt={car.name}
-                            className="w-20 h-20 object-cover rounded p-2"
-                        />
-                    </Link>
-                    <div className="flex-grow">
-                        <p>
-                            {car.name} - {car.model}
-                        </p>
-                    </div>
-                    <button
-                        type="button" onClick={() => handleDelete(car.id)}
-                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-sm text-sm float-right "
-                    >
-                        Delete Car
-                    </button>
-                </li>
-
-
-            ));
+        return cars.map((car) => (
+            <li key={car.id} className="flex items-center space-x-4 py-4" style={{ transform: "scale(1.7)", marginTop: "60px" }}>
+                <Link to={`/detail/${car.id}`} className="flex-shrink-0">
+                    <img
+                        src={car.photo}
+                        alt={car.name}
+                        className="w-20 h-20 object-cover rounded p-2"
+                    />
+                </Link>
+                <div className="flex-grow">
+                    <p>
+                        {car.name} - {car.model}
+                    </p>
+                </div>
+                <button
+                    type="button"
+                    onClick={() => handleDelete(car.id)}
+                    className="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-sm text-sm float-right"
+                >
+                    Delete Car
+                </button>
+            </li>
+        ));
     };
-
     return (
         <div className="flex flex-col items-center w-300px">
             <div>
