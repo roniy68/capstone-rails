@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, Outlet } from "react-router-dom";
 import Home from "../components/pages/Home";
 import CarsPage from "../components/pages/CarsPage";
 import MyReservationsPage from "../components/pages/MyReservationsPage"
@@ -12,11 +12,19 @@ import NotFound from "../components/fragments/NotFound";
 import DeletePage from "../components/pages/DeleteCars";
 import PrivateRoutes from "./PrivateRoutes";
 
+const LoginRoute = () => {
+  const user = sessionStorage.getItem("username")
+
+  return user ? <Navigate to="/" /> : <Outlet />
+}
+
 export default (
   <Router>
     <Routes>
       {/* General Routes */}
-      <Route path="/login" element={<Login />} />
+      <Route element={<LoginRoute />}>
+        <Route path="/login" element={<Login />} />
+      </Route>
       <Route element={<PrivateRoutes />}>
         {/* Protected Routes */}
         <Route path="/" element={<Layout />}>
