@@ -1,43 +1,92 @@
-import React from 'react';
-import logo from '../../../assets/images/murple_logo.png'
-import { Link } from 'react-router-dom';
+import React from "react";
+import logo from "../../../assets/images/logo.jpg";
+import { Link, useLocation } from "react-router-dom";
+import { FaFacebookF, FaTwitter, FaGithub, FaPinterestP } from "react-icons/fa";
+import { TiSocialGooglePlus } from "react-icons/ti";
 
 const Sidebar = () => {
+  const location = useLocation();
 
-    return (
-        <>
-            <div className="flex flex-col bg-neutral-200 p-3 lg:w-[400px] border-r border-red-400">
+  const links = [
+    {
+      url: "/cars",
+      label: "MODELS",
+    },
+    {
+      url: "/reserve",
+      label: "RESERVE",
+    },
+    {
+      url: "/addcar",
+      label: "ADD CAR",
+    },
+    {
+      url: "/myreservations",
+      label: "RESERVATIONS",
+    },
+    {
+      url: "/delete",
+      label: "DELETE MODELS",
+    },
+  ];
 
-                <div className="mb-20 p-10 bg-red-300 rounded-full">
-                    <img src={logo} alt="logo" height="10px" />
-                </div>
+  return (
+    <>
+      <div
+        id="sidebar"
+        className="hidden md:flex flex-col bg-white lg:w-[400px] border-r border-gray-400 transition ease-in delay-300"
+      >
+        <div className="rounded-full">
+          <Link to="/">
+            <img
+              className="h-auto w-[200px] m-0 flex items-center justify-start"
+              src={logo}
+              alt="logo"
+            />
+          </Link>
+        </div>
 
-                <ul className="py-4 flex-1 bg-red-500">
-                    <Link to="/cars">
-                        <li className="px-4 py-2">MODELS</li>
-                    </Link>
-                    <Link to="/reserve">
-                        <li className="px-4 py-2">ADD RESERVATION</li>
-                    </Link>
-                    <Link to="/addcar">
-                        <li className="px-4 py-2">ADD CAR</li>
-                    </Link>
-                    <Link to="/myreservations">
-                        <li className="px-4 py-2">MY RESERVATIONS</li>
-                    </Link>
-                </ul>
-                <div className="mt-6 bg-red-500">
-                    <ul className='flex p-6 justify-around'>
-                        <li>FB</li>
-                        <li>GH</li>
-                        <li>FB</li>
-                        <li>GH</li>
-                    </ul>
-                </div>
+        <ul className="mt-50 py-4 font-bold flex-1">
+          {links.map((link) => (
+            <Link to={link.url}>
+              <li
+                className={`p-4 ml-6 mb-4 text-[20px] lg:text-[30px] rounded-md ${
+                  location.pathname === link.url
+                    ? "bg-[#96bf01] text-white"
+                    : "hover:bg-[#96bf01] hover:text-white"
+                }`}
+              >
+                {link.label}
+              </li>
+            </Link>
+          ))}
+        </ul>
 
-            </div>
-        </>
-    )
-}
+        <div className="mt-6">
+          <ul className="flex p-6 justify-around text-gray-500">
+            <li>
+              <FaFacebookF size={20} />
+            </li>
+            <li>
+              <FaTwitter size={20} />
+            </li>
+            <li>
+              <TiSocialGooglePlus size={20} />
+            </li>
+            <li>
+              <FaPinterestP size={20} />
+            </li>
+            <li>
+              <FaGithub size={20} />
+            </li>
+          </ul>
+          <p className="flex items-center justify-center">
+            @ 2023 SAT - RENTCAR
+          </p>
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default Sidebar
+export default Sidebar;
