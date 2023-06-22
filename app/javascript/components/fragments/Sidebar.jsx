@@ -37,7 +37,7 @@ const Sidebar = () => {
           {
             links.map((link) => (
               <Link to={link.url}>
-                <li className="p-4 text-[20px] lg:text-[30px] hover:bg-[#96bf01] hover:text-white rounded-md">{link.label}</li>
+                <li className="p-4 ml-6 text-[20px] lg:text-[30px] hover:bg-[#96bf01] hover:text-white rounded-md">{link.label}</li>
               </Link>
             ))
           }

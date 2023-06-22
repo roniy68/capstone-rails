@@ -80,52 +80,60 @@ const CarDetailPage = () => {
   };
 
   if (!car) {
-    return <p>Loading...</p>;
+    return <p className="text-center text-[#96bf01] text-2xl">Loading...</p>;
   }
 
   return (
-    <>
-      <div className="detail-image">
+    <div className="shadow flex items-center justify-center w-f h-screen ms:flex-col ">
+      <div className="w-[250px] h-[250px] p-6 mb-4">
         <img src={car.photo} alt={car.name} />
       </div>
-      <div className="detail-container">
-        <div className="card">
-          <h2>
-            {car.name} - {car.model}
-          </h2>
-        </div>
 
-        <div className="desc">
-          <p>Price: ${car.price}</p>
-          <p>Description: {car.description}</p>
+      <div className="p-6 border-2 rounded">
+        <div className=" p-10">
+          <div className="text-[2rem] lg:text-[3rem] font-bold text-gray-700  flex items-center justify-center mb-6">
+            <h2>
+              {car.name} - {car.model}
+            </h2>
+          </div>
+
+          <div className="text-[20px] text-gray-700  flex-col items-center justify-center">
+            <p>Price: ${car.price}</p>
+            <p>Description: {car.description}</p>
+          </div>
+          <form onSubmit={handleReservation} className="rform">
+            <label className="text-[20px] text-gray-700">
+              Start Date:
+              <input
+                className="text-[20px] text-gray-700"
+                type="date"
+                name="start_date"
+                value={formData.start_date}
+                onChange={handleChange}
+              />
+            </label>
+            <br />
+            <label className="text-[20px] text-gray-700">
+              End Date:
+              <input
+                className="text-[20px] text-gray-700"
+                type="date"
+                name="end_date"
+                value={formData.end_date}
+                onChange={handleChange}
+              />
+            </label>
+            <br />
+            <button
+              className="bg-green-400 hover:bg-green-900 hover:text-white rounded p-4 font-bold mt-12"
+              type="submit"
+            >
+              Reserve
+            </button>
+          </form>
         </div>
-        <form onSubmit={handleReservation} className="rform">
-          <label className="date">
-            Start Date:
-            <input
-              type="date"
-              name="start_date"
-              value={formData.start_date}
-              onChange={handleChange}
-            />
-          </label>
-          <br />
-          <label className="date">
-            End Date:
-            <input
-              type="date"
-              name="end_date"
-              value={formData.end_date}
-              onChange={handleChange}
-            />
-          </label>
-          <br />
-          <button className="reserve-button" type="submit">
-            Reserve
-          </button>
-        </form>
       </div>
-    </>
+    </div>
   );
 };
 

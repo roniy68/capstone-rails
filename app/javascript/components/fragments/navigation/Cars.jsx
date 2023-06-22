@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { BsFillCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
+import { BsCaretLeft, BsCaretRight } from "react-icons/bs";
 import {
   AiFillGithub,
   AiFillFacebook,
@@ -82,17 +82,15 @@ const Cars = () => {
 
   return (
     <div className="h-screen w-full">
-        {message && (
-          <p className="text-center text-green-600 text-2xl">
-            {message}
-          </p>
-        )}
-        <h1 className="font-bold text-[30x] flex items-center justify-center tracking-widest">
-          LATEST MODELS
-        </h1>
-        <p className="text-gray-500 text-[15px] flex items-center justify-center mb-10">
-          Please select a renting car Model
-        </p>
+      {message && (
+        <p className="text-center text-green-600 text-2xl">{message}</p>
+      )}
+      <h1 className="font-bold text-[30x] flex items-center justify-center tracking-widest">
+        LATEST MODELS
+      </h1>
+      <p className="text-gray-500 text-[15px] flex items-center justify-center mb-10">
+        Please select a renting car Model
+      </p>
 
       <div className="flex justify-center items-center">
         <button
@@ -100,7 +98,7 @@ const Cars = () => {
           disabled={currentIndex === 0}
           className="bg-[#96bf01] rounded-r-full mr-6 pl-10"
         >
-          <BsFillCaretLeftFill size={50} className="text-white" />
+          <BsCaretLeft size={50} className="text-white" />
         </button>
         <ul className="flex justify-center items-center w-full m-0">
           {renderCars()}
@@ -110,7 +108,7 @@ const Cars = () => {
           disabled={currentIndex >= cars.length - 3}
           className="bg-[#96bf01] rounded-l-full ml-6 pr-10"
         >
-          <BsFillCaretRightFill size={50} className="text-white" />
+          <BsCaretRight size={50} className="text-white" />
         </button>
       </div>
     </div>
