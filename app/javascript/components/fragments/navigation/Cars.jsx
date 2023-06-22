@@ -17,7 +17,6 @@ const Cars = () => {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const location = useLocation();
   const [message, setMessage] = React.useState(location?.state?.message || "");
-  const Navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchCars());
@@ -45,7 +44,7 @@ const Cars = () => {
     const startIndex = currentIndex;
     const endIndex = startIndex + 2;
     return cars.slice(startIndex, endIndex + 1).map((car) => (
-      <li key={car.id} className="w-[400px] h-[400px] mt-10 shadow">
+      <li key={car.id} className="w-auto h-auto lg:w-[400px] lg:h-[400px] mt-10 shadow">
         <Link to={`/detail/${car.id}`}>
           <img
             src={car.photo}
@@ -78,7 +77,9 @@ const Cars = () => {
   }
 
   return (
-    <div className="h-screen w-full">
+
+    <div className="bg-green-900 h-auto w-auto">
+
       {message && (
         <p className="text-center text-green-600 text-2xl">{message}</p>
       )}
@@ -97,7 +98,7 @@ const Cars = () => {
         >
           <BsCaretLeft size={50} className="text-white" />
         </button>
-        <ul className="bg-red-500 lg:w-[800px] flex-1 flex justify-center items-center m-0">
+        <ul className=" lg:w-[800px] gap-4 flex-1 flex justify-center items-center">
           {renderCars()}
         </ul>
         <button
@@ -108,6 +109,8 @@ const Cars = () => {
           <BsCaretRight size={50} className="text-white" />
         </button>
       </div>
+
+
     </div>
   );
 };
