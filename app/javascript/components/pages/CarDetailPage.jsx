@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { BiLeftArrow } from "react-icons/bi";
+import { BsCaretLeft } from "react-icons/bi";
 
 
 const CarDetailPage = () => {
@@ -86,15 +86,18 @@ const CarDetailPage = () => {
   }
 
   const handleGoBack = () => {
-    navigate(-1); // Go back to the previous page
+    navigate(-1);
   };
 
   return (
     <div className="shadow flex items-center justify-center w-f h-screen ms:flex-col ">
+      <button>
+         <BsCaretLeft />
+      </button>
+     
       <div className="w-[250px] h-[250px] p-6 mb-4">
         <img src={car.photo} alt={car.name} />
       </div>
-
       <div className="p-6 border-2 rounded">
         <div className=" p-10">
           <div className="text-[2rem] lg:text-[3rem] font-bold text-gray-700  flex items-center justify-center mb-6">

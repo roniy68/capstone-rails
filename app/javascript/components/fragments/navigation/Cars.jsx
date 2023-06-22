@@ -50,7 +50,7 @@ const Cars = () => {
           <img
             src={car.photo}
             alt={car.name}
-            className="w-[200px] h-[200px] p-10 mx-auto my-4"
+            className="w-[200px] h-[200px] mx-auto my-4"
           />
           <div className="text-center">
             <p>
@@ -72,7 +72,9 @@ const Cars = () => {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="text-[#96bf01] text-2xl text-center">Loading...</div>
+    );
   }
 
   return (
@@ -80,7 +82,7 @@ const Cars = () => {
       {message && (
         <p className="text-center text-green-600 text-2xl">{message}</p>
       )}
-      <h1 className="font-bold text-[30x] flex items-center justify-center tracking-widest">
+      <h1 className="font-bold text-[30px] flex items-center justify-center tracking-widest">
         LATEST MODELS
       </h1>
       <p className="text-gray-500 text-[15px] flex items-center justify-center mb-10">
