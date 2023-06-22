@@ -66,7 +66,7 @@ admin2.cars.create(
   model: 'benz',
   description: 'A luxury car with impressive performance.',
   price: 250.5,
-  photo: 'https://ik.imagekit.io/ahroniy/mercedies.jpg?updatedAt=1686688717606',
+  photo: 'https://ik.imagekit.io/ahroniy/mercedies.jpg?updatedAt=1686688717606'
 )
 
 Car.create(
@@ -74,5 +74,5 @@ Car.create(
   model: 'benz',
   description: 'A luxury car with impressive performance.',
   price: 250.5,
-  photo: 'https://ik.imagekit.io/ahroniy/mercedies.jpg?updatedAt=1686688717606',
+  photo: 'https://ik.imagekit.io/ahroniy/mercedies.jpg?updatedAt=1686688717606'
 )
