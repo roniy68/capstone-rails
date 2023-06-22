@@ -61,7 +61,6 @@ const CarDetailPage = () => {
           user_id: userId,
         }),
       });
-
       if (response.ok) {
         const data = await response.json();
         if (data.alreadyReserved) {
@@ -133,7 +132,8 @@ const CarDetailPage = () => {
           </form>
         </div>
       </div>
-    </div>
+    </>
+
   );
 };
 

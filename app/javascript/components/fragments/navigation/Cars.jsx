@@ -49,7 +49,6 @@ const Cars = () => {
   };
 
 
-
   const renderCars = () => {
     const startIndex = currentIndex;
     const endIndex = startIndex + 2;
