@@ -97,7 +97,8 @@ const ReservationForm = () => {
     <div className="flex flex-col items-center justify-center h-screen">
       {reservationStatus && <p className="bg-green-200 font-bold mb-6 p-4 rounded shadow-lg">{reservationStatus}</p>}
       <div className="h-auto lg:w-[800px] w-[600px] p-6 bg-slate-300 rounded-lg shadow-lg">
-        <form onSubmit={handleSubmit} className="space-y-4 shadow">
+        <h1 className="font-bold text-[20px] flex justify-center items-center mb-6"> Reserve A Car </h1>
+        <form onSubmit={handleSubmit} className="text-lg space-y-4 shadow">
           <div>
             <label htmlFor="car_name" className="block mb-1">
               Car Name:
