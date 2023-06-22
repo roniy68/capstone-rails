@@ -21,6 +21,10 @@ const Sidebar = () => {
     {
       url: "/myreservations",
       label: "RESERVATIONS"
+    },
+    {
+      url: "/delete",
+      label: "DELETE MODELS"
     }
   ]
   return (
