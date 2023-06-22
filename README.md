@@ -2,7 +2,7 @@
 <details>
 <summary>Table of Contents</summary>
 
-- [🚗 RENTCAR - Luxury cars renting platform ](#-rentcar---luxury-cars-renting-plateform-)
+- [🚗 RENTCAR - Luxury cars renting platform ](#-rentcar---luxury-cars-renting-platform-)
   - [📸 Screenshots ](#-screenshots-)
   - [🚀 Live Demo](#-live-demo)
   - [📋 Kanban Board](#-kanban-board)
@@ -29,7 +29,7 @@
   - [📜 License ](#-license-)
 </details>
 
-# 🚗 RENTCAR - Luxury cars renting plateform <a name="about-project"></a>
+# 🚗 RENTCAR - Luxury cars renting platform <a name="about-project"></a>
 
 **RENTCAR** is a collaborative project, it's about luxury car rental platform built with Rails and React. Users can browse and reserve available models, manage reservations, and contribute by adding or deleting cars. It offers a seamless experience for renting luxury cars with ease.
 
