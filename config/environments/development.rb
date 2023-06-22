@@ -3,7 +3,6 @@ require 'active_support/core_ext/integer/time'
 # in test.rb and development.rb
 # make sure to update host according to your need
 # Rails.application.routes.default_url_options = {protocol: "http", host: "localhost", port: 3000}
-  
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.

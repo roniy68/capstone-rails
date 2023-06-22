@@ -1,6 +1,6 @@
 # Constants
 # car1.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images','murple_logo.png')), filename: 'murple_logo.png')
-IMAGE = Rails.root.join('app', 'assets', 'images','murple_logo.png')
+IMAGE = Rails.root.join('app', 'assets', 'images', 'murple_logo.png')
 # Create Users
 admin1 = User.create(username: 'ahroniyA')
 admin2 = User.create(username: 'salwaB')
@@ -61,14 +61,13 @@ Reservation.create!(
   car_id: car3.id
 )
 
-
 admin2.cars.create(
   name: 'PhotoTest',
   model: 'benz',
   description: 'A luxury car with impressive performance.',
   price: 250.5,
   photo: 'https://ik.imagekit.io/ahroniy/mercedies.jpg?updatedAt=1686688717606',
-  image: File.open(Rails.root.join('app', 'assets', 'images','murple_logo.png'), filename: 'murple_logo.png')
+  image: File.open(Rails.root.join('app', 'assets', 'images', 'murple_logo.png'), filename: 'murple_logo.png')
 )
 
 Car.create(
@@ -77,5 +76,5 @@ Car.create(
   description: 'A luxury car with impressive performance.',
   price: 250.5,
   photo: 'https://ik.imagekit.io/ahroniy/mercedies.jpg?updatedAt=1686688717606',
-  image: File.open(Rails.root.join('app', 'assets', 'images','murple_logo.png'), filename: 'murple_logo.png')
+  image: File.open(Rails.root.join('app', 'assets', 'images', 'murple_logo.png'), filename: 'murple_logo.png')
 )
