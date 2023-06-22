@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { BsCaretLeft } from "react-icons/bi";
-
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { BsCaretLeft } from "react-icons/bs";
 
 const CarDetailPage = () => {
   const { id } = useParams();
@@ -85,18 +84,20 @@ const CarDetailPage = () => {
     return <p className="text-center text-[#96bf01] text-2xl">Loading...</p>;
   }
 
-  const handleGoBack = () => {
-    navigate(-1);
-  };
-
   return (
-    <div className="shadow flex items-center justify-center w-f h-screen ms:flex-col ">
-      <button>
-         <BsCaretLeft />
-      </button>
-     
-      <div className="w-[250px] h-[250px] p-6 mb-4">
+    <div className="shadow flex flex-col lg:flex-row items-center justify-center w-screen h-screen">
+      <div className="w-[400px] h-[400px] mr-6">
         <img src={car.photo} alt={car.name} />
+      </div>
+      <div className="absolute bg-blue-800">
+        <button className="bg-[#96bf01] rounded-l-full mr-2 pl-5 lg:mr-6 lg:pl-10 fixed bottom-10 left-0 lg:ml-[320px] md:ml-[200px] sm:ml-[100px]">
+          <Link to="/cars">
+            <BsCaretLeft
+              size={50}
+              className="text-white flex items-center justify-center"
+            />
+          </Link>
+        </button>
       </div>
       <div className="p-6 border-2 rounded">
         <div className=" p-10">

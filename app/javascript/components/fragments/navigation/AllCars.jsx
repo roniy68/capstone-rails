@@ -76,7 +76,7 @@ const AllCars = () => {
                     </div>
                     <button
                         type="button" onClick={() => handleDelete(car.id)}
-                        className="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-sm text-sm float-right "
+                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-sm text-sm float-right "
                     >
                         Delete Car
                     </button>
