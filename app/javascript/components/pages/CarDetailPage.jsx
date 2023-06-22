@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { BiLeftArrow } from "react-icons/bi";
+
 
 const CarDetailPage = () => {
   const { id } = useParams();
@@ -82,6 +84,10 @@ const CarDetailPage = () => {
   if (!car) {
     return <p className="text-center text-[#96bf01] text-2xl">Loading...</p>;
   }
+
+  const handleGoBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
 
   return (
     <div className="shadow flex items-center justify-center w-f h-screen ms:flex-col ">
