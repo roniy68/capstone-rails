@@ -17,11 +17,13 @@ const Cars = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const location = useLocation();
   const [message, setMessage] = useState(location?.state?.message || "");
-  const navigate = useNavigate();
-  const [carouselItemsPerPage, setCarouselItemsPerPage] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     dispatch(fetchCars());
+    checkMobileView();
+    window.addEventListener("resize", checkMobileView);
+    return () => window.removeEventListener("resize", checkMobileView);
   }, [dispatch]);
 
   useEffect(() => {
@@ -34,38 +36,39 @@ const Cars = () => {
     }
   }, [message]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setCarouselItemsPerPage(3);
-      } else {
-        setCarouselItemsPerPage(1);
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const checkMobileView = () => {
+    if (window.innerWidth <= 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => prevIndex - carouselItemsPerPage);
+    setCurrentIndex((prevIndex) => prevIndex - 1);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => prevIndex + carouselItemsPerPage);
+    setCurrentIndex((prevIndex) => prevIndex + 1);
   };
 
   const renderCars = () => {
     const startIndex = currentIndex;
-    const endIndex = startIndex + carouselItemsPerPage - 1;
+    const endIndex = startIndex + (isMobile ? 0 : 2);
     return cars.slice(startIndex, endIndex + 1).map((car) => (
-      <li key={car.id} className="w-[400px] h-[400px] mt-10 shadow">
+      <li
+        key={car.id}
+        className={`w-auto h-auto mt-10 shadow ${
+          isMobile ? "w-[100%]" : "lg:w-[400px] lg:h-[400px]"
+        }`}
+      >
         <Link to={`/detail/${car.id}`}>
           <img
             src={car.photo}
             alt={car.name}
-            className="w-[200px] h-[200px] mx-auto my-4"
+            className={`w-[200px] h-[200px] mx-auto my-4 ${
+              isMobile ? "w-[100%]" : ""
+            }`}
           />
           <div className="text-center">
             <p>
@@ -93,7 +96,7 @@ const Cars = () => {
   }
 
   return (
-    <div className="h-screen w-full">
+    <div className="h-auto w-auto">
       {message && (
         <p className="text-center text-green-600 text-2xl">{message}</p>
       )}
@@ -108,17 +111,21 @@ const Cars = () => {
         <button
           onClick={handlePrev}
           disabled={currentIndex === 0}
-          className="bg-[#96bf01] rounded-r-full lg:mr-6 lg:pl-10 z-50"
+          className="bg-[#96bf01] rounded-r-full mr-2 pl-4 lg:mr-6 lg:pl-10"
         >
           <BsCaretLeft size={50} className="text-white" />
         </button>
-        <ul className="flex justify-center items-center w-20 lg:w-full m-0">
+        <ul
+          className={`lg:w-[800px] gap-4 flex-1 flex justify-center items-center ${
+            isMobile ? "flex-wrap" : ""
+          }`}
+        >
           {renderCars()}
         </ul>
         <button
           onClick={handleNext}
-          disabled={currentIndex >= cars.length - carouselItemsPerPage}
-          className="bg-[#96bf01] rounded-l-full ml:2 pr:4 lg:ml-6 lg:pr-10"
+          disabled={currentIndex >= cars.length - (isMobile ? 1 : 3)}
+          className="bg-[#96bf01] rounded-l-full ml-2 pr-4 lg:ml-6 lg:pr-10"
         >
           <BsCaretRight size={50} className="text-white" />
         </button>

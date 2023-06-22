@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react'
 import Sidebar from './Sidebar'
 import { Outlet, useNavigate } from 'react-router-dom'
 // import NavBar from './NavBar'
-import { HiOutlineMenu, HiAnnotation, HiBell, HiOutlineUser } from 'react-icons/hi'
+import { HiOutlineMenu, HiAnnotation, HiOutlineUser } from 'react-icons/hi'
 import { AiOutlineLogout } from "react-icons/ai";
 
 const Layout = () => {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
 
   const handleClick = (e) => {
     setShow(current => !current)
@@ -41,19 +41,19 @@ const Layout = () => {
             <div className="flex bg-[#96bf01] lg:h-[80px] md:h-[60px] p-4 sticky top-0 z-10 items-center justify-between">
               {/* Navbar Ham burger */}
               <div onClick={handleClick} className='flex-none text-white'>
-                <HiOutlineMenu size={36} />
+                <HiOutlineMenu size={30} />
               </div>
               {/* Navbar Menus */}
               <div className='flex text-slate-50 justify-end flex-auto gap-2'>
                 <div className='p-6'>
-                  <HiAnnotation size={36} />
+                  <HiAnnotation size={30} />
                 </div>
                 <div className='p-6'>
-                  <HiOutlineUser size={36} />
+                  <HiOutlineUser size={30} />
                 </div>
 
                 <div className='p-6'>
-                  <AiOutlineLogout size={36} onClick={handleLogout} />
+                  <AiOutlineLogout size={30} onClick={handleLogout} />
                 </div>
               </div>
             </div>

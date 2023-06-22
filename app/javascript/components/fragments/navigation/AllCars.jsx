@@ -61,41 +61,45 @@ const AllCars = () => {
         return cars
             .slice(startIndex, endIndex + 1)
             .map((car) => (
-                <li key={car.id} className="flex items-center space-x-4 py-4" style={{ transform: "scale(1.7)", marginTop: "60px" }}>
-                    <Link to={`/detail/${car.id}`} className="flex-shrink-0">
-                        <img
-                            src={car.photo}
-                            alt={car.name}
-                            className="w-20 h-20 object-cover rounded p-2"
-                        />
-                    </Link>
-                    <div className="flex-grow">
-                        <p>
-                            {car.name} - {car.model}
-                        </p>
-                    </div>
-                    <button
-                        type="button" onClick={() => handleDelete(car.id)}
-                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-sm text-sm float-right "
-                    >
-                        Delete Car
-                    </button>
-                </li>
-
-
-            ));
+                <li
+  key={car.id}
+  className="flex items-center space-x-4 py-4 sm:max-w-600px mx-auto"
+  style={{ marginTop: "60px" }}
+>
+  <Link to={`/detail/${car.id}`} className="flex-shrink-0">
+    <img
+      src={car.photo}
+      alt={car.name}
+      className="w-24 h-24 lg:w-52 lg:h-auto object-cover rounded p-2"
+    />
+  </Link>
+  <div className="flex-grow text-center ml-6">
+    <p className="text-xl my-2">
+      {car.name} - {car.model}
+    </p>
+  </div>
+  <div>
+    <button
+      type="button"
+      onClick={() => handleDelete(car.id)}
+      className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-sm text-lg"
+    >
+      Delete
+    </button>
+  </div>
+</li>
+    ));
     };
 
     return (
-        <div className="flex flex-col items-center w-300px">
+        <div className=" flex flex-1 flex-col p-6 items-center w-auto ">
             <div>
                 <h1 className="flex items-center justify-center font-bold mt-10 text-5xl">
                     ALL CARS
                 </h1>
-                <p className="text-3xl">Please press the Delete button to delete cars</p>
             </div>
 
-            <div>
+            <div className=" w-auto lg:w-[800px]">
                 <ul>{renderCars()}</ul>
             </div>
         </div>

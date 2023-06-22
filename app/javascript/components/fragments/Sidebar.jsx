@@ -50,7 +50,7 @@ const Sidebar = () => {
           {links.map((link) => (
             <Link to={link.url}>
               <li
-                className={`p-4 ml-6 mb-4 text-[20px] lg:text-[30px] rounded-md ${
+                className={`p-4 ml-6 mb-4 text-[15px] lg:text-[25px] rounded-md ${
                   location.pathname === link.url
                     ? "bg-[#96bf01] text-white"
                     : "hover:bg-[#96bf01] hover:text-white"

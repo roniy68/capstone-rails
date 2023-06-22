@@ -73,7 +73,6 @@ const ReservationForm = () => {
 
       if (response.ok) {
         const reservation = await response.json();
-        console.log("Reservation created:", reservation);
         setFormData({
           car_name: "",
           car_model: "",
@@ -95,8 +94,13 @@ const ReservationForm = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      {reservationStatus && <p className="bg-green-200 font-bold mb-6 p-4 rounded shadow-lg">{reservationStatus}</p>}
-      <div className="h-auto lg:w-[800px] w-[600px] p-6 bg-slate-300 rounded-lg shadow-lg">
+      {reservationStatus && (
+        <p className="bg-green-200 font-bold mb-6 p-4 rounded shadow-lg">
+          {reservationStatus}
+        </p>
+      )}
+      <div className="h-auto w-auto lg:w-[800px] p-6 bg-slate-300 rounded-lg shadow-lg">
+        <h1 className="text-center text-[25px] font-bold mb-6">Add Reservation</h1>
         <form onSubmit={handleSubmit} className="space-y-4 shadow">
           <div>
             <label htmlFor="car_name" className="block mb-1">
