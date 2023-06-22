@@ -36,15 +36,20 @@
 ## 📸 Screenshots <a name="screenshot"></a>
 
 <p>
-<img src="" width=400 height=250 alt="screenshot" />
+<img src="https://github.com/roniy68/capstone-rails/assets/77187003/be1d9418-e6ac-4ca7-829c-7a672790e271" width=400 height=250 alt="screenshot" />
+  <img src="https://github.com/roniy68/capstone-rails/assets/77187003/9c8ecfdf-cd89-49ef-8cc0-51e78376fd82" width=400 height=250 alt="screenshot" />
+  <img src="https://github.com/roniy68/capstone-rails/assets/77187003/50ea1c45-511c-4dee-942d-741cffb2a14e" width=400 height=250 alt="screenshot" />
+  <img src="https://github.com/roniy68/capstone-rails/assets/77187003/68c8a168-7f32-413b-a327-b38562c73218" width=400 height=250 alt="screenshot" />
+  <img src="https://github.com/roniy68/capstone-rails/assets/77187003/f2359c19-0684-4b01-97b2-66236afa374c" width=400 height=250 alt="screenshot" />
 </p>
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 🚀 Live Demo
 
-[RENTCAR-Luxury Cars](capstone-rails.onrender.com)
+[RENTCAR-Luxury Cars](https://capstone-rails.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -56,7 +61,8 @@ We have used a Kanban board to split the tasks and simplify the project workflow
 
 ### The members: [@Salwa](https://github.com/Salwa99), [@Ahmed](https://github.com/roniy68), [@Talha](https://github.com/Talha-Hanif5666)
 
-<img src="" width=600 height=400 alt="kanban board" />
+
+<img src="https://github.com/roniy68/capstone-rails/assets/77187003/bdb6c83b-1e4c-4d1b-98ed-cf28d59ed7f2" width=600 height=400 alt="kanban board" />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -247,6 +253,6 @@ If you like this project, please consider giving it a ⭐.
 
 ## 📜 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT](./readme-assets/MIT.md) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
