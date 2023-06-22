@@ -61,7 +61,7 @@ const AllCars = () => {
         return cars
             .slice(startIndex, endIndex + 1)
             .map((car) => (
-                <li key={car.id} className="flex items-center space-x-4 py-4" style={{ transform: "scale(1.7)", marginTop: "60px" }}>
+                <li key={car.id} className="flex items-center space-x-4 py-4" style={{ marginTop: "60px" }}>
                     <Link to={`/detail/${car.id}`} className="flex-shrink-0">
                         <img
                             src={car.photo}
