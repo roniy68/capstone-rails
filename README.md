@@ -2,7 +2,7 @@
 <details>
 <summary>Table of Contents</summary>
 
-- [🚗 RENTCAR - Luxury cars renting plateform ](#-rentcar---luxury-cars-renting-plateform-)
+- [🚗 RENTCAR - Luxury cars renting platform ](#-rentcar---luxury-cars-renting-plateform-)
   - [📸 Screenshots ](#-screenshots-)
   - [🚀 Live Demo](#-live-demo)
   - [📋 Kanban Board](#-kanban-board)
