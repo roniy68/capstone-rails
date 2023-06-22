@@ -6,7 +6,7 @@ import { HiOutlineMenu, HiAnnotation, HiOutlineUser } from 'react-icons/hi'
 import { AiOutlineLogout } from "react-icons/ai";
 
 const Layout = () => {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
 
   const handleClick = (e) => {
     setShow(current => !current)

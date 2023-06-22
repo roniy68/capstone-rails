@@ -70,7 +70,7 @@ const AllCars = () => {
     <img
       src={car.photo}
       alt={car.name}
-      className="w-24 h-24 object-cover rounded p-2"
+      className="w-24 h-24 lg:w-52 lg:h-auto object-cover rounded p-2"
     />
   </Link>
   <div className="flex-grow text-center ml-6">
@@ -84,19 +84,11 @@ const AllCars = () => {
       onClick={() => handleDelete(car.id)}
       className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-sm text-lg"
     >
-      Delete Car
+      Delete
     </button>
   </div>
 </li>
-
-              
-
-              
-
-
-
-
-            ));
+    ));
     };
 
     return (
@@ -105,10 +97,9 @@ const AllCars = () => {
                 <h1 className="flex items-center justify-center font-bold mt-10 text-5xl">
                     ALL CARS
                 </h1>
-                <p className="mt-6 text-3xl">Please press the Delete button to delete cars</p>
             </div>
 
-            <div className="">
+            <div className="bg-blue-500 w-auto lg:w-[800px]">
                 <ul>{renderCars()}</ul>
             </div>
         </div>
