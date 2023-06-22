@@ -19,6 +19,8 @@
     - [🧪 Tests](#-tests)
   - [👨‍💻 Authors  ](#-authors--)
     - [👤 **Salwa Ballouti**:](#-salwa-ballouti)
+    - [👤 **Ahmed Hasan Rony**](#-ahmed-hasan-rony)
+    - [👤 **Muhammad Talha Hanif**](#-muhammad-talha-hanif)
   - [🎯 Future Features  ](#-future-features--)
   - [🙏 Acknowledgements](#-acknowledgements)
   - [💎 Resources](#-resources)
@@ -190,13 +192,13 @@ rspec spec
 - Twitter: [@SalwaBallouti](https://twitter.com/salwa_ballouti)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/salwa-ballouti)
 
-👤 **Ahmed Hasan Rony**
+### 👤 **Ahmed Hasan Rony**
 
 - GitHub: [@roniy68](https://github.com/roniy68)
 - Twitter: [@Ahmed Hasan Rony](https://twitter.com/ahroniy)
 - LinkedIn: [@Ahmed Hasan Rony](https://www.linkedin.com/in/ahroniy/)
 
-👤 **Muhammad Talha Hanif**
+### 👤 **Muhammad Talha Hanif**
 
 - GitHub: [@githubhandle](https://github.com/Talha-Hanif5666)
 - Twitter: [@twitterhandle](https://twitter.com/TalhaHa45039660?t=R4git6jFgsysI4xPxmN-ag&s=09)
