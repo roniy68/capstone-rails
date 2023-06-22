@@ -31,7 +31,6 @@ const MyReservations = () => {
             (reservation) => reservation.id !== reservationId
           )
         );
-        console.log("Reservation deleted successfully.");
       } else {
         const error = await response.json();
         console.error("Error deleting reservation:", error);
@@ -43,7 +42,7 @@ const MyReservations = () => {
 
   return (
     <div className="h-full overflow-auto p-6">
-      <h2 className="text-[40px] font-bold mb-12 flex items-center justify-center">
+      <h2 className="lg:text-[40px] text-[25px] font-bold mb-12 flex items-center justify-center">
         My Reservations
       </h2>
       {reservations.length > 0 ? (
@@ -54,8 +53,8 @@ const MyReservations = () => {
               className="bg-[#96bf01] mb-6 p-6 rounded shadow-lg flex flex-col justify-center items-center"
             >
               <div className="flex flex-col items-center justify-center">
-                <p className="text-[30px] font-bold mb-6">
-                  Car Name: {reservation.car_name}
+                <p className="text-[30px] font-bold mb-6 ">
+                  {reservation.car_name}
                 </p>
                 <div className=" text-[20px] p-6 border-t border-white">
                   <p>Car Model: {reservation.car_model}</p>
