@@ -51,7 +51,6 @@ const AddCar = () => {
 
       if (response.ok) {
         const newCar = await response.json();
-        console.log("New car added:", newCar);
 
         setCarData({
           name: "",
@@ -73,7 +72,11 @@ const AddCar = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      {carAdded && <p className="bg-green-200 font-bold mb-6 p-4 rounded shadow-lg">New car has been added!</p>}
+      {carAdded && (
+        <p className="bg-green-200 font-bold mb-6 p-4 rounded shadow-lg">
+          New car has been added!
+        </p>
+      )}
       <div className="h-auto lg:w-[800px] w-[600px] p-6 bg-slate-300 rounded-lg shadow-lg">
         <form onSubmit={handleSubmit} className="space-y-4 shadow">
           <div>
@@ -139,7 +142,6 @@ const AddCar = () => {
               onChange={handleChange}
               className="w-full border border-gray-300 rounded px-3 py-2"
             />
-
           </div>
           <div className="flex justify-center items-center">
             <button
