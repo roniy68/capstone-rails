@@ -16,7 +16,7 @@ const Login = () => {
       const response = await axios.post(
         'api/v1/users/signin',
         {
-          username,
+          username: username,
         },
         {
           headers: {
@@ -24,7 +24,7 @@ const Login = () => {
           },
         }
       );
-      sessionStorage.setItem('username', response.data.username);
+      sessionStorage.setItem('username', username);
 
       navigate('/', { state: { message: 'Successfully Signed In' } });
     } catch (error) {
