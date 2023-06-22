@@ -97,7 +97,7 @@ const Cars = () => {
         >
           <BsCaretLeft size={50} className="text-white" />
         </button>
-        <ul className="flex justify-center items-center w-full m-0">
+        <ul className="bg-red-500 lg:w-[800px] flex-1 flex justify-center items-center m-0">
           {renderCars()}
         </ul>
         <button
