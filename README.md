@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <details>
-<summary>Table of Contents</summary>
+<summary><h1>🔥Table of Contents🔥</h1></summary>
 
 - [🚗 RENTCAR - Luxury cars renting platform ](#-rentcar---luxury-cars-renting-platform-)
   - [📸 Screenshots ](#-screenshots-)
@@ -50,6 +50,11 @@
 
 [RENTCAR-Luxury Cars](https://capstone-rails.onrender.com/)
 
+## 📹 Short Loom 
+
+https://www.loom.com/share/ab17f762d1a44bad804d3d480ca30909?sid=33e79aad-b43b-4ec3-9537-0a73d4678dcf 
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 📋 Kanban Board
@@ -68,36 +73,36 @@ We have used a Kanban board to split the tasks and simplify the project workflow
 
 - **Back-end** 💻:
     <details>
-    <summary>Client</summary>
+    <summary>Server</summary>
     <ul>
-      <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
-      <li><a href="https://redux-toolkit.js.org/">PostgreSQL</a></li>
+      <li><a href="https://rubyonrails.org/">🔥 Ruby on Rails</a></li>
+      <li><a href="https://redux-toolkit.js.org/">🔥 PostgreSQL</a></li>
     </ul>
   </details>
 
-  - **Front-end** 💻:
+- **Front-end** 💻:
   <details>
   <summary>Client</summary>
   <ul>
-  <li><a href="https://react.dev/">React</a></li>
-  <li><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></li>
-  <li><a href="https://reactrouter.com/en/main">React Router</a></li>
-  <li><a href="https://tailwindcss.com/">Tailwind</a></li>
-  <li><a href="https://reactrouter.com/en/main">React icons</a></li>
+  <li><a href="https://react.dev/">🔥 React</a></li>
+  <li><a href="https://redux-toolkit.js.org/">🔥 Redux Toolkit</a></li>
+  <li><a href="https://reactrouter.com/en/main">🔥 React Router</a></li>
+  <li><a href="https://tailwindcss.com/">🔥 Tailwind</a></li>
+  <li><a href="https://reactrouter.com/en/main">🔥 React icons</a></li>
   </ul>
   </details>
 
 - **Tools** 🛠:
-  - [Rspec](https://rspec.info/)
-  - [Esbuild](https://esbuild.github.io/)
-  - [Render](https://render.com/)
+  - 🔥 [Rspec](https://rspec.info/)
+  - 🔥 [Esbuild](https://esbuild.github.io/)
+  - 🔥 [Render](https://render.com/)
 
 <details>
 <summary>Linter</summary>
   <ul>
-    <li>Eslint</li>
-    <li>Rubocop</li>
-    <li>Stylint</li>
+    <li>🔥 Eslint</li>
+    <li>🔥 Rubocop</li>
+    <li>🔥 Stylint</li>
   </ul>
 </details>
   
@@ -153,7 +158,7 @@ Install the node dependencies with:
 yarn install
 ```
 
-or
+🔥 or 🔥
 
 ```sh
 npm install
@@ -222,9 +227,10 @@ rspec spec
 
 ## 🎯 Future Features <a name="future-features"></a>
 
-- [ ] Implement the full authentication.
-- [ ] Implement edit car or reservation.
-- [ ] Implement search bar.
+- [ ] Implement the full authentication. ㊙️
+- [ ] Implement edit car or reservation. 💳
+- [ ] Implement search bar. 🔃
+- [ ] File Uploads 🗃️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -251,6 +257,12 @@ We would like to thank Murat Korkmaz for this inspiring design.
 
 ## 🤝 Contribution <a name="contribution"></a>
 
+### To know more about this project Follow : 
+- 🔥 [Wiki](https://github.com/roniy68/capstone-rails/wiki)
+- 🔥 [Discussions](https://github.com/roniy68/capstone-rails/discussions)
+- 🔥 [Issues](https://github.com/roniy68/capstone-rails/issues)
+
+- 
 Contributions, issues, and feature requests are welcome!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
