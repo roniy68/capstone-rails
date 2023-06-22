@@ -3,10 +3,10 @@ import Cars from '../fragments/navigation/Cars'
 
 const CarsPage = () => {
     return (
-      <>
-        <Cars />
-      </>
-    );
+        <>
+            <Cars />
+        </>
+    )
 }
 
 export default CarsPage

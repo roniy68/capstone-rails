@@ -16,7 +16,3 @@
 
 /* Custom CSS  */
 @import "./custom.css";
-@import "./navigationStyle/detail.css";
-@import "./navigationStyle/MyReservations.css";
-@import "./navigationStyle/OurCars.css";
-@import "./navigationStyle/ReservationAddForm.css"

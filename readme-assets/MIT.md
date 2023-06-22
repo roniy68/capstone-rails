@@ -1,4 +1,4 @@
-## Copyright 2023, Ahmed Hasan Rony 
+## Copyright 2023, Ahmed Hasan Rony, Salwa Ballouti, Talha
 
 ###### Please delete this line and the next one
 ###### APP TYPE can be a webpage/website, a web app, a software and so on

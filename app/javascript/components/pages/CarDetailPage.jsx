@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { BsCaretLeft } from "react-icons/bs";
 
 const CarDetailPage = () => {
   const { id } = useParams();
@@ -61,7 +62,7 @@ const CarDetailPage = () => {
           user_id: userId,
         }),
       });
-  
+
       if (response.ok) {
         const data = await response.json();
         if (data.alreadyReserved) {
@@ -78,32 +79,43 @@ const CarDetailPage = () => {
       console.error("Error:", error);
     }
   };
-  
 
   if (!car) {
-    return <p>Loading...</p>;
+    return <p className="text-center text-[#96bf01] text-2xl">Loading...</p>;
   }
 
   return (
-    <>
-    <div className="detail-image">
-    <img src={car.photo} alt={car.name} />
-    </div>
-      <div className="detail-container">
-        <div className="card">
-          <h2>
-            {car.name} - {car.model}
-          </h2>
+    <div className="shadow flex flex-col lg:flex-row items-center justify-center w-screen h-screen">
+      <div className="w-[400px] h-[400px] mr-6">
+        <img src={car.photo} alt={car.name} />
+      </div>
+      <div className="absolute bg-blue-800">
+        <button className="bg-[#96bf01] rounded-l-full mr-2 pl-5 lg:mr-6 lg:pl-10 fixed bottom-10 left-0 lg:ml-[320px] md:ml-[200px] sm:ml-[100px]">
+          <Link to="/cars">
+            <BsCaretLeft
+              size={50}
+              className="text-white flex items-center justify-center"
+            />
+          </Link>
+        </button>
+      </div>
+      <div className="p-6 border-2 rounded">
+        <div className=" p-10">
+          <div className="text-[2rem] lg:text-[3rem] font-bold text-gray-700  flex items-center justify-center mb-6">
+            <h2>
+              {car.name} - {car.model}
+            </h2>
           </div>
-          
-          <div className="desc">
+
+          <div className="text-[20px] text-gray-700  flex-col items-center justify-center">
             <p>Price: ${car.price}</p>
             <p>Description: {car.description}</p>
           </div>
           <form onSubmit={handleReservation} className="rform">
-            <label className="date">
+            <label className="text-[20px] text-gray-700">
               Start Date:
               <input
+                className="text-[20px] text-gray-700"
                 type="date"
                 name="start_date"
                 value={formData.start_date}
@@ -111,9 +123,10 @@ const CarDetailPage = () => {
               />
             </label>
             <br />
-            <label className="date">
+            <label className="text-[20px] text-gray-700">
               End Date:
               <input
+                className="text-[20px] text-gray-700"
                 type="date"
                 name="end_date"
                 value={formData.end_date}
@@ -121,14 +134,16 @@ const CarDetailPage = () => {
               />
             </label>
             <br />
-            <button className="reserve-button" type="submit">
+            <button
+              className="bg-green-400 hover:bg-green-900 hover:text-white rounded p-4 font-bold mt-12"
+              type="submit"
+            >
               Reserve
             </button>
           </form>
-        
+        </div>
       </div>
-      </>
-  
+    </div>
   );
 };
 
