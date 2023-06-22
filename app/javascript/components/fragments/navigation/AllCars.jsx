@@ -87,15 +87,15 @@ const AllCars = () => {
     };
 
     return (
-        <div className="flex flex-col items-center w-300px">
+        <div className="bg-red-500 flex flex-1 flex-col p-6 items-center w-auto ">
             <div>
                 <h1 className="flex items-center justify-center font-bold mt-10 text-5xl">
                     ALL CARS
                 </h1>
-                <p className="text-3xl">Please press the Delete button to delete cars</p>
+                <p className="mt-6 text-3xl">Please press the Delete button to delete cars</p>
             </div>
 
-            <div>
+            <div className="">
                 <ul>{renderCars()}</ul>
             </div>
         </div>

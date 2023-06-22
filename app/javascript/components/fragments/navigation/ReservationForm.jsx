@@ -99,7 +99,8 @@ const ReservationForm = () => {
           {reservationStatus}
         </p>
       )}
-      <div className="h-auto lg:w-[800px] w-[600px] p-6 bg-slate-300 rounded-lg shadow-lg">
+      <div className="h-auto w-auto lg:w-[800px] p-6 bg-slate-300 rounded-lg shadow-lg">
+        <h1 className="text-center text-[25px] font-bold mb-6">Add Reservation</h1>
         <form onSubmit={handleSubmit} className="space-y-4 shadow">
           <div>
             <label htmlFor="car_name" className="block mb-1">

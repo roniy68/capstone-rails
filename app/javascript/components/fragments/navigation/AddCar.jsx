@@ -73,11 +73,12 @@ const AddCar = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       {carAdded && (
-        <p className="bg-green-200 font-bold mb-6 p-4 rounded shadow-lg">
+        <p className="bg-green-200 font-bold mb-6 p-2 rounded shadow-lg">
           New car has been added!
         </p>
       )}
-      <div className="h-auto lg:w-[800px] w-[600px] p-6 bg-slate-300 rounded-lg shadow-lg">
+      <div className="h-auto w-auto lg:w-[800px] p-6 bg-slate-300 rounded-lg shadow-lg">
+        <h1 className="text-center text-[25px] font-bold mb-6">Add Car</h1>
         <form onSubmit={handleSubmit} className="space-y-4 shadow">
           <div>
             <label htmlFor="name" className="block mb-1">
