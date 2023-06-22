@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { BsArrowLeftSquareFill, BsArrowRightSquareFill, BsThreeDots } from "react-icons/bs";
+import { BsArrowLeftSquareFill, BsArrowRightSquareFill } from "react-icons/bs";
 import {
   AiFillGithub,
   AiFillFacebook,
@@ -8,7 +8,6 @@ import {
   AiFillLinkedin,
 } from "react-icons/ai";
 import { useLocation } from "react-router-dom";
-
 
 const Cars = () => {
   const [cars, setCars] = useState([]);
@@ -49,28 +48,38 @@ const Cars = () => {
     setCurrentIndex((prevIndex) => prevIndex + 1);
   };
 
+  
+
   const renderCars = () => {
     const startIndex = currentIndex;
     const endIndex = startIndex + 2;
-
-    if (cars.length === 0) {
-      return <p >No car is present.</p>;
-    }
-
     return cars
       .slice(startIndex, endIndex + 1)
       .map((car) => (
         <li key={car.id} className="car-card">
-          {/* Rest of your code */}
+          <Link to={`/detail/${car.id}`}>
+            <img src={car.photo} alt={car.name} />
+            <div>
+              <p>
+                {car.name} - {car.model}
+              </p>
+            </div>
+            <div className="social-media">
+              <AiFillGithub />
+              <AiFillFacebook />
+              <AiFillInstagram />
+              <AiFillLinkedin />
+            </div>
+          </Link>
         </li>
       ));
   };
 
   return (
-    <div className="container mx-auto" style={{ marginTop: "-100px" }}>
+    <div className="container mx-auto">
       <div className="car-title">
         {message && (
-          <p style={{ color: "black", textAlign: "center", fontSize: "larger", fontWeight: "bold", float: "right" }}>{message}</p>
+          <p style={{ color: "black", textAlign: "center", fontSize: "larger", fontWeight: "bold" }}>{message}</p>
         )}
         <h1>LATEST MODELS</h1>
         <p>Please select a renting car Model</p>
