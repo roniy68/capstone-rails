@@ -174,6 +174,12 @@ To load the sample data, run:
 rails db:seed
 ```
 
+### 💾 API
+
+For API documentiation see the file [API Documentation](./readme-assets/API.md).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ### 💻 Usage
 
 To run the project, execute the following command:
