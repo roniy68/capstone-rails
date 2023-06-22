@@ -1,17 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-size: 1.5rem;
-    font-family: 'Robot', sans-serif;
-    background-color: white;
+  font-family: 'Robot', sans-serif;
 }
 
-li:hover {
-    @apply bg-green-700;
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.sign-in-form::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://as1.ftcdn.net/v2/jpg/03/70/92/84/1000_F_370928450_R6g8c0j5cey86PUXE32W7KMiqIUe1fOI.jpg');
+  background-size: cover;
+  filter: blur(8px);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
+.sign-in-title {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.sign-in-inputs {
+  margin-bottom: 20px;
+  width: 400px;
+}
+
+.username-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 4px solid #ccc;
+  border-radius: 5px;
+  background: transparent;
+  /* Add a transparent background */
+  color: white;
+  /* Change the text color */
+  font-size: large;
+
+}
+
+.btn {
+  text-align: center;
+}
+
+.sign-in-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: rgb(47 35 35);
+  color: #fff;
+  border: solid 2px #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 130px;
+  font-size: large;
+}
+
+.sign-in-button:hover {
+  background: linear-gradient(135deg, #da3636, #4a1094);
 }

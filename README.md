@@ -1,171 +1,257 @@
 <a name="readme-top"></a>
+<details>
+<summary>Table of Contents</summary>
 
-<a name="readme-top"></a>
+- [🚗 RENTCAR - Luxury cars renting plateform ](#-rentcar---luxury-cars-renting-plateform-)
+  - [📸 Screenshots ](#-screenshots-)
+  - [🚀 Live Demo](#-live-demo)
+  - [📋 Kanban Board](#-kanban-board)
+    - [Kanban Board.](#kanban-board)
+    - [The members: @Salwa, @Ahmed, @Talha](#the-members-salwa-ahmed-talha)
+  - [Tech Stack  ](#tech-stack--)
+  - [✨ Key Features  ](#-key-features--)
+  - [📘 Getting Started  ](#-getting-started--)
+    - [📋 Prerequisites](#-prerequisites)
+    - [Setup ](#setup-)
+    - [📥 Installation](#-installation)
+    - [💾 Database](#-database)
+    - [💻 Usage](#-usage)
+    - [🧪 Tests](#-tests)
+  - [👨‍💻 Authors  ](#-authors--)
+    - [👤 **Salwa Ballouti**:](#-salwa-ballouti)
+    - [👤 **Ahmed Hasan Rony**](#-ahmed-hasan-rony)
+    - [👤 **Muhammad Talha Hanif**](#-muhammad-talha-hanif)
+  - [🎯 Future Features  ](#-future-features--)
+  - [🙏 Acknowledgements](#-acknowledgements)
+  - [💎 Resources](#-resources)
+  - [🤝 Contribution  ](#-contribution--)
+  - [💖 Show Your Support  ](#-show-your-support--)
+  - [📜 License ](#-license-)
+</details>
 
-<div align="center">
+# 🚗 RENTCAR - Luxury cars renting plateform <a name="about-project"></a>
 
-  <img src="readme-assets/murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
+**RENTCAR** is a collaborative project, it's about luxury car rental platform built with Rails and React. Users can browse and reserve available models, manage reservations, and contribute by adding or deleting cars. It offers a seamless experience for renting luxury cars with ease.
 
-  <h3><b>Capstone-Rails</b></h3>
+## 📸 Screenshots <a name="screenshot"></a>
 
-</div>
+<p>
+<img src="https://github.com/roniy68/capstone-rails/assets/77187003/be1d9418-e6ac-4ca7-829c-7a672790e271" width=400 height=250 alt="screenshot" />
+  <img src="https://github.com/roniy68/capstone-rails/assets/77187003/9c8ecfdf-cd89-49ef-8cc0-51e78376fd82" width=400 height=250 alt="screenshot" />
+  <img src="https://github.com/roniy68/capstone-rails/assets/77187003/50ea1c45-511c-4dee-942d-741cffb2a14e" width=400 height=250 alt="screenshot" />
+  <img src="https://github.com/roniy68/capstone-rails/assets/77187003/68c8a168-7f32-413b-a327-b38562c73218" width=400 height=250 alt="screenshot" />
+  <img src="https://github.com/roniy68/capstone-rails/assets/77187003/f2359c19-0684-4b01-97b2-66236afa374c" width=400 height=250 alt="screenshot" />
+</p>
 
-# 📗 Table of Contents
-
-## 📑 Table of Contents
-
-- [📊 Capstone-Rails ](#-Capstone-Rails-)
-  - [🛠 Built With ](#-built-with-)
-    - [🧰 Tech Stack ](#-tech-stack-)
-    - [💎 Key Features ](#-key-features-)
-  - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites](#prerequisites)
-    - [Setup](#setup)
-    - [Install](#install)
-    - [Usage](#usage)
-    - [Tests](#tests)
-  - [📧 Contact ](#-contact-)
-  - [🔭 Future Features ](#-future-features-)
-  - [🤝 Contributing ](#-contributing-)
-  - [💖 Show your support ](#-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [📝 License ](#-license-)
-
-<!-- PROJECT DESCRIPTION -->
-
-# 📊 Rails Blog <a name="about-project"></a>
-
-Rails Blog is a Ruby on rails project. It's a minimalistic presentation of a RoR application
-
-## 🛠 Built With <a name="built-with"></a>
-
-### 🧰 Tech Stack <a name="tech-stack"></a>
-
-- Ruby On Rails
-- Node
-- Postgresql
-
-<!-- Features -->
-
-### 💎 Key Features <a name="key-features"></a>
-
-- Minimalistic user interface
-- Provides options to catalog user's personal album ,books and games
-- Development Tools : Ruby and rbenv 🔗
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
 
-## 💻 Getting Started <a name="getting-started"></a>
+## 🚀 Live Demo
+
+[RENTCAR-Luxury Cars](https://capstone-rails.onrender.com/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📋 Kanban Board 
+
+We have used a Kanban board to split the tasks and simplify the project workflow.
+
+### [Kanban Board](https://github.com/roniy68/capstone-rails/projects/1).
+
+### The members: [@Salwa](https://github.com/Salwa99), [@Ahmed](https://github.com/roniy68), [@Talha](https://github.com/Talha-Hanif5666)
+
+
+<img src="https://github.com/roniy68/capstone-rails/assets/77187003/bdb6c83b-1e4c-4d1b-98ed-cf28d59ed7f2" width=600 height=400 alt="kanban board" />
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Tech Stack  <a name="tech-stack"></a>
+
+- **Back-end** 💻:   
+  <details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
+    <li><a href="https://redux-toolkit.js.org/">PostgreSQL</a></li>
+  </ul>
+</details>
+
+  - **Front-end** 💻: 
+    <details>
+    <summary>Client</summary>
+    <ul>
+      <li><a href="https://react.dev/">React</a></li>
+      <li><a href="https://redux-toolkit.js.org/">Redux Toolkit</a></li>
+      <li><a href="https://reactrouter.com/en/main">React Router</a></li>
+      <li><a href="https://tailwindcss.com/">Tailwind</a></li>
+      <li><a href="https://reactrouter.com/en/main">React icons</a></li>
+    </ul>
+</details>
+
+
+- **Tools** 🛠: 
+  - [Rspec](https://rspec.info/)
+  - [Esbuild](https://esbuild.github.io/)
+  - [Render](https://render.com/)
+
+
+<details>
+<summary>Linter</summary>
+  <ul>
+    <li>Eslint</li>
+    <li>Rubocop</li>
+    <li>Stylint</li>
+  </ul>
+</details>
+  
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ✨ Key Features  <a name="key-features"></a>
+
+- **Log in with a username to access the palteform.**
+- **Browse list of available cars.**
+- **Add your cars or delete them.**
+- **Reserve a cars.**
+- **Responsive design.**
+- **Use API endpoint.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📘 Getting Started  <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
 
-### Live Demo
+### 📋 Prerequisites
 
-##### [Live Here ](https://capstone-rails.onrender.com)
+Make sure you have the following installed on your machine:
+- [Ruby 3.1.3 or higher](https://www.ruby-lang.org/en/)
+- [Rails 7.0.4 or higher](https://rubyonrails.org/)
+- [PostgreSQL 15.2 or higher](https://www.postgresql.org/)
+- [Node 18.14 or higher](https://nodejs.org/en)
 
-### Prerequisites
+### Setup <a name="setup"></a>
 
-In order to use this project, you need
-
-<li>Ruby environment installed in your local machine</li>
-<li>Git CLI</li>
-
-### Setup
-
-Clone this repository to your desired folder:
+Clone this repository to your desired foler.
 
 ```sh
-  git clone https://github.com/roniy68/Capstone-Rails
-  cd Capstone-Rails
+  git clone https://github.com/roniy68/capstone-rails.git
 ```
-
-### Install
-
-Install the dependencies with:
 
 ```sh
-  bundle install
+  cd capstone-rails
 ```
 
-### Usage
+### 📥 Installation
+Install the required gems with:
+
+```sh
+bundle install
+```
+
+Install the node dependencies with:
+
+```sh
+yarn install
+```
+
+```sh
+npm install
+```
+
+### 💾 Database
+
+Create the databases and run migrations with:
+
+```sh
+rails db:create
+rails db:migrate
+```
+
+To load the sample data, run:
+
+```sh
+rails db:seed
+```
+
+### 💻 Usage
 
 To run the project, execute the following command:
 
 ```sh
-  rails s
+  ./bin/dev
 ```
+### 🧪 Tests
 
-### Tests
-
-To run the tests, execute the following command:
+To run tests, run the following command:
 
 ```sh
-  rspec spec
+rspec spec 
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
+## 👨‍💻 Authors  <a name="author"></a>
 
-## 📧 Contact <a name="authors"></a>
+### 👤 **Salwa Ballouti**:
+- GitHub: [@Salwa99](https://github.com/Salwa99)
+- Twitter: [@SalwaBallouti](https://twitter.com/salwa_ballouti)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/salwa-ballouti)
 
-I am always looking for ways to improve my project. If you have any suggestions or ideas, I would love to hear from you.
+### 👤 **Ahmed Hasan Rony**
 
-[![Github](https://img.shields.io/badge/GitHub-673AB7?style=for-the-badge&logo=github&logoColor=white)](https://github.com/roniy68)
-[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/ahroniy)
-[![Linkedin](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/ahroniy)
-[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ahmed.hasan.rony@gmail.com)
+- GitHub: [@roniy68](https://github.com/roniy68)
+- Twitter: [@Ahmed Hasan Rony](https://twitter.com/ahroniy)
+- LinkedIn: [@Ahmed Hasan Rony](https://www.linkedin.com/in/ahroniy/)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+### 👤 **Muhammad Talha Hanif**
 
-<!-- FUTURE FEATURES -->
-
-## 🔭 Future Features <a name="future-features"></a>
-
-- [x] **Implement edit entries and remove entries functionalities**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## 📧 Authors <a name="authors"></a>
-
-👤 **Ahmed Hasan Rony**
-
-- **_[Ahmed Hasan Rony](https://github.com/roniy68)_**
-
-## 🤝 Contributing <a name="contributing"></a>
-
-I welcome any and all contributions to my website! If you have an idea for a new feature or have found a bug, please open an issue or submit a pull request.
-
-Feel free to check the [issues page](https://github.com/roniy68/Capstone-Rails/issues).
+- GitHub: [@githubhandle](https://github.com/Talha-Hanif5666)
+- Twitter: [@twitterhandle](https://twitter.com/TalhaHa45039660?t=R4git6jFgsysI4xPxmN-ag&s=09)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/muhammad-talha-hanif-6b1355116)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
+## 🎯 Future Features  <a name="future-features"></a>
 
-## 💖 Show your support <a name="support"></a>
+- [ ] Implement the full authentication.
+- [ ] Implement edit car or reservation.
+- [ ] Implement search bar.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgements
+
+This app was designed based on an original design idea by [Murat Korkmaz](https://www.behance.net/muratk) on Behance. 
+We would like to thank Murat Korkmaz for this inspiring design.
+
+- [App Design Template](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 💎 Resources
+
+🎨 **Colors**
+- 🟢 Accent: #96bf01
+
+🖌 **Fonts**
+- Normal: [Roboto](https://fonts.google.com/specimen/Roboto)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contribution  <a name="contribution"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 💖 Show Your Support  <a name="support"></a>
 
 If you like this project, please consider giving it a ⭐.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGEMENTS -->
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-This project was inspired by:
-
-- [GitHub Finder](https://github.com/JasurbekIsokov/github-finder)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
-
-## 📝 License <a name="license"></a>
+## 📜 License <a name="license"></a>
 
 This project is [MIT](./readme-assets/MIT.md) licensed.
 

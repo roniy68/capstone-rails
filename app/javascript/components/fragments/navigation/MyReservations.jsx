@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Navigation from "./Navigation";
 
 const MyReservations = () => {
   const [reservations, setReservations] = useState([]);
@@ -43,33 +42,39 @@ const MyReservations = () => {
   };
 
   return (
-    <div>
-      <Navigation />
-      <div className="my-reservations-container">
-        <h2>My Reservations</h2>
-        {reservations.length > 0 ? (
-          <ul className="reservation-list">
-            {reservations.map((reservation) => (
-              <li key={reservation.id} className="reservation-card">
-                <div className="card-content">
-                  <p>Car Name: {reservation.car_name}</p>
+    <div className="h-full overflow-auto p-6">
+      <h2 className="text-[40px] font-bold mb-12 flex items-center justify-center">
+        My Reservations
+      </h2>
+      {reservations.length > 0 ? (
+        <ul className="flex flex-col lg:flex-row gap-4 lg:gap-8">
+          {reservations.map((reservation) => (
+            <li
+              key={reservation.id}
+              className="bg-[#96bf01] mb-6 p-6 rounded shadow-lg flex flex-col justify-center items-center"
+            >
+              <div className="flex flex-col items-center justify-center">
+                <p className="text-[30px] font-bold mb-6">
+                  Car Name: {reservation.car_name}
+                </p>
+                <div className=" text-[20px] p-6 border-t border-white">
                   <p>Car Model: {reservation.car_model}</p>
                   <p>Start Date: {reservation.start_date}</p>
                   <p>End Date: {reservation.end_date}</p>
                 </div>
-                <button
-                  className="delete-button"
-                  onClick={() => handleDelete(reservation.id)}
-                >
-                  Delete
-                </button>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No reservations found!</p>
-        )}
-      </div>
+              </div>
+              <button
+                className="bg-red-400 hover:bg-red-900 hover:text-white rounded p-4 font-bold mt-12"
+                onClick={() => handleDelete(reservation.id)}
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="alert">No reservations found!</p>
+      )}
     </div>
   );
 };
