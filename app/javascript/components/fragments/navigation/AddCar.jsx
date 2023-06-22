@@ -71,7 +71,7 @@ const AddCar = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center">
       {carAdded && (
         <p className="bg-green-200 font-bold mb-6 p-2 rounded shadow-lg">
           New car has been added!

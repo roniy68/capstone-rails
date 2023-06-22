@@ -92,14 +92,14 @@ const AllCars = () => {
     };
 
     return (
-        <div className="bg-red-500 flex flex-1 flex-col p-6 items-center w-auto ">
+        <div className=" flex flex-1 flex-col p-6 items-center w-auto ">
             <div>
                 <h1 className="flex items-center justify-center font-bold mt-10 text-5xl">
                     ALL CARS
                 </h1>
             </div>
 
-            <div className="bg-blue-500 w-auto lg:w-[800px]">
+            <div className=" w-auto lg:w-[800px]">
                 <ul>{renderCars()}</ul>
             </div>
         </div>
