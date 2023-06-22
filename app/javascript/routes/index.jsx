@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Home from "../components/pages/Home";
 import CarsPage from "../components/pages/CarsPage";
 import MyReservationsPage from "../components/pages/MyReservationsPage"
@@ -10,26 +10,30 @@ import Login from "../components/fragments/login/login";
 import Layout from "../components/fragments/Layout";
 import NotFound from "../components/fragments/NotFound";
 import DeletePage from "../components/pages/DeleteCars";
-
-
+import PrivateRoutes from "./PrivateRoutes";
 
 export default (
   <Router>
     <Routes>
-    <Route path="/login" element={<Login />} />
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="/cars" element={<CarsPage />} />
-        <Route path="/detail/:id" element={<CarDetailPage />} />
-        <Route path="/reserve" element={<ReservationPage />} />
-        <Route path="/myreservations" element={<MyReservationsPage />} />
-        <Route path="/addcar" element={<AddCarPage />} />
-        <Route path="/delete" element={<DeletePage />} />
-        {/* More Routes here */}
+      {/* General Routes */}
+      <Route path="/login" element={<Login />} />
+      {/* Protected Routes */}
+      <Route element={<PrivateRoutes />}>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="/cars" element={<CarsPage />} />
+          <Route path="/detail/:id" element={<CarDetailPage />} />
+          <Route path="/reserve" element={<ReservationPage />} />
+          <Route path="/myreservations" element={<MyReservationsPage />} />
+          <Route path="/addcar" element={<AddCarPage />} />
+          <Route path="/delete" element={<DeletePage />} />
+          {/* More Protected Routes here */}
+        </Route>
       </Route>
+
 
       {/* Catch  all routes*/}
       <Route path="*" element={<NotFound />} />
     </Routes>
-  </Router>
+  </Router >
 );
