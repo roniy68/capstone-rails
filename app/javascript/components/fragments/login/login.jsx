@@ -9,7 +9,7 @@ const Login = () => {
   const navigate = useNavigate();
 
 
-  
+
   // Function to sign in
   const handleSignIn = async () => {
     try {
@@ -25,13 +25,13 @@ const Login = () => {
         }
       );
       sessionStorage.setItem('username', response.data.username);
-      
+
       navigate('/', { state: { message: 'Successfully Signed In' } });
     } catch (error) {
       setMessage('Sign in failed');
     }
   };
-  
+
   useEffect(() => {
     if (message) {
       const timer = setTimeout(() => {
@@ -46,7 +46,7 @@ const Login = () => {
 
   return (
     <div className="sign-in-form">
-      {message && <p style={{ color: "white", textAlign: "center"}}>{message}</p>}
+      {message && <p style={{ color: "white", textAlign: "center" }}>{message}</p>}
       <h1 className="sign-in-title">Welcome, please LogIn to continue</h1>
       <div className="sign-in-inputs">
         <input

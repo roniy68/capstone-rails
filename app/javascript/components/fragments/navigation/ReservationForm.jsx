@@ -95,8 +95,8 @@ const ReservationForm = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
-      {reservationStatus && <p className="alert-msg">{reservationStatus}</p>}
-      <div className="w-96 bg-white rounded-lg shadow-lg p-6">
+      {reservationStatus && <p className="bg-green-200 font-bold mb-6 p-4 rounded shadow-lg">{reservationStatus}</p>}
+      <div className="h-auto lg:w-[800px] w-[600px] p-6 bg-slate-300 rounded-lg shadow-lg">
         <form onSubmit={handleSubmit} className="space-y-4 shadow">
           <div>
             <label htmlFor="car_name" className="block mb-1">
@@ -150,10 +150,10 @@ const ReservationForm = () => {
               className="w-full border border-gray-300 rounded px-3 py-2"
             />
           </div>
-          <div>
+          <div className="flex justify-center items-center">
             <button
               type="submit"
-              className="w-full bg-green-500 text-white rounded py-2 text-xl"
+              className="w-auto lg:w-60 p-12 m-12 bg-[#96bf01] hover:bg-green-500 text-white rounded py-2 font-bold"
             >
               Submit
             </button>
