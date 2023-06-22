@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   # Api Endpoints
   namespace :api do
     namespace :v1 do
-      resources :users, only: %i[index show create update destroy]
-      resources :cars, only: %i[index create show destroy]
+      resources :users, only: %i[index show create update destroy] do
+        resources :cars, only: %i[create]
+      end
+      resources :cars, only: %i[index show create destroy]
       resources :reservations, only: %i[index create show destroy]
       get '/users/:user_id/reservations', to: 'reservations#user_reservations'
       post 'users/signin', to: 'sessions#create'

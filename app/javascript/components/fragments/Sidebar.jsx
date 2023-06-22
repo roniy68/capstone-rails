@@ -29,7 +29,7 @@ const Sidebar = () => {
         {/* className={`${hide ? "hidden transition ease-in delay-300 md:flex flex-col bg-white pl-12 lg:w-[400px] border-r border-gray-400" : 'hidden'}`} */}
         <div className=" rounded-full">
           <Link to="/">
-            <img className='h-auto w-[200px] m-0 flex items-center justify-start' src={logo} alt="logo"/>
+            <img className='h-auto w-[200px] m-0 flex items-center justify-start' src={logo} alt="logo" />
           </Link>
         </div>
 
@@ -44,11 +44,11 @@ const Sidebar = () => {
         </ul>
         <div className="mt-6">
           <ul className='flex p-6 justify-around text-gray-500'>
-            <li><FaFacebookF size={20}/></li>
-            <li><FaTwitter size={20}/></li>
-            <li><TiSocialGooglePlus size={20}/></li>
-            <li><FaPinterestP size={20}/></li>
-            <li><FaGithub size={20}/></li>
+            <li><FaFacebookF size={20} /></li>
+            <li><FaTwitter size={20} /></li>
+            <li><TiSocialGooglePlus size={20} /></li>
+            <li><FaPinterestP size={20} /></li>
+            <li><FaGithub size={20} /></li>
           </ul>
           <p className='flex items-center justify-center'>@ 2023 SAT - RENTCAR</p>
         </div>
