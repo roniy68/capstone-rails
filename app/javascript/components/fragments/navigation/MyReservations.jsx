@@ -31,7 +31,6 @@ const MyReservations = () => {
             (reservation) => reservation.id !== reservationId
           )
         );
-        console.log("Reservation deleted successfully.");
       } else {
         const error = await response.json();
         console.error("Error deleting reservation:", error);
