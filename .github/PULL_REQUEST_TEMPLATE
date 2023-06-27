@@ -1,0 +1,71 @@
+# Highlights 🥇 
+
+<img src="https://media4.giphy.com/media/py2UYwTIX5SXm/giphy.gif"/>
+
+
+
+### ***Hello @Reviewer, we are three team members in this project. And Followed This Requirements*** 
+
+## What Has Been Done: 
+✅ The user logs in to the website, only by typing the username [ For Three People Work]
+✅ In the navigation panel, the user can see links to:
+Cars items .
+✅ On the main page, the user can see the list of models in a carousel
+✅ When the user selects a specific item, they can see the [details page]
+✅ When the user clicks the "Add Car" link in the navigation panel they can see a form for adding a new item.
+✅ Make the app responsive, creating both mobile and desktop versions.
+✅ When the user clicks the "Delete item" link in the navigation panel they can see a list of all items with title and "Delete" button.
+- When the user clicks the "Delete" button, the selected item is marked as removed and does not show on the main list anymore.
+✅ When the user clicks the "My reservations" link in the navigation panel they can see a list of their reservations (with information about item name, date and city).
+✅ Add full documentation for your API.
+
+
+# Tech Setup 
+✅ Set up the repository/repositories on GitHub and use Gitflow.
+✅  should use Postgres as your database
+✅ Use Rails to create backend API.
+✅ Use React & Redux to create frontend UI.
+✅ You can choose if you want to set up your project as two separate apps or as one.
+✅ The [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/) requires that you give appropriate credit to the author. Therefore, you must do it in the README of your project.
+
+
+# Kanban Board
+### [Kanban Board](https://github.com/roniy68/capstone-rails/projects/1) 
+
+# Live Link
+### [Live Here](https://capstone-rails.onrender.com/)
+
+# Local Installation 
+
+```
+bundle install &&  EDITOR="code --wait" rails credentials:edit 
+```
+
+### put your db user and pass as env variable
+
+```
+POSTGRESQL_USER: username
+POSTGRESQL_PASSWORD: password
+RAILSBLOG_DATABASE_PASSWORD: password
+```
+
+## 👥 Authors
+
+- Ahmed Hassan Rony @roniy68 
+- Salwa Balloti @Salwa99 
+- Talha Hanif @Talha-Hanif5666 
+
+## Missed anything?
+- [ ] Explained the purpose of this PR.
+- [ ] Self reviewed the PR.
+- [ ] Added or updated test cases.
+- [ ] Informed of breaking changes, testing and migrations (if applicable).
+- [ ] Updated documentation (if applicable).
+- [ ] Attached screenshots (if applicable).
+
+## Followed Rules: 
+- Made sure [no linter errors](https://github.com/microverseinc/linters-config)
+-  Followed [Github Flow](https://github.com/microverseinc/curriculum-transversal-skills/blob/main/git-github/articles/github_flow.md)
+-  Documented [professionaly](https://github.com/microverseinc/curriculum-transversal-skills/blob/main/documentation/articles/professional_repo_rules.md)
+- Follow our list of [best practices for Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/articles/ruby_best_practices.md).
+
